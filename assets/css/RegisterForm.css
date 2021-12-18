@@ -1,0 +1,56 @@
+body{
+    background-image: url("../img/marble.jfif");
+    background-size: cover;
+}
+div.Registerform{
+    text-align: center;
+    height:58%;
+   border-radius: 60px;
+    background-color: #c4c3c37a;
+    position: absolute;
+    font-size: 18px;
+    margin: 30px 200px 30px 280px ;
+    padding: 5px 20px 200px 20px ;
+    font-family: "Times New Roman";
+}
+td.Rtitles{
+    padding:10px;
+    text-align: right;
+    margin: 0px;
+}
+
+.enters{
+    text-align: left;
+    padding:13px;
+    line-height: 30px;
+}
+.postnumb
+{
+    width: 95px;
+}
+select{
+    height:20px;
+}
+
+.address{
+    width: 400px;
+}
+input.Registerbuttons{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.507);
+    color: black;
+    border-style: dashed;
+    cursor: pointer;
+    border-color: rgb(255, 255, 255, 0.507);
+}
+a.Registerbuttons{
+    padding: 20px;
+}
+input.Registerbuttons:hover{
+    background-color: rgb(64, 171, 243);
+    color:#ffffff;
+    font-weight: bold;
+}
