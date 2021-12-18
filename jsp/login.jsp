@@ -6,10 +6,10 @@
     </head>
     <body>
 <%
-    String sUserID = request.getParameter("sUserID");
-    String sUserPWD = request.getParameter("sUserPWD");
+    String strUserID = request.getParameter("user_id");
+    String strUserPWD = request.getParameter("password");
 
-    if(sUserID==null || sUserPWD==null || sUserID.equals("") || sUserPWD.equals("")){
+    if(strUserID==null || strUserPWD==null || strUserID.equals("") || strUserPWD.equals("")){
         response.sendRedirect("index.html");
 	}
 
