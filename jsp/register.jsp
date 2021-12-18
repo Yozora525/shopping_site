@@ -2,12 +2,13 @@
 <%@page pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>登入</title>
+        <title>註冊</title>
 </head>
 <body>
     <%@ include file="conMySQL.jsp"%>
 <%
-    String strUserEmail = request.getParameter("user_email");
+    
+    String strUserName = request.getParameter("user_name");
     String strUserPWD = request.getParameter("password");
 
     if(strUserID==null || strUserPWD==null || strUserID.equals("") || strUserPWD.equals("")){
@@ -15,19 +16,14 @@
 	}
 
 	else{
-
+        // 判斷email 是否有註冊過，如果有回註冊，若沒有註冊，將資料寫入資料庫
         if(){
-            response.sendRedirect(""); // 導向後台
-        }
 
-        else if(){
-            response.sendRedirect(""); // 導向會員
         }
 
         else{
-            //out.println("帳號或密碼輸入錯誤") // 輸入錯誤, 回首頁,用js來做？
-        }
 
+        }
 	}
 %>
 </body>
