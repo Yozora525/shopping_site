@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊</title>
+    <style>
+    @import url("RegisterForm.css");
+    </style>        
+</head>
+<body>
+    <div class="Registerform">
+    <form>
+<h1>會員註冊</h1>
+    
+    <table class="register" border="1">
+        <tr>
+            <td class="Rtitles"><b>姓名<br>Name</b></td>
+            <td class="enters"><input type="text"></td>
+            <td class="Rtitles"><b>性別<br>Gender</b></td>
+            <td class="enters"><input type="radio" name="gender" value="male">男性 Male
+                <input type="radio" name="gender" value="female">女性 Female
+              </td>
+        </tr>
+        <tr>
+            <td class="Rtitles"><b>出生年月日<br>Birthday</b></td>
+            <td class="enters" colspan="3"><input type="date" name=" birthday"></td>
+        </tr>
+        <tr>
+            <td class="Rtitles"><b>手機<br>Phone Number</b></td>
+            <td class="enters"><input type="cellphone" maxlength="10"></td>
+            <td class="Rtitles"><b>市內電話<br>Home Number</b></td>
+            <td class="enters"><input type="cellphone" maxlength="10"></td>
+        </tr>
+        <tr>
+            <td class="Rtitles"><b>電子郵件<br>Email</b></td>
+            <td class="enters" colspan="3"><input type="email"></td>
+        </tr>
+        <tr>
+            <td class="Rtitles"><b>密碼<br>Password</b></td>
+            <td class="enters" colspan="3"><input type="password"></td>
+        </tr>
+        <tr>
+            <td class="Rtitles"><b>寄送地址<br>Address</b></td>
+            <td class="enters" colspan="3">
+                <input placeholder="請輸入郵遞區號" type="address" maxlength="5" class="postnumb">
+                <select size="1" name="CountyName" >
+                  <option>基隆市</option>
+                  <option>臺北市</option>
+                  <option>新北市</option>
+                  <option>桃園市</option>
+                  <option>新竹縣</option>
+                  <option>新竹市</option>
+                  <option>苗栗縣</option>
+                  <option>台中市</option>
+                  <option>彰化縣</option>
+                  <option>南投縣</option>
+                  <option>雲林縣</option>
+                  <option>嘉義縣</option>
+                  <option>嘉義市</option>
+                  <option>台南市</option>
+                  <option>高雄市</option>
+                  <option>屏東縣</option>
+                  <option>宜蘭縣</option>
+                  <option>花蓮縣</option>
+                  <option>台東縣</option>
+                  <option>澎湖縣</option>
+                  <option>金門縣</option>
+                  <option>連江縣</option>
+                </select><br>
+                <input class="address" type="address">
+              </td>
+        </tr>
+        </table><br>
+
+        <input type="submit" value="確認送出">
+        <input type="reset" value="清除重填">
+
+        </form>
+    </div>
+</body>
+</html>
