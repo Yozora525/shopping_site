@@ -1,0 +1,65 @@
+.loginForm{
+    width: 400px;
+    height: 400px;
+    border: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -140px;
+    background-color:#FFDAC8;
+    border-radius: 5px;
+}
+.loginForm .inputContent{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    text-align: center;
+}
+.loginForm .inputContent p{
+    padding-top: 10px;
+}
+.loginForm .inputContent h2{
+    padding-bottom: 15px;
+    color: #0080FF;
+}
+.buttonBlock{
+    padding-left: 30px;
+}
+.button{
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background-color: #0080FF;
+    color: white;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: white;
+    color: #0080FF;
+    cursor: pointer;
+}
+.hr{
+    padding-top: 5px;
+}
+hr{
+    position: relative;
+    text-align: center;
+    border: 1px #0080FF solid;
+    background-color: #0080FF;
+}
+.becomeNumber{
+    color: #0080FF;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: none;
+}
+.becomeNumber:hover{
+    color: #9F35FF;
+}
