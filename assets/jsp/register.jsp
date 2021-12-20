@@ -9,9 +9,14 @@
 <%
     
     String strUserName = request.getParameter("user_name");
-    String strUserPWD = request.getParameter("password");
+    String strSex = request.getParameterValue("gender");
+    String strPhone = request.getParameter("phone");
+    String strEmail = request.getParameter("user_email");
+    String strPassword = request.getParameter("password");
+    String strAdr = request.getParameter("");
+    
 
-    if(strUserID==null || strUserPWD==null || strUserID.equals("") || strUserPWD.equals("")){
+    if(strUserName==null || strUserName.equals("") ){
         response.sendRedirect("index.html");
 	}
 
