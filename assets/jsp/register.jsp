@@ -16,7 +16,7 @@
     String strAdr = request.getParameter("");
     
 
-    if(strUserName==null || strUserName.equals("") ){
+    if(strUserName==null || strUserName.equals("") || strPhone==null ||strPhone.equals("") || strEmail==null || strEmail.equals("") || strAdr==null || strPassword==null || strAdr.equals("") || strPassword.equals("")){
         response.sendRedirect("index.html");
 	}
 
