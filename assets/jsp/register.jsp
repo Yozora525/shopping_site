@@ -1,11 +1,11 @@
 <%@page contentType="text/html"%> 
 <%@page pageEncoding="UTF-8"%>
+<%@ include file="conMySQL.jsp"%>
 <html>
 <head>
         <title>註冊</title>
 </head>
 <body>
-    <%@ include file="conMySQL.jsp"%>
 <%
     
     String strUserName = request.getParameter("user_name");
