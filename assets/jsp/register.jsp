@@ -10,13 +10,22 @@
     String strEmail = request.getParameter("user_email");
     String strPassword = request.getParameter("user_pwd");
     String strConfirmPassword = request.getParameter("user_pwd2");
+    int index = strEmail.indexOf("@");
 
     if(strUserName == null || strUserName.equals("") || strEmail == null || strEmail.equals("") || strPassword == null || strPassword.equals("")|| strConfirmPassword == null || strConfirmPassword.equals("")){
         response.sendRedirect("index.html");
 	}
     // 檢查兩次輸入的密碼是否一致
-    else if(user_pwd != user_pwd2){
+    else if(strPassword != strConfirmPassword){
         out.println("兩次輸入密碼不同, 點<a href='index.html'>我</a>回首頁");
+    }
+
+    else if(strPassword.length() < 8 || strConfirmPassword.length() < 8 ||strPassword.length() > 16 || strConfirmPassword.length() > 16){
+        out.println("字數未符合規定, 點<a href='index.html'>我</a>回首頁");
+    }
+
+    else if(index = -1){
+        out.println("請輸入正確信箱, 點<a href='index.html'>我</a>回首頁");
     }
 
     else{
