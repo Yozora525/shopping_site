@@ -1,16 +1,16 @@
 <%@page contentType="text/html"%> 
 <%@page pageEncoding="UTF-8"%>
+<%@ include file="conMySQL.jsp"%>
 <html>
 <head>
     <title>登入</title>
 </head>
 <body>
-    <%@ include file="conMySQL.jsp"%>
 <%
     String strUserEmail = request.getParameter("user_email");
-    String strUserPWD = request.getParameter("password");
+    String strPassword = request.getParameter("password");
 
-    if(strUserID==null || strUserPWD==null || strUserID.equals("") || strUserPWD.equals("")){
+    if(strUserID==null || strPassword==null || strUserID.equals("") || strPassword.equals("")){
         response.sendRedirect("index.html");
 	}
 

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/member_center.css">
+</head>
+<body>
+    <header class="mainHeader">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/img/headphones.png" alt="earphonelogo">
+            </a>
+            <nav class="navBar">
+                <a href="#">產品介紹</a>
+                <a href="#">會員中心</a>
+                <a href="#">關於我們</a>
+                <a href="#">聯絡我們</a>
+            </nav>
+            <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
+            <form class="headerSearch" method="POST" action="#">
+                <input type="search">
+                <button><img src="assets/img/magnifying-glass.png"></button>
+            </form>
+        </div>
+    </header>
+    <div class="memberCenter">
+        <div class="memberInfo">
+            <div class="memberLeft">
+                <div class="memberInfoImg">
+                    <img src="assets/img/memberImg.png">
+                </div>
+                <div class="memberInfoContent">
+                    <p>XXX，您好!</p>
+                </div>
+                <div class="hr">
+                    <hr>
+                </div>
+                <div class="logout">
+                    <p><a href="#" class="logoutButton">登出</a></p>
+                </div>
+            </div>
+            <div class="memberRight">
+                <form action="">
+                <table>
+                    <tr>
+                        <td>姓名  :&nbsp;&nbsp;<input type="text" id="name" readonly/><input type="text" id="nameModify" style="display:none;"/><input type="button" onclick="edit1();" id="btt1" name="btt1" value="Edit"/></td>
+                        <td>電話  :&nbsp;&nbsp;<input type="tel" id="tel" readonly/><input type="tel" id="telModify" style="display:none;"/><input type="button" onclick="edit2();" id="btt2" name="btt2" value="Edit"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">地址  :&nbsp;&nbsp;<input type="text" id="address" readonly/><input type="text" id="addressModify" style="display:none;"/><input type="button" onclick="edit3();" id="btt3" name="btt3" value="Edit"/></td>
+                    </tr>
+                    <tr>
+                        <td>Email  :&nbsp;&nbsp;<input type="email" id="email" readonly/><input type="email" id="emailModify" style="display:none;"/><input type="button" onclick="edit4();" id="btt4" name="btt4" value="Edit"/></td>
+                        <td>密碼   :&nbsp;&nbsp;<input type="text" id="password" readonly/><input type="text" id="passwordModify" style="display:none;"/><input type="button" onclick="edit5();" id="btt5" name="btt5" value="Edit"/></td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+        </div>
+        <div class="record">
+            <div class="order">
+                <h2>訂單紀錄</h2>
+                <table border="1" class="orderTable">
+                    <tr>
+                        <th>日期</th>
+                        <th>商品名稱</th>
+                        <th>數量</th>
+                        <th>金額</th>
+                    </tr>
+                    <tr>
+                        <td>2021年 1月 1日</td>
+                        <td>鐵三角 M50x</td>
+                        <td>1個</td>
+                        <td>$ 5600</td>
+                    </tr>
+                    <tr>
+                        <td>2021年 3月 15日</td>
+                        <td>SONY IER-Z1R</td>
+                        <td>1個</td>
+                        <td>$ 55900</td>
+                    </tr>
+                    <tr>
+                        <td>2021年 5月 31日</td>
+                        <td>水月雨 KATO</td>
+                        <td>1個</td>
+                        <td>$ 5680</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="comment">
+                <h2>評論紀錄</h2>
+                <table border="1" class="commentTable">
+                    <tr>
+                        <th>日期</th>
+                        <th>商品名稱</th>
+                        <th>留言</th>
+                    </tr>
+                    <tr>
+                        <td>2021年 1月 1日</td>
+                        <td>鐵三角 M50x</td>
+                        <td>隔音效果做得特別好!!</td>
+                    </tr>
+                    <tr>
+                        <td>2021年 3月 15日</td>
+                        <td>SONY IER-Z1R</td>
+                        <td>音質細節部分表現的超級好!!</td>
+                    </tr>
+                    <tr>
+                        <td>2021年 5月 31日</td>
+                        <td>水月雨 KATO</td>
+                        <td>沒有因為是無線耳機而帶來很重的延遲感!!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/member_center.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+.memberCenter{
+    width: 1200px;
+    margin: auto;
+}
+.memberInfo{
+    width: auto;
+    height: 350px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+.memberLeft{
+    width: 30%;
+    height: 350px;
+    background-color: #c4c3c37a;
+    border-radius: 20px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 10px 0px;
+    float: left;
+}
+.memberCenter .memberInfo .memberInfoImg img{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    transform: scale(1);
+    transition: .8s;
+}
+.memberCenter .memberInfo .memberInfoImg img:hover{
+    transform: scale(1.2);
+}
+.memberCenter .memberInfoContent{
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+}
+.memberCenter .hr{
+    padding: 10px;
+}
+.memberCenter .logout{
+    padding: 0px 10px 10px 10px;
+}
+hr{
+    position: relative;
+    text-align: center;
+    border: 1px #0080FF solid;
+    background-color: #0080FF;
+}
+.logoutButton{
+    color: #0080FF;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.logoutButton:hover{
+    color: black;
+}
+.memberRight{
+    width: 66%;
+    height: 350px;
+    text-align: left;
+    font-weight: bolder;
+    background-color: #c4c3c37a;
+    border-radius: 20px;
+    float: left;
+    margin: 0px 0px 10px 40px;
+    padding: 0px 0px 10px 0px;
+}
+.memberRight table{
+    width: 100%;
+    border: none;
+    padding-top: 10px;
+}
+.memberRight table th,
+.memberRight table td{
+    padding: 38px 15px 38px 15px;
+    font-size: 20px;
+}
+.memberRight input{
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    top: -4px;
+}
+#name{
+    width: 55%;
+}
+#nameModify{
+    width: 55%;
+}
+#tel{
+    width: 55%;
+}
+#telModify{
+    width: 55%;
+}
+#address{
+    width: 79%;
+}
+#addressModify{
+    width: 55%;
+}
+#email{
+    width: 55%;
+}
+#emailModify{
+    width: 55%;
+}
+#password{
+    width: 55%;
+}
+#passwordModify{
+    width: 55%;
+}
+#btt1{
+    background-color: #0080FF;
+    color: white;
+    cursor: pointer;
+}
+#btt2{
+    background-color: #0080FF;
+    color: white;
+    cursor: pointer;
+}
+#btt3{
+    background-color: #0080FF;
+    color: white;
+    cursor: pointer;
+}
+#btt4{
+    background-color: #0080FF;
+    color: white;
+    cursor: pointer;
+}
+#btt5{
+    background-color: #0080FF;
+    color: white;
+    cursor: pointer;
+}
+.record{
+    width: auto;
+    clear: both;
+}
+.order{
+    width: 43%;
+    height: 300px;
+    background-color: #c4c3c37a;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    float: left;
+}
+.orderTable{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 10px;
+}
+.orderTable tr td{
+    height: 45px;
+}
+.comment{
+    width: 43%;
+    height: 300px;
+    background-color: #c4c3c37a;
+    border-radius: 20px;
+    margin: 20px 20px 20px 15px;
+    padding: 20px;
+    float: left;
+}
+.commentTable{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+.commentTable tr td{
+    height: 45px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/managed_server.css">
+</head>
+<body>
+    <header class="mainHeader">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/img/headphones.png" alt="earphonelogo">
+            </a>
+            <nav class="navBar">
+                <a href="#">產品介紹</a>
+                <a href="#">會員中心</a>
+                <a href="#">關於我們</a>
+                <a href="#">聯絡我們</a>
+            </nav>
+            <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
+            <form class="headerSearch" method="POST" action="#">
+                <input type="search">
+                <button><img src="assets/img/magnifying-glass.png"></button>
+            </form>
+        </div>
+    </header>
+    <div class="managedServer">
+        <div class="memberInfo">
+            <div class="memberInfoImg">
+                <img src="assets/img/memberImg.png">
+            </div>
+            <div class="memberInfoContent">
+                <p>XXX您好!</p>
+            </div>
+            <div class="hr">
+                <hr>
+            </div>
+            <div class="logout">
+                <p><a href="#" class="logoutButton">登出</a></p>
+            </div>
+        </div>
+        <div class="inventory">
+            <button class="accordion">商品存貨</button>
+            <div class="panel">
+                <table border="1">
+                    <tbody id="amsTbody">
+                        <tr>
+                            <th>商品名稱</th>
+                            <th>售價</th>
+                            <th>數量</th>
+                            <th class="subtractionCol">刪除商品</th>
+                        </tr>
+                        <tr class="tdSet">
+                            <td class="tdSet"><p>鐵三角 M50x</p><img class="inventoryImg" src="assets/img/technica_M50x.jpg" alt=""></td>
+                            <td class="tdSet">$ 5600</td>
+                            <td class="tdSet"> 20個</td>
+                            <td class="tdSet"><button class="subtractionBtn" onclick="editTable.delRow()"><img class="subtraction" src="assets/img/diminish.png" alt=""></button></td>
+                        </tr>
+                        <tr class="tdSet">
+                            <td class="tdSet"><p>SONY IER-Z1R</p><img class="inventoryImg" src="assets/img/sony_IERZ1R.jfif" alt=""></td>
+                            <td class="tdSet">$ 55900</td>
+                            <td class="tdSet"> 15個</td>
+                            <td class="tdSet"><button class="subtractionBtn" onclick="editTable.delRow()"><img class="subtraction" src="assets/img/diminish.png" alt=""></button></td>
+                        </tr>
+                        <tr class="tdSet">
+                            <td class="tdSet"><p>水月雨 KATO</p><img class="inventoryImg" src="assets/img/Oxygen_kato.jfif" alt=""></td>
+                            <td class="tdSet">$ 5680</td>
+                            <td class="tdSet"> 10個</td>
+                            <td class="tdSet"><button class="subtractionBtn" onclick="editTable.delRow()"><img class="subtraction" src="assets/img/diminish.png" alt=""></button></td>
+                        </tr>
+                        <tr class="tdSet">
+                            <td class="tdSet"></td>
+                            <td class="tdSet"></td>
+                            <td class="tdSet"></td>
+                            <td class="tdSet"><button class="subtractionBtn" onclick="editTable.delRow()"><img class="subtraction" src="assets/img/diminish.png" alt=""></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="addBtn" onclick="editTable.addRow()">+ 新增存貨</button>
+            </div>
+        </div>
+        <div class="record">
+            <button class="accordion">訂單紀錄</button>
+            <div class="panel">
+                <table border="1">
+                    <tr>
+                        <th>姓名</th>
+                        <th>email</th>
+                        <th>地址</th>
+                        <th>商品名稱</th>
+                        <th>金額</th>
+                        <th>數量</th>
+                    </tr>
+                    <tr>
+                        <td>王小明</td>
+                        <td>asd123456789@gmail.com</td>
+                        <td>桃園市龍潭區</td>
+                        <td>鐵三角 M50x</td>
+                        <td>$ 5600</td>
+                        <td>1個</td>
+                    </tr>
+                    <tr>
+                        <td>陳小中</td>
+                        <td>zxc987654321@gmail.com</td>
+                        <td>新北市板橋區</td>
+                        <td>SONY IER-Z1R</td>
+                        <td>$ 55900</td>
+                        <td>1個</td>
+                    </tr>
+                    <tr>
+                        <td>黃小雅</td>
+                        <td>qwe135792468@gmail.com</td>
+                        <td>新竹縣竹北市</td>
+                        <td>水月雨 KATO</td>
+                        <td>$ 6000</td>
+                        <td>1個</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/managed_server.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
