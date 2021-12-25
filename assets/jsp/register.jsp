@@ -31,7 +31,7 @@
                 if(con.isClosed())
                 out.println("連線建立失敗");
                 }
-
+                // 將資料寫入資料庫
                 else{
                     String sql = "USE `headphones`";
                     ResultSet rs;
@@ -52,12 +52,12 @@
                 }
 
             catch (SQLException sExec){
-                out.println("SQL錯誤!" + sExec.toString());
+                out.println("SQL錯誤!" + sExec.toString() + ", 點<a href='index.html'>我</a>回首頁");
                 }
         }
 
         catch (ClassNotFoundException err) {
-                out.println("class錯誤" + err.toString());
+                out.println("class錯誤" + err.toString() + ", 點<a href='index.html'>我</a>回首頁");
         }
     }
 %>
