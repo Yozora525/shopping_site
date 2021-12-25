@@ -1,32 +1,47 @@
-    * {box-sizing: border-box;}
     body {
         font-family: 'Times New Roman', Times, serif;
         background-image:url("../img/marble.jfif");
         background-size: cover;
     }
-    .mySlides {display: none;}
-    img {vertical-align: middle;}
-    
-    .slideshow-container {
-        border-color: rgba(255, 255, 255, 0.938) ;
-        border-width: 10px;
-        border-style: double;
-      max-width: 1000px;
-      margin:50px 300px 200px 280px;
- 
-    }
-       
-    .active {
-      background-color: #717171;
+
+    .mySlides {
+      display: none;
     }
 
-    .fade {
+    img {
+      vertical-align: middle;
+      border-radius: 35px;
+    }
+    
+    .slideshow-container {
+      border-color: rgba(255, 255, 255, 0.938) ;
+      max-width: 1000px;
+      max-height: 400px;
+      margin:20px 300px 100px 290px;
+    }
+       
+        .fade {
       -webkit-animation-name: fade;
       -webkit-animation-duration: 1.5s;
       animation-name: fade;
       animation-duration: 1.5s;
     }
     
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 4px;
+      background-color: rgb(0, 183, 255);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    
+
     @-webkit-keyframes fade {
       from {opacity: .4} 
       to {opacity: 1}
