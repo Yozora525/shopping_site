@@ -10,13 +10,11 @@
     
     String strUserName = request.getParameter("user_name");
     String strSex = request.getParameterValue("gender");
-    String strPhone = request.getParameter("phone");
     String strEmail = request.getParameter("user_email");
     String strPassword = request.getParameter("password");
-    String strAdr = request.getParameter("");
     
 
-    if(strUserName==null || strUserName.equals("") || strPhone==null ||strPhone.equals("") || strEmail==null || strEmail.equals("") || strAdr==null || strPassword==null || strAdr.equals("") || strPassword.equals("")){
+    if(strUserName==null || strUserName.equals("") || strEmail==null || strEmail.equals("") || strPassword==null || strPassword.equals("")){
         response.sendRedirect("index.html");
 	}
 
