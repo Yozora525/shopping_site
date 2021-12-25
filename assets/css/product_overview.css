@@ -1,0 +1,100 @@
+body, html {
+    margin: 0;
+    font-family: Arial;
+}
+.productOverview{
+    width: 90%;
+    padding: 0% 5% 0% 5%;
+    height: 1450px;
+}
+/* Style tab links */
+.tablink {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 16.6666%;
+    position: relative;
+  }
+  
+.tablink:hover {
+    background-color: #46A3FF;
+    color: white;
+}
+
+.tablink:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0%;
+    bottom: 0px;
+    height: 0;
+    border-bottom: 4px solid white;
+    transition: .5s;
+}
+.tablink:hover:after{
+    width: 100%;
+}
+  
+  /* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+  
+  #inEar {background-color: #c4c3c37a;}
+  #overEar {background-color: #c4c3c37a;}
+  #wireless {background-color: #c4c3c37a;}
+  #sport {background-color: #c4c3c37a;}
+  #noiseReduct {background-color: #c4c3c37a;}
+  #microphone {background-color: #c4c3c37a;}
+
+.commodity{
+    width: 300px;
+    height: 430px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    float: left;
+    margin: 30px;
+}
+.commodity img{
+    width: 270px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 15px;
+    transform: scale(1);
+    transition: .8s;
+}
+.commodity img:hover{
+    transform: scale(1.1);
+}
+.product_name{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.product_price{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.productDetails{
+    width: 100px;
+    height: 35px;
+    color: white;
+    background-color: #0080FF;
+    border: none;
+    border-radius: 5px;
+}
+.productDetails:hover{
+    color: black;
+    background-color: white;
+    border-style: dashed;
+    cursor: pointer;
+}
