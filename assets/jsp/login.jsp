@@ -28,10 +28,10 @@
                     ResultSet rs;
 
                     con.createStatement().execute(sql);
-                    sql = "SELECT `email`, `password` FROM `members` WHERE `email` = " + strUserEmail;
+                    sql = "SELECT `email`, `password` FROM `user` WHERE `email` = " + strUserEmail;
                     rs = con.createStatement().executeQuery(sql);
                     // 判斷帳密是否正確
-                    if(strUserEmail == rs.getString("email") && strPassword == rs.getString("password")){
+                    if(strUserEmail.equals(rs.getString("email")) && strPassword.equals(rs.getString("password"))){
                         sendRedirect("");
                     }
 
@@ -44,12 +44,12 @@
                     }
 
             catch (SQLException sExec){
-                out.println("SQL錯誤!" + sExec.toString() + ", 點<a href='index.html'>我</a>回首頁");
+                out.println("SQL錯誤!" + sExec.toString() + ", 點<a href='../../index.html'>我</a>回首頁");
             }
         }
 
             catch (ClassNotFoundException err) {
-                out.println("class錯誤" + err.toString() + ", 點<a href='index.html'>我</a>回首頁");
+                out.println("class錯誤" + err.toString() + ", 點<a href='../../index.html'>我</a>回首頁");
             }
 	}
 %>

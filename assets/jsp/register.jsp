@@ -18,14 +18,13 @@
     String strEmail = request.getParameter("user_email");
     String strPassword = request.getParameter("user_pwd");
     String strConfirmPassword = request.getParameter("user_pwd_2");
-    int index = strEmail.indexOf("@");
 
     if(strUserName == null || strUserName.equals("") || strEmail == null || strEmail.equals("") || strPassword == null || strPassword.equals("")|| strConfirmPassword == null || strConfirmPassword.equals("")){
         response.sendRedirect("../../index.html");
 	}
     // 檢查兩次輸入的密碼是否一致
-    if(strPassword == strConfirmPassword || (strPassword.length() > 8 && strConfirmPassword.length() > 8 && strPassword.length() < 16 && strConfirmPassword.length() < 16)){
-
+    
+    if(strPassword.equals(strConfirmPassword)){
         try {
                 
             sql = "SELECT * FROM `user`";
@@ -38,17 +37,17 @@
 
             con.createStatement().execute(sql);
             con.close();
+            out.println("註冊成功, <a href='../../index.html'>回首頁</a>");
         }
 
         catch (SQLException sExec){
-            out.println("SQL錯誤!" + sExec.toString() + ", 點<a href='../../../../index.html'>我</a>回首頁");
+            out.println("此信箱已註冊,<a href='../../index.html'>回首頁</a>");
         }
 
-        out.println("註冊成功, 點<a href='../../../../index.html'>我</a>回首頁");
     }
 
     else{
-        out.println("欄位輸入錯誤, 點<a href='../../../../index.html'>我</a>回首頁");
+        out.println("欄位輸入錯誤,<a href='../../index.html'>回首頁</a>");
     }
 
     

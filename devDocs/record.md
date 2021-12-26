@@ -10,7 +10,9 @@ register.jsp
 將資料寫入資料庫
 
 ### 2021/12/26 ###
-login.jsp
+register.jsp 完成
+login.jsp 檢查帳密, 尚未測試, session 尚未做
+
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
