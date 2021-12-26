@@ -21,7 +21,7 @@
     int index = strEmail.indexOf("@");
 
     if(strUserName == null || strUserName.equals("") || strEmail == null || strEmail.equals("") || strPassword == null || strPassword.equals("")|| strConfirmPassword == null || strConfirmPassword.equals("")){
-        response.sendRedirect("index.html");
+        response.sendRedirect("../../index.html");
 	}
     // 檢查兩次輸入的密碼是否一致
     else if(strPassword != strConfirmPassword){
