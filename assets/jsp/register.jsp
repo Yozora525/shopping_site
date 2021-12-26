@@ -43,7 +43,7 @@
             sql = "SELECT * FROM `members`";
             rs = con.createStatement().executeQuery(sql);
 
-            sql="INSERT members (`member_mail`, `member_name`, `member_pwd`) ";
+            sql="INSERT members (`email`, `username`, `password`) ";
             sql+="VALUES ('" + strEmail + "', ";
             sql+="'" + strUserName + "', ";
             sql+="'" + strPassword + "')";

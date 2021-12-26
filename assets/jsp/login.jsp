@@ -28,10 +28,10 @@
                     ResultSet rs;
 
                     con.createStatement().execute(sql);
-                    sql = "SELECT `member_mail`, `member_pwd` FROM `members` WHERE `member_mail` = " + strUserEmail;
+                    sql = "SELECT `email`, `password` FROM `members` WHERE `email` = " + strUserEmail;
                     rs = con.createStatement().executeQuery(sql);
                     // 判斷帳密是否正確
-                    if(strUserEmail == rs.getString("member_mail") && strPassword == rs.getString("member_pwd")){
+                    if(strUserEmail == rs.getString("email") && strPassword == rs.getString("password")){
                         sendRedirect("");
                     }
 
