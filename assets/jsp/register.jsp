@@ -24,22 +24,10 @@
         response.sendRedirect("../../index.html");
 	}
     // 檢查兩次輸入的密碼是否一致
-    else if(strPassword != strConfirmPassword){
-        out.println("兩次輸入密碼不同, 點<a href='../../../../index.html'>我</a>回首頁");
-    }
-
-    else if(strPassword.length() < 8 || strConfirmPassword.length() < 8 ||strPassword.length() > 16 || strConfirmPassword.length() > 16){
-        out.println("字數未符合規定, 點<a href='../../../../index.html'>我</a>回首頁");
-    }
-
-    else if(index == -1){
-        out.println("請輸入正確信箱, 點<a href='../../../../index.html'>我</a>回首頁");
-    }
-
-    else{
+    if(strPassword == strConfirmPassword || (strPassword.length() > 8 && strConfirmPassword.length() > 8 && strPassword.length() < 16 && strConfirmPassword.length() < 16)){
 
         try {
-                    
+                
             sql = "SELECT * FROM `user`";
             rs = con.createStatement().executeQuery(sql);
 
@@ -58,6 +46,12 @@
 
         out.println("註冊成功, 點<a href='../../../../index.html'>我</a>回首頁");
     }
+
+    else{
+        out.println("欄位輸入錯誤, 點<a href='../../../../index.html'>我</a>回首頁");
+    }
+
+    
 %>
 </body>
 </html>
