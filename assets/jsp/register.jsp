@@ -17,7 +17,7 @@
     String strUserName = request.getParameter("user_name");
     String strEmail = request.getParameter("user_email");
     String strPassword = request.getParameter("user_pwd");
-    String strConfirmPassword = request.getParameter("user_pwd2");
+    String strConfirmPassword = request.getParameter("user_pwd_2");
     int index = strEmail.indexOf("@");
 
     if(strUserName == null || strUserName.equals("") || strEmail == null || strEmail.equals("") || strPassword == null || strPassword.equals("")|| strConfirmPassword == null || strConfirmPassword.equals("")){
