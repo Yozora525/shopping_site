@@ -1,5 +1,6 @@
 <%@page contentType="text/html"%> 
 <%@page pageEncoding="UTF-8"%>
+<%@ page import = "java.sql.*" %>
 <html>
 <head>
     <title>註冊</title>
@@ -52,7 +53,7 @@
 
             out.println("註冊成功, 點<a href='index.html'>我</a>回首頁");
         }
-        
+
         catch (SQLException sExec){
             out.println("SQL錯誤!" + sExec.toString() + ", 點<a href='index.html'>我</a>回首頁");
         }
