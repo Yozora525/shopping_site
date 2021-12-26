@@ -24,7 +24,7 @@
         response.sendRedirect("../../index.html");
 	}
     // 檢查兩次輸入的密碼是否一致
-    else if(strPassword != strConfirmPassword){
+    else if(strPassword == strConfirmPassword){
         out.println("兩次輸入密碼不同, 點<a href='../../../../index.html'>我</a>回首頁");
     }
 
@@ -40,10 +40,10 @@
 
         try {
                     
-            sql = "SELECT * FROM `members`";
+            sql = "SELECT * FROM `user`";
             rs = con.createStatement().executeQuery(sql);
 
-            sql="INSERT members (`email`, `username`, `password`) ";
+            sql="INSERT user (`email`, `username`, `password`) ";
             sql+="VALUES ('" + strEmail + "', ";
             sql+="'" + strUserName + "', ";
             sql+="'" + strPassword + "')";
