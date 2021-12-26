@@ -17,10 +17,10 @@
       border-color: rgba(255, 255, 255, 0.938) ;
       max-width: 1000px;
       max-height: 400px;
-      margin:20px 300px 100px 290px;
+      margin:28px 300px 30px 290px;
     }
        
-        .fade {
+    .fade {
       -webkit-animation-name: fade;
       -webkit-animation-duration: 1.5s;
       animation-name: fade;
@@ -40,7 +40,112 @@
       background-color: #717171;
     }
 
+    h2 {
+      background-color: rgb(64, 147, 255);
+      color: white;
+      font-size: 50px; 
+      font-weight: bold;
+      margin: 40px 190px 10px 8px;
+      padding: 10px;
+      width: 40%;
+      text-align: center;
+      vertical-align: middle;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: multiply;
+      column-span: all;
+      transition: 0.3s;
+      transform: scale(1);
+    }
+
+    h2:hover{
+      transform: scale(1.18);
+  }
     
+    .hotsales{
+      column-count:4;
+      column-gap: 2px;
+      padding: 10%; 
+      padding-right: 0%;  
+      width: fit-content;
+    }
+
+    .topsalepic{
+      width:180px;
+      height:130px;
+    }
+
+    .flip-card {
+      margin:auto 20px;
+      background-color: transparent;
+      width: 180px;
+      height: 130px;
+      padding: 20px;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+    
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    /* Position the front and back side */
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+    }  
+    
+    /* Style the back side */
+    .flip-card-back {
+      background-color: rgba(64, 147, 255, 0.836);
+      border-radius: 28%;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    p.viewmore{
+      vertical-align: middle;
+      text-align: center;
+      border-color: rgb(255, 255, 255) ;
+      border-width: 2px;
+      border-style:solid;
+      width: 40%;
+      margin: 45px 0px 10px 53px;
+    }
+
+    span.num{
+      font-size: 30px;
+      color:white;
+      position: relative;
+      text-align:center;
+      top: -9px;
+      right: 11px;
+    }
+
+  .bookmarkRibbon {
+    width: 0px;
+    height: 35px;
+    background-color: transparent;
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    border: solid 15px #B13A22;
+    border-bottom: solid 15px transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
 
     @-webkit-keyframes fade {
       from {opacity: .4} 
@@ -55,3 +160,20 @@
     @media only screen and (max-width: 300px) {
       .text {font-size: 11px}
     }
+
+    footer{
+      padding: 20px;
+      height: 80px;
+      background-color: #a5a2a26e;
+    }
+    .footerlink{
+      font-family: 'Times New Roman', Times, serif;
+      padding-top: 10px;
+      padding-left: 50px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 20px;
+     line-height: 40px;
+    }
+    
+    
