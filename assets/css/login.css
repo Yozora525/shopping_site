@@ -39,6 +39,8 @@
     background-color: white;
     color: #0080FF;
     border-radius: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .button:hover{
     background-color: #0080FF;

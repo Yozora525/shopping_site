@@ -46,8 +46,10 @@ input.Registerbuttons{
     cursor: pointer;
     border-color: rgb(255, 255, 255, 0.507);
 }
-a.Registerbuttons{
+.Registerbuttons{
     padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 input.Registerbuttons:hover{
     background-color: rgb(64, 171, 243);
