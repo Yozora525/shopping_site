@@ -1,0 +1,234 @@
+.productIntro{
+    width: 95%;
+    height: 1000px;
+    margin: 2.5%;
+}
+.productImg{
+    width: 40%;
+    height: 45%;
+    margin: 4% 0% 4% 6%;
+    float: left;
+    position: relative;
+}
+.comment{
+    width: 95%;
+    height: 500px;
+    margin: 2.5%;
+    overflow: auto;
+}
+
+  /* Hide the images by default */
+.mySlides {
+    display: none;
+}
+  
+  /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+  
+  /* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+  
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+  /* Six columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    margin: 4% 12% 4% 0%;
+}
+.column1{
+    float: right;
+    width: 25%;
+    margin: 4% 0% 4% 0%;
+}
+  
+  /* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+  
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+.productDescription{
+    width: 50%;
+    height: 45%;
+    margin: 1% 0% 4% 0%;
+    float: right;
+}
+.productContent{
+    width: 100%;
+    margin: 30px;
+}
+.name{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.stars{
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    top: -13px;
+    left: -5px;
+}
+.stars input{
+    display: none;
+}
+.stars label{
+    font-size: 30px;
+    color: gold;
+    margin: 0px 2px;
+    text-shadow: 1px 1px #bbb;
+}
+.stars label:before{
+    content: '★';
+}
+.productContent .number{
+    float: left;
+    margin: 20px 30px 20px 0px;
+    width: 50px;
+}
+.productContent ul{
+    margin: 20px 20px 30px -4%;
+}
+.productContent ul li{
+    margin: 15px 10px 15px 0px;
+}
+.priceShow{
+    margin: 20px 30px 20px 0px;
+}
+.price{
+    font-size: 25px;
+}
+.amount{
+    margin: 20px 30px 20px 0px;
+    float: left;
+}
+.buttonBlock{
+    clear: both;
+}
+.buttonBlock img{
+    width: 20px;
+    height: 20px;
+    margin-bottom: -2%;
+}
+.buttonBlock button{
+    width: 150px;
+    height: 50px;
+    margin: 35px 80px 20px 0px;
+    color: white;
+    background-color: #0080FF;
+    font-size: 15px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.buttonBlock button:hover{
+    color: black;
+    background-color: white;
+    box-shadow: 5px 5px 5px black;
+}
+.productFeature{
+    clear: both;
+    width: 92%;
+    height: 40%;
+    text-align: center;
+    float: left;
+    margin: 0% 4% 4% 4%;
+}
+.commentTitle{
+    margin: 0% 4% 0% 4%;
+}
+.comment table{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.comment table tr{
+    height: 200px;
+}
+.commentPerson{
+    text-align: center;
+    width: 30%;
+    height: 94%;
+    background-color: #c4c3c37a;
+    border-radius: 10px;
+    position: relative;
+    float: left;
+    margin-left: 30px;
+}
+.comment table img{
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+}
+.stars1{
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    top: -10px;
+    left: 32%;
+}
+.stars1 input{
+    display: none;
+}
+.stars1 label{
+    font-size: 25px;
+    color: gold;
+    margin: 0px 2px;
+    text-shadow: 1px 1px #bbb;
+}
+.stars1 label:before{
+    content: '★';
+}
+.commentText{
+    width: 62.5%;
+    height: 94%;
+    background-color: #c4c3c37a;
+    border-radius: 10px;
+    float: left;
+    margin: 0px 0px 0px 30px;
+}
+.commentText p{
+    font-size: 20px;
+    margin: 15px;
+}
