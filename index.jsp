@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@ page contentType="text/html" %>
+<%@page pageEncoding="UTF-8"%>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -206,7 +208,16 @@
         <footer >
             <div class="footerlink">
                 <b>© Copyright 2022, in耳吉 All Rights Reserved <br>
-                網頁瀏覽人數: 人</b>
+                  <%
+                      int counter;
+                      String strNo = (String)application.getAttribute("counter"); //讀application變數
+                      counter = Integer.parseInt(strNo); //轉成整數
+                      if (session.isNew())
+                        counter++;                                        //計數器加1
+                      strNo = String.valueOf(counter);    //轉成字串
+                      application.setAttribute("counter",strNo); //寫application變數
+                  %>
+                網頁瀏覽人數:  <%= counter %> 人</b>
             </div>
         </footer>
 
