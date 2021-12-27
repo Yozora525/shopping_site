@@ -5,5 +5,7 @@
 
 <% 
     String strKeyWord = request.getParameter("key_word");
+    ResultSet rs;
+
     
 %>
