@@ -14,7 +14,8 @@ register.jsp 完成
 login.jsp 檢查帳密, 尚未測試, session 尚未做
 
 ### 2021/12/27 ###
-login.jsp 完成, sql injection完成!
+login.jsp 完成, 防止sql injection完成!
+新增search.jsp (產品搜尋功能)
 
 
 ##  智森 ##
