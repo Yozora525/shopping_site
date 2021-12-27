@@ -14,8 +14,8 @@ register.jsp 完成
 login.jsp 檢查帳密, 尚未測試, session 尚未做
 
 ### 2021/12/27 ###
-login.jsp session完成, 尚未debug
-memberCenter 判斷是否登入
+login.jsp 完成, 尚未debug
+
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###

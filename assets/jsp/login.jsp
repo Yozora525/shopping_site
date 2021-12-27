@@ -14,13 +14,19 @@
 
 	else{
 
-        sql = "SELECT `email`, `password` FROM `user` WHERE `email` = '" + strUserEmail + "' AND `password` = '" + strPassword + "'";
-        rs = con.createStatement().executeQuery(sql);
+        sql = "SELECT `email`, `password` FROM `user` WHERE `email` = ? AND `password` = ?";
+        PreparedStatement pstmt = null;
+        pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, strUserEmail);
+        pstmt.setString(3, strPassword);
+        rs = pstmt.executeQuery();
+        //rs = con.createStatement().executeQuery(sql);
         
         // 判斷帳密是否正確
         if(rs.next()){
             session.setAttribute("email", strUserEmail);
             con.close();
+            response.sendRedirect("../../member_center.html");
         }
 
         else{
