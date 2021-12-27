@@ -1,18 +1,20 @@
 <%@page contentType="text/html"%> 
 <%@page pageEncoding="UTF-8"%>
-<%@ page import = "java.sql.*" %>
+<%@page import = "java.sql.*" %>
+<%@include file = "consql.jsp" %>
 <html>
 <head>
     <title>註冊</title>
 </head>
 <body>
 <%
+/*
     Class.forName("com.mysql.jdbc.Driver");
     String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
     Connection con=DriverManager.getConnection(url,"root","Yozora525*");
     String sql = "USE `headphones`";
     ResultSet rs;
-    con.createStatement().execute(sql);
+    con.createStatement().execute(sql);*/
 
     String strUserName = request.getParameter("user_name");
     String strEmail = request.getParameter("user_email");
