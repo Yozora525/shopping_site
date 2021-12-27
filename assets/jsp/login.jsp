@@ -7,18 +7,17 @@
     String strUserEmail = request.getParameter("user_email");
     String strPassword = request.getParameter("password");
     ResultSet rs;
+    PreparedStatement pstmt = null;
     // 判斷是否有填寫欄位
     if(strUserEmail == null || strPassword==null || strUserEmail.equals("") || strPassword.equals("")){
         out.println("請確實填寫資料!, 點<a href='../../login.html'>我</a>回登入頁面");
 	}
 
 	else{
-
         sql = "SELECT `email`, `password` FROM `user` WHERE `email` = ? AND `password` = ?";
-        PreparedStatement pstmt = null;
         pstmt = con.prepareStatement(sql);
         pstmt.setString(1, strUserEmail);
-        pstmt.setString(3, strPassword);
+        pstmt.setString(2, strPassword);
         rs = pstmt.executeQuery();
         //rs = con.createStatement().executeQuery(sql);
         
@@ -26,7 +25,7 @@
         if(rs.next()){
             session.setAttribute("email", strUserEmail);
             con.close();
-            response.sendRedirect("../../member_center.html");
+            out.println("OK!");
         }
 
         else{
@@ -34,6 +33,5 @@
             out.println("帳密輸入錯誤!, 點<a href='../../index.html'>我</a>回首頁");
         }
 
-        
 	}
 %>
