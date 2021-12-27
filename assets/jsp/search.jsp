@@ -11,12 +11,13 @@
     rs = con.createStatement().executeQuery(sql);
 
     if(rs.next()){
-            // ...內容
-            con.close();
-        }
 
-        else{
-            con.close();
-            out.println("查無搜尋結果");
-        }
+            // ...內容
+        con.close();
+    }
+
+    else{
+        con.close();
+        out.println("查無搜尋結果");
+    }
 %>
