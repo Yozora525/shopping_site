@@ -7,7 +7,7 @@
     String strKeyWord = request.getParameter("key_word");
     ResultSet rs;
 
-    sql = "SELECT * FROM `user` WHERE `product_name` = '%" + strKeyWord + "%' OR `product_introduce` = '%" + strKeyWord + "%'";
+    sql = "SELECT * FROM `user` WHERE `product_name` LIKE '%" + strKeyWord + "%' OR `product_introduce` LIKE '%" + strKeyWord + "%'";
     rs = con.createStatement().executeQuery(sql);
 
     if(rs.next()){
