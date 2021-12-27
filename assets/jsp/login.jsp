@@ -1,55 +1,33 @@
 <%@page contentType="text/html"%> 
 <%@page pageEncoding="UTF-8"%>
-<%@ page import = "java.sql.*" %> 
+<%@page import = "java.sql.*" %> 
+<%@include file = "consql.jsp" %>
 
 <%
     String strUserEmail = request.getParameter("user_email");
     String strPassword = request.getParameter("user_pwd");
+    ResultSet rs;
     // 判斷是否有填寫欄位
     if(strUserEmail == null || strPassword==null || strUserEmail.equals("") || strPassword.equals("")){
-        response.sendRedirect("index.html");
+        response.sendRedirect("../../index.html");
 	}
 
 	else{
 
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            try {
-                String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
-                Connection con=DriverManager.getConnection(url,"root","Yozora525*");
-
-                if(con.isClosed())
-                out.println("連線建立失敗");
-                }
-
-                else{
-                    String sql = "USE `headphones`";
-                    ResultSet rs;
-
-                    con.createStatement().execute(sql);
-                    sql = "SELECT `email`, `password` FROM `user` WHERE `email` = " + strUserEmail;
-                    rs = con.createStatement().executeQuery(sql);
-                    // 判斷帳密是否正確
-                    if(strUserEmail.equals(rs.getString("email")) && strPassword.equals(rs.getString("password"))){
-                        sendRedirect("");
-                    }
-
-                    else{
-                        out.println("帳密輸入錯誤!, 點<a href='index.html'>我</a>回首頁");
-                    }
-
-                    con.createStatement().execute(sql);
-                    con.close();
-                    }
-
-            catch (SQLException sExec){
-                out.println("SQL錯誤!" + sExec.toString() + ", 點<a href='../../index.html'>我</a>回首頁");
-            }
+        sql = "SELECT `email`, `password` FROM `user` WHERE `email` = '" + strUserEmail + "' AND `password` = '" + strPassword + "'";
+        rs = con.createStatement().executeQuery(sql);
+        
+        // 判斷帳密是否正確
+        if(rs.next()){
+            session.setAttribute("email", strUserEmail);
+            con.close();
         }
 
-            catch (ClassNotFoundException err) {
-                out.println("class錯誤" + err.toString() + ", 點<a href='../../index.html'>我</a>回首頁");
-            }
+        else{
+            con.close();
+            out.println("帳密輸入錯誤!, 點<a href='../../index.html'>我</a>回首頁");
+        }
+
+        
 	}
 %>
