@@ -5,11 +5,11 @@
 
 <%
     String strUserEmail = request.getParameter("user_email");
-    String strPassword = request.getParameter("user_pwd");
+    String strPassword = request.getParameter("password");
     ResultSet rs;
     // 判斷是否有填寫欄位
     if(strUserEmail == null || strPassword==null || strUserEmail.equals("") || strPassword.equals("")){
-        response.sendRedirect("../../index.html");
+        out.println("請確實填寫資料!, 點<a href='../../login.html'>我</a>回登入頁面");
 	}
 
 	else{
