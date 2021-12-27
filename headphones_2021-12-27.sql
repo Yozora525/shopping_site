@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 8.0.27)
 # 數據庫: headphones
-# 生成時間: 2021-12-27 07:57:23 +0000
+# 生成時間: 2021-12-27 14:22:47 +0000
 # ************************************************************
 
 
@@ -47,6 +47,7 @@ CREATE TABLE `inventory` (
   `wear` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
   `link` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
   `mic` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+  `way` varchar(45) NOT NULL DEFAULT '',
   `inventory_quantity` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -65,6 +66,7 @@ CREATE TABLE `product` (
   `wear` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
   `link` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
   `mic` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+  `way` varchar(45) NOT NULL DEFAULT '',
   `brand` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
