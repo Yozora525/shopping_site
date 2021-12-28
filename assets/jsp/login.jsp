@@ -10,7 +10,7 @@
     PreparedStatement pstmt = null;
     // 判斷是否有填寫欄位
     if(strUserEmail == null || strPassword==null || strUserEmail.equals("") || strPassword.equals("")){
-        out.println("請確實填寫資料!, 點<a href='../../login.html'>我</a>回登入頁面");
+        out.println("請確實填寫資料!, 點<a href='../../login.jsp'>我</a>回登入頁面");
 	}
 
 	else{
@@ -30,7 +30,7 @@
 
         else{
             con.close();
-            out.println("帳密輸入錯誤!, 點<a href='../../index.html'>我</a>回首頁");
+            out.println("帳密輸入錯誤!, 點<a href='../../index.jsp'>我</a>回首頁");
         }
 
 	}

@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 8.0.27)
 # 數據庫: headphones
-# 生成時間: 2021-12-27 14:22:47 +0000
+# 生成時間: 2021-12-28 12:22:12 +0000
 # ************************************************************
 
 
@@ -18,6 +18,18 @@ SET NAMES utf8mb4;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE='NO_AUTO_VALUE_ON_ZERO', SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# 轉儲表 counter
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `counter`;
+
+CREATE TABLE `counter` (
+  `count` int unsigned NOT NULL,
+  PRIMARY KEY (`count`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 
 # 轉儲表 evaluation
@@ -32,6 +44,15 @@ CREATE TABLE `evaluation` (
   `comment` varchar(350) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+LOCK TABLES `evaluation` WRITE;
+/*!40000 ALTER TABLE `evaluation` DISABLE KEYS */;
+
+INSERT INTO `evaluation` (`email`, `product_name`, `score`, `comment`)
+VALUES
+	('','',NULL,NULL);
+
+/*!40000 ALTER TABLE `evaluation` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # 轉儲表 inventory
