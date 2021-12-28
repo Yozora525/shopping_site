@@ -4,8 +4,8 @@
 <%@include file = "consql.jsp" %>
 
 <%
-    String strServerEmail = request.getParameter("user_email");
-    String strPassword = request.getParameter("password");
+    String strServerEmail = request.getParameter("server_email");
+    String strPassword = request.getParameter("server_password");
     ResultSet rs;
     PreparedStatement pstmt = null;
     // 判斷是否有填寫欄位
