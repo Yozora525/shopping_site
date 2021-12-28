@@ -17,6 +17,9 @@ login.jsp 檢查帳密, 尚未測試, session 尚未做
 login.jsp 完成, 防止sql injection完成!
 新增search.jsp (產品搜尋功能)
 
+### 2021/12/27 ###
+server_login.jsp 完成, 尚未測試, 等待前端完成後端登入頁面
+
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
