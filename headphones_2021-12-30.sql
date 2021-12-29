@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2021-12-29 14:09:22 +0000
+# 生成時間: 2021-12-29 16:15:39 +0000
 # ************************************************************
 
 
@@ -127,7 +127,7 @@ CREATE TABLE `product` (
   `mic` varchar(45) NOT NULL DEFAULT '',
   `way` varchar(45) NOT NULL DEFAULT '',
   `brand` varchar(45) NOT NULL,
-  `status` int(11) DEFAULT 1
+  `status` char(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `product` WRITE;
@@ -135,27 +135,27 @@ LOCK TABLES `product` WRITE;
 
 INSERT INTO `product` (`product_name`, `price`, `product_introduce`, `product_image`, `wear`, `link`, `mic`, `way`, `brand`, `status`)
 VALUES
-	('AKG K240',2200,'0','assets/img/AKG_K240.jpg','耳罩式','有線','無','','AKG',1),
-	('AKG K701',4990,'0','assets/img/AKG_K701.jpg','耳罩式','有線','無','','AKG',1),
-	('AKG K702',9200,'0','assets/img/AKG_K702.jpg','耳罩式','有線','無','','AKG',1),
-	('AKG K712',7890,'0','assets/img/AKG_K712.jpg','耳罩式','有線','無','','AKG',1),
-	('Galaxy Buds Pro',6990,'0','assets/img/Galaxy_BudsPro.jpg','入耳式','無線','無','','Samsung',1),
-	('Galaxy Buds2',4990,'0','assets/img/Galaxy_Buds2.jpg','入耳式','無線','無','','Samsung',1),
-	('SONY MDR-XB950N1',7490,'0','assets/img/SONY_MDRXB950N1.jpg','耳罩式','無線','無','','鐵三角',1),
-	('SONY WH-1000XM4',10900,'0','assets/img/SONY_WH1000XM4.jpg','耳罩式','無線','有','','SONY',1),
-	('SONY WH-H900N',7490,'0','assets/img/SONY_WHH900N.jpg','耳罩式','無線','有','','SONY',1),
-	('SONY WI-SP500',2390,'0','assets/img/SONY_WI-SP500.jpg','入耳式','無線','有','','SONY',1),
-	('SONY WI-SP510',2690,'0','assets/img/SONY_WISP510.jpg','入耳式','無線','無','','SONY',1),
-	('SONY WI-SP600N',4990,'0','assets/img/SONY_WI-SP600N.jpg','入耳式','無線','有','','SONY',1),
-	('水月雨 blessing2',11000,'0','assets/img/MoonDrop_Blessing2.jpg','入耳式','有線','無','','水月雨',1),
-	('水月雨 KATO',5680,'0','assets/img/Moondrop_kato.jpg','入耳式','有線','無','','水月雨',1),
-	('水月雨 kxxs',4980,'0','assets/img/MoonDrop_KXXS.jpg','入耳式','有線','無','','水月雨',1),
-	('水月雨 SSR',1180,'0','assets/img/MoonDrop_SSR.jpg','入耳式','有線','無','','水月雨',1),
-	('水月雨 光',26800,'0','assets/img/MoonDrop_illumination1.jpg','入耳式','有線','無','','水月雨',1),
-	('鐵三角 ATH-M50xBT2',7600,'0','assets/img/ATH_M50xBT2.jpg','耳罩式','無線','有','','鐵三角',1),
-	('鐵三角 HL7BT',5700,'0','assets/img/ATH_HL7BT.jpg','耳罩式','無線','無','','鐵三角',1),
-	('鐵三角 SR50BT',7700,'0','assets/img/ATH_SR50BT.jpg','耳罩式','無線','有','','鐵三角',1),
-	('鐵三角 WS660BT',5200,'0','assets/img/ATH_WS660BT.jpg','耳罩式','無線','無','','鐵三角',1);
+	('AKG K240',2200,'0','assets/img/AKG_K240.jpg','耳罩式','有線','無','','AKG','1'),
+	('AKG K701',4990,'0','assets/img/AKG_K701.jpg','耳罩式','有線','無','','AKG','1'),
+	('AKG K702',9200,'0','assets/img/AKG_K702.jpg','耳罩式','有線','無','','AKG','1'),
+	('AKG K712',7890,'0','assets/img/AKG_K712.jpg','耳罩式','有線','無','','AKG','1'),
+	('Galaxy Buds Pro',6990,'0','assets/img/Galaxy_BudsPro.jpg','入耳式','無線','無','','Samsung','1'),
+	('Galaxy Buds2',4990,'0','assets/img/Galaxy_Buds2.jpg','入耳式','無線','無','','Samsung','1'),
+	('SONY MDR-XB950N1',7490,'0','assets/img/SONY_MDRXB950N1.jpg','耳罩式','無線','無','','鐵三角','1'),
+	('SONY WH-1000XM4',10900,'0','assets/img/SONY_WH1000XM4.jpg','耳罩式','無線','有','','SONY','1'),
+	('SONY WH-H900N',7490,'0','assets/img/SONY_WHH900N.jpg','耳罩式','無線','有','','SONY','1'),
+	('SONY WI-SP500',2390,'0','assets/img/SONY_WI-SP500.jpg','入耳式','無線','有','','SONY','1'),
+	('SONY WI-SP510',2690,'0','assets/img/SONY_WISP510.jpg','入耳式','無線','無','','SONY','1'),
+	('SONY WI-SP600N',4990,'0','assets/img/SONY_WI-SP600N.jpg','入耳式','無線','有','','SONY','1'),
+	('水月雨 blessing2',11000,'0','assets/img/MoonDrop_Blessing2.jpg','入耳式','有線','無','','水月雨','1'),
+	('水月雨 KATO',5680,'0','assets/img/Moondrop_kato.jpg','入耳式','有線','無','','水月雨','1'),
+	('水月雨 kxxs',4980,'0','assets/img/MoonDrop_KXXS.jpg','入耳式','有線','無','','水月雨','1'),
+	('水月雨 SSR',1180,'0','assets/img/MoonDrop_SSR.jpg','入耳式','有線','無','','水月雨','1'),
+	('水月雨 光',26800,'0','assets/img/MoonDrop_illumination1.jpg','入耳式','有線','無','','水月雨','1'),
+	('鐵三角 ATH-M50xBT2',7600,'0','assets/img/ATH_M50xBT2.jpg','耳罩式','無線','有','','鐵三角','1'),
+	('鐵三角 HL7BT',5700,'0','assets/img/ATH_HL7BT.jpg','耳罩式','無線','無','','鐵三角','1'),
+	('鐵三角 SR50BT',7700,'0','assets/img/ATH_SR50BT.jpg','耳罩式','無線','有','','鐵三角','1'),
+	('鐵三角 WS660BT',5200,'0','assets/img/ATH_WS660BT.jpg','耳罩式','無線','無','','鐵三角','1');
 
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
