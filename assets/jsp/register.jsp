@@ -16,7 +16,7 @@
     ResultSet rs;
 
     if(strUserName == null || strUserName.equals("") || strEmail == null || strEmail.equals("") || strPassword == null || strPassword.equals("")|| strConfirmPassword == null || strConfirmPassword.equals("")){
-        response.sendRedirect("../../index.html");
+        response.sendRedirect("../../index.jsp");
 	}
     // 檢查兩次輸入的密碼是否一致
     
@@ -34,17 +34,17 @@
 
             con.createStatement().execute(sql);
             con.close();
-            out.println("註冊成功, <a href='../../index.html'>回首頁</a>");
+            out.println("註冊成功, <a href='../../index.jsp'>回首頁</a>");
         }
 
         catch (SQLException sExec){
-            out.println("此信箱已註冊,<a href='../../index.html'>回首頁</a>");
+            out.println("此信箱已註冊,<a href='../../index.jsp'>回首頁</a>");
         }
 
     }
 
     else{
-        out.println("欄位輸入錯誤,<a href='../../index.html'>回首頁</a>");
+        out.println("欄位輸入錯誤,<a href='../../index.jsp'>回首頁</a>");
     }
     
 %>
