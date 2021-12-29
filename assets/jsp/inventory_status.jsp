@@ -16,39 +16,44 @@
 
     String strInventory = session.getAttribute("strInventory").toString();
     String strResult = session.getAttribute("strResult").toString();
+    String strStatus = session.getAttribute("strStatus").toString();
+    int no;
+    session.removeAttribute("strResult");
+    session.removeAttribute("strInventory");
+    session.removeAttribute("strStatus");
 
     // out.println(strInventory);
-    // out.println(strResult);
+    out.println(strResult);
+    // out.println(Boolean.toString(strResult.equals("0")));
         if(strResult.equals("1")){
             sql = "UPDATE `product` SET `status` = '0' WHERE `product_name` LIKE '" + strInventory + "'";
-            int no=con.createStatement().executeUpdate(sql); //可回傳異動數
+            //out.println(sql);
+            no=con.createStatement().executeUpdate(sql); //可回傳異動數
 			
             if (no > 0){
-                out.println("更新成功");
-                session.removeAttribute("strResult");
-                session.removeAttribute("strInventory");
+                out.println("下架更新成功");
+                
                 con.close();
             }
-            
-            else if(strResult.equals("0")){
+
+            else{
+                out.println("更新失敗");
+            }
+        }
+
+        else if(strResult.equals("0")){
                 sql = "UPDATE `product` SET `status` = '1' WHERE `product_name` LIKE '" + strInventory + "'";
                 no=con.createStatement().executeUpdate(sql); //可回傳異動數
-                
                 if (no > 0){
-                    out.println("更新成功");
-                    session.removeAttribute("strResult");
-                    session.removeAttribute("strInventory");
+                    out.println("上架更新成功");
                     con.close();
                 }
 
                 else{
                     out.println("更新失敗");
-                    session.removeAttribute("strResult");
-                    session.removeAttribute("strInventory");
                     con.close();
                 }
             }
-        }
 %>
 </body>
 </html>
