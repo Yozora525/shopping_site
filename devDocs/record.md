@@ -17,9 +17,11 @@ login.jsp 檢查帳密, 尚未測試, session 尚未做
 login.jsp 完成, 防止sql injection完成!
 新增search.jsp (產品搜尋功能)
 
-### 2021/12/27 ###
+### 2021/12/28 ###
 server_login.jsp 完成, 尚未測試, 等待前端完成後端登入頁面
 
+### 2021/12/29 ###
+新增 inventory_managed.jsp 用途為處理存貨狀態(上架/下架)
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
