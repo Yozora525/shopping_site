@@ -32,6 +32,10 @@
 .managedServer .logout{
     padding: 0px 10px 10px 10px;
 }
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
 hr{
     position: relative;
     text-align: center;
@@ -45,7 +49,8 @@ hr{
     text-decoration: none;
 }
 .logoutButton:hover{
-    color: black;
+    color: rgb(36, 85, 248);
+    font-size: 25px;
 }
 .managedServer .inventory{
     width: 728px;
@@ -62,6 +67,20 @@ hr{
     padding: 20px;
 }
 .accordion {
+    background-color: #0080FF;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.4s;
+  }
+  .accordion {
     background-color: #0080FF;
     color: white;
     font-size: 20px;
@@ -110,9 +129,7 @@ table{
     width: 200px;
     height: auto;
 }
-.subtractionCol{
-    width: 10%;
-}
+
 .subtraction{
     width: 30px;
     height: 30px;
@@ -128,16 +145,6 @@ table{
 .inventory .panel table{
     width: 100%;
 }
-.addBtn{
-    margin: 0px 0px 20px 0px;
-    color: white;
-    background-color: #0080FF;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.addBtn:hover{
-    color: #0080FF;
-    background-color: white;
-}
+
+
+
