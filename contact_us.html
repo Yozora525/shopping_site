@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>in耳吉 | 會員註冊</title>
-    <style>
-        @import url("assets/css/RegisterForm.css");
-        @import url("assets/css/all.css");
-        @import url("assets/css/contact_us.css");
-    </style>
+    <title>in耳吉 | 聯絡我們</title>
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/contact_us.css">
 </head>
-
 <body>
     <header class="mainHeader">
         <div class="container">
@@ -21,7 +16,7 @@
             </a>
             <nav class="navBar">
                 <a href="product_overview.html">產品介紹</a>
-                <a href="login.html">會員中心</a>
+                <a href="member_center.html">會員中心</a>
                 <a href="#">後台管理</a>
                 <a href="#">關於我們</a>
                 <a href="#" onclick="openNav()">聯絡我們</a>
@@ -33,31 +28,7 @@
             </form>
         </div>
     </header>
-    <div class="Registerform">
-        <form method="POST" action="assets/jsp/register.jsp">
-            <h1>會員註冊</h1>
-            <table class="register" border="1">
-                <tr>
-                    <td class="Rtitles"><b>姓名<br>Name</b></td>
-                    <td class="enters"><input type="text" name="user_name"></td>
-                    <td class="Rtitles"><b>電子郵件<br>Email</b></td>
-                    <td class="enters"><input type="email" name="user_email"></td>
-                </tr>
-                <tr>
-                    <td class="Rtitles"><b>密碼<br>Password</b></td>
-                    <td class="enters" colspan="3"><input type="password" maxlength="16" minlength="8" name="user_pwd"> ※請設計8~16字元</td>
-                </tr>
-                <tr>
-                    <td class="Rtitles"><b>確認密碼<br>Confirm Password</b></td>
-                    <td class="enters" colspan="3"><input type="password" maxlength="16" minlength="8" name="user_pwd_2"> ※請再次核對密碼</td>
-                </tr>
-            </table>
-            <br>
-            <input class="Registerbuttons" type="submit" value="確認送出">
-            <input class="Registerbuttons" type="reset" value="清除重填">
-        </form>
-    </div>
-
+    
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
@@ -77,7 +48,7 @@
         </div>
       </div>
       
-      <script type="text/javascript" src="assets/js/contact_us.js"></script>  
-</body>
+      <script type="text/javascript" src="assets/js/contact_us.js"></script> 
 
+</body>
 </html>

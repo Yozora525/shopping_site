@@ -11,6 +11,7 @@
     <style>
     @import url("assets/css/Homepage.css");
     @import url("assets/css/all.css");
+    @import url("assets/css/contact_us.css");
     </style>
 </head>
 <body>
@@ -24,7 +25,7 @@
                 <a href="login.html">會員中心</a>
                 <a href="#">後台管理</a>
                 <a href="#">關於我們</a>
-                <a href="#">聯絡我們</a>
+                <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
             <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
             <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
@@ -204,6 +205,27 @@
             </a>
           </div>
         </div>
+        
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2668942752266!2d121.24136351423672!3d24.957032547528176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z5Lit5Y6f5aSn5a246LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1640762486119!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy"></iframe>
+              <h3>
+                  隸屬學系：中原大學資訊管理學系<br>
+                  聯絡地址：320314 桃園市中壢區中北路200號 <br>
+                  電話：886-3-265-5401<br>
+              <hr class="contacthr">
+              <form method="post" action=" ">
+                  <input class="contact" type="text" name="contact_name" placeholder="姓名"><br>
+                  <input class="contact" type="email" name="contact_email" placeholder="Email"><br>
+              <textarea name="contact" cols="52" rows="10" wrap="hard" placeholder="歡迎留下任何鼓勵或意見回饋，謝謝您！"></textarea><br>
+              <input class="contactbutton" type="submit" value="確認送出" />
+              </form>
+              </h3>
+          </div>
+        </div>
+        
+        <script type="text/javascript" src="assets/js/contact_us.js"></script> 
 
         <footer >
             <div class="footerlink">
