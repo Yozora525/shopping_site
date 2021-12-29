@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<%@ page contentType="text/html" %>
+<%@page contentType="text/html"%> 
 <%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %> 
+<%@include file = "assets/jsp/consql.jsp" %>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -230,16 +230,44 @@
         <footer >
             <div class="footerlink">
                 <b>© Copyright 2022, in耳吉 All Rights Reserved <br>
-                  <%
-                      int counter;
-                      String strNo = (String)application.getAttribute("counter"); //讀application變數
-                      counter = Integer.parseInt(strNo); //轉成整數
-                      if (session.isNew())
-                        counter++;                                        //計數器加1
-                      strNo = String.valueOf(counter);    //轉成字串
-                      application.setAttribute("counter",strNo); //寫application變數
+                <%
+                  try {
+                         Class.forName("com.mysql.jdbc.Driver");
+                      try { 	   
+                              if(con.isClosed())
+                                  out.println("連線建立失敗");
+                              else{	        
+                                  sql="USE `headphones`";
+                                  con.createStatement().execute(sql);
+                                  sql="SELECT * FROM `counter`" ;
+                                  ResultSet rs=con.createStatement().executeQuery(sql); 
+
+                                  if (rs.next()){
+                                      String countString = rs.getString(1);
+	                                    int count = Integer.parseInt(countString);
+
+                                      if(session.isNew()){
+	                                        count++; //計數器加1
+	                                        countString = String.valueOf(count); //寫回資料庫
+	                                        sql="UPDATE `counter` SET `count` = " + countString ;
+	                                        con.createStatement().execute(sql);
+                                      }
+
+                                      out.println("網頁瀏覽人數: "+count+"人"+"</b>");
+                                      con.close();//關閉連線 
+                                  }
+                              }
+                          }
+                    catch (SQLException sExec)  { 
+                          out.println("SQL錯誤"+sExec.toString());
+                          out.print(sql);
+                          out.close();
+                      }
+                    }
+                    catch (ClassNotFoundException err) {
+                      out.println("class錯誤"+err.toString());
+                    }
                   %>
-                網頁瀏覽人數:  <%= counter %> 人</b>
             </div>
         </footer>
 
