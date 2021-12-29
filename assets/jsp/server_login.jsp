@@ -25,7 +25,7 @@
         if(rs.next()){
             session.setAttribute("server_email", strServerEmail);
             con.close();
-            out.println("OK!");
+            response.sendRedirect("");
         }
 
         else{
