@@ -1,240 +1,248 @@
-CREATE DATABASE  IF NOT EXISTS `headphones` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `headphones`;
--- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
---
--- Host: 127.0.0.1    Database: headphones
--- ------------------------------------------------------
--- Server version	8.0.26
+# ************************************************************
+# Sequel Ace SQL dump
+# 版本號： 20019
+#
+# https://sequel-ace.com/
+# https://github.com/Sequel-Ace/Sequel-Ace
+#
+# 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
+# 數據庫: headphones
+# 生成時間: 2021-12-29 11:44:58 +0000
+# ************************************************************
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+SET NAMES utf8mb4;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40101 SET @OLD_SQL_MODE='NO_AUTO_VALUE_ON_ZERO', SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `counter`
---
+
+# 轉儲表 counter
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `counter`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `counter` (
-  `count` int unsigned NOT NULL,
-  PRIMARY KEY (`count`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `counter`
---
+CREATE TABLE `counter` (
+  `count` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`count`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `counter` WRITE;
 /*!40000 ALTER TABLE `counter` DISABLE KEYS */;
-INSERT INTO `counter` VALUES (0);
+
+INSERT INTO `counter` (`count`)
+VALUES
+	(0);
+
 /*!40000 ALTER TABLE `counter` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `evaluation`
---
+
+# 轉儲表 evaluation
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `evaluation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `evaluation` (
   `email` varchar(45) NOT NULL DEFAULT '',
   `product_name` varchar(45) NOT NULL,
-  `score` int DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
   `comment` varchar(350) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `evaluation`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `evaluation` WRITE;
 /*!40000 ALTER TABLE `evaluation` DISABLE KEYS */;
-INSERT INTO `evaluation` VALUES ('','',NULL,NULL);
+
+INSERT INTO `evaluation` (`email`, `product_name`, `score`, `comment`)
+VALUES
+	('','',NULL,NULL);
+
 /*!40000 ALTER TABLE `evaluation` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `inventory`
---
+
+# 轉儲表 inventory
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `inventory`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `inventory` (
   `product_name` varchar(45) NOT NULL,
-  `import_quantity` int DEFAULT NULL,
-  `sold_quantity` int DEFAULT NULL,
+  `import_quantity` int(11) DEFAULT NULL,
+  `sold_quantity` int(11) DEFAULT NULL,
   `import_date` date DEFAULT NULL,
-  `wear` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
-  `link` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
-  `mic` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+  `wear` varchar(45) NOT NULL DEFAULT '',
+  `link` varchar(45) NOT NULL DEFAULT '',
+  `mic` varchar(45) NOT NULL DEFAULT '',
   `way` varchar(45) NOT NULL DEFAULT '',
-  `inventory_quantity` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `inventory`
---
+  `inventory_quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `inventory` WRITE;
 /*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
-INSERT INTO `inventory` VALUES ('AKG K240',0,0,NULL,'耳罩式','有線','無','',0),('AKG K701',0,0,NULL,'耳罩式','有線','無','',0),('AKG K702',0,0,NULL,'耳罩式','有線','無','',0),('AKG K712',0,0,NULL,'耳罩式','有線','無','',0),('Galaxy Buds Pro',0,0,NULL,'入耳式','無線','無','',0),('Galaxy Buds2',0,0,NULL,'入耳式','無線','無','',0),('SONY MDR-XB950N1',0,0,NULL,'耳罩式','無線','無','',0),('SONY WH-1000XM4',0,0,NULL,'耳罩式','無線','有','',0),('SONY WH-H900N',0,0,NULL,'耳罩式','無線','有','',0),('SONY WI-SP500',0,0,NULL,'入耳式','無線','有','',0),('SONY WI-SP510',0,0,NULL,'入耳式','無線','無','',0),('SONY WI-SP600N',0,0,NULL,'入耳式','無線','有','',0),('水月雨 blessing2',0,0,NULL,'入耳式','有線','無','',0),('水月雨 KATO',0,0,NULL,'入耳式','有線','無','',0),('水月雨 kxxs',0,0,NULL,'入耳式','有線','無','',0),('水月雨 SSR',0,0,NULL,'入耳式','有線','無','',0),('水月雨 光',0,0,NULL,'入耳式','有線','無','',0),('鐵三角 ATH-M50xBT2',0,0,NULL,'耳罩式','耳罩式','有','',0),('鐵三角 HL7BT',0,0,NULL,'耳罩式','耳罩式','無','',0),('鐵三角 SR50BT',0,0,NULL,'耳罩式','耳罩式','有','',0),('鐵三角 WS660BT',0,0,NULL,'耳罩式','耳罩式','無','',0);
+
+INSERT INTO `inventory` (`product_name`, `import_quantity`, `sold_quantity`, `import_date`, `wear`, `link`, `mic`, `way`, `inventory_quantity`)
+VALUES
+	('AKG K240',0,0,NULL,'耳罩式','有線','無','',0),
+	('AKG K701',0,0,NULL,'耳罩式','有線','無','',0),
+	('AKG K702',0,0,NULL,'耳罩式','有線','無','',0),
+	('AKG K712',0,0,NULL,'耳罩式','有線','無','',0),
+	('Galaxy Buds Pro',0,0,NULL,'入耳式','無線','無','',0),
+	('Galaxy Buds2',0,0,NULL,'入耳式','無線','無','',0),
+	('SONY MDR-XB950N1',0,0,NULL,'耳罩式','無線','無','',0),
+	('SONY WH-1000XM4',0,0,NULL,'耳罩式','無線','有','',0),
+	('SONY WH-H900N',0,0,NULL,'耳罩式','無線','有','',0),
+	('SONY WI-SP500',0,0,NULL,'入耳式','無線','有','',0),
+	('SONY WI-SP510',0,0,NULL,'入耳式','無線','無','',0),
+	('SONY WI-SP600N',0,0,NULL,'入耳式','無線','有','',0),
+	('水月雨 blessing2',0,0,NULL,'入耳式','有線','無','',0),
+	('水月雨 KATO',0,0,NULL,'入耳式','有線','無','',0),
+	('水月雨 kxxs',0,0,NULL,'入耳式','有線','無','',0),
+	('水月雨 SSR',0,0,NULL,'入耳式','有線','無','',0),
+	('水月雨 光',0,0,NULL,'入耳式','有線','無','',0),
+	('鐵三角 ATH-M50xBT2',0,0,NULL,'耳罩式','耳罩式','有','',0),
+	('鐵三角 HL7BT',0,0,NULL,'耳罩式','耳罩式','無','',0),
+	('鐵三角 SR50BT',0,0,NULL,'耳罩式','耳罩式','有','',0),
+	('鐵三角 WS660BT',0,0,NULL,'耳罩式','耳罩式','無','',0);
+
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `product`
---
+
+# 轉儲表 product
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `product` (
   `product_name` varchar(45) NOT NULL,
-  `price` int NOT NULL,
+  `price` int(11) NOT NULL,
   `product_introduce` varchar(400) NOT NULL,
   `product_image` varchar(200) NOT NULL,
-  `wear` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
-  `link` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
-  `mic` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+  `wear` varchar(45) NOT NULL DEFAULT '',
+  `link` varchar(45) NOT NULL DEFAULT '',
+  `mic` varchar(45) NOT NULL DEFAULT '',
   `way` varchar(45) NOT NULL DEFAULT '',
   `brand` varchar(45) NOT NULL,
-  `status` int NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product`
---
+  `status` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES ('AKG K240',2200,'0','0','耳罩式','有線','無','','AKG',10),('AKG K701',4990,'0','0','耳罩式','有線','無','','AKG',7),('AKG K702',9200,'0','0','耳罩式','有線','無','','AKG',8),('AKG K712',7890,'0','0','耳罩式','有線','無','','AKG',9),('Galaxy Buds Pro',6990,'0','0','入耳式','無線','無','','Samsung',19),('Galaxy Buds2',4990,'0','0','入耳式','無線','無','','Samsung',18),('SONY MDR-XB950N1',7490,'0','0','耳罩式','無線','無','','鐵三角',13),('SONY WH-1000XM4',10900,'0','0','耳罩式','無線','有','','SONY',17),('SONY WH-H900N',7490,'0','0','耳罩式','無線','有','','SONY',14),('SONY WI-SP500',2390,'0','0','入耳式','無線','有','','SONY',20),('SONY WI-SP510',2690,'0','0','入耳式','無線','無','','SONY',21),('SONY WI-SP600N',4990,'0','0','入耳式','無線','有','','SONY',6),('水月雨 blessing2',11000,'0','0','入耳式','有線','無','','水月雨',5),('水月雨 KATO',5680,'0','0','入耳式','有線','無','','水月雨',4),('水月雨 kxxs',4980,'0','0','入耳式','有線','無','','水月雨',3),('水月雨 SSR',1180,'0','0','入耳式','有線','無','','水月雨',2),('水月雨 光',26800,'0','0','入耳式','有線','無','','水月雨',1),('鐵三角 ATH-M50xBT2',7600,'0','0','耳罩式','無線','有','','鐵三角',12),('鐵三角 HL7BT',5700,'0','0','耳罩式','無線','無','','鐵三角',15),('鐵三角 SR50BT',7700,'0','0','耳罩式','無線','有','','鐵三角',11),('鐵三角 WS660BT',5200,'0','0','耳罩式','無線','無','','鐵三角',16);
+
+INSERT INTO `product` (`product_name`, `price`, `product_introduce`, `product_image`, `wear`, `link`, `mic`, `way`, `brand`, `status`)
+VALUES
+	('AKG K240',2200,'0','0','耳罩式','有線','無','','AKG',10),
+	('AKG K701',4990,'0','0','耳罩式','有線','無','','AKG',7),
+	('AKG K702',9200,'0','0','耳罩式','有線','無','','AKG',8),
+	('AKG K712',7890,'0','0','耳罩式','有線','無','','AKG',9),
+	('Galaxy Buds Pro',6990,'0','0','入耳式','無線','無','','Samsung',19),
+	('Galaxy Buds2',4990,'0','0','入耳式','無線','無','','Samsung',18),
+	('SONY MDR-XB950N1',7490,'0','0','耳罩式','無線','無','','鐵三角',13),
+	('SONY WH-1000XM4',10900,'0','0','耳罩式','無線','有','','SONY',17),
+	('SONY WH-H900N',7490,'0','0','耳罩式','無線','有','','SONY',14),
+	('SONY WI-SP500',2390,'0','0','入耳式','無線','有','','SONY',20),
+	('SONY WI-SP510',2690,'0','0','入耳式','無線','無','','SONY',21),
+	('SONY WI-SP600N',4990,'0','0','入耳式','無線','有','','SONY',6),
+	('水月雨 blessing2',11000,'0','0','入耳式','有線','無','','水月雨',5),
+	('水月雨 KATO',5680,'0','0','入耳式','有線','無','','水月雨',4),
+	('水月雨 kxxs',4980,'0','0','入耳式','有線','無','','水月雨',3),
+	('水月雨 SSR',1180,'0','0','入耳式','有線','無','','水月雨',2),
+	('水月雨 光',26800,'0','0','入耳式','有線','無','','水月雨',1),
+	('鐵三角 ATH-M50xBT2',7600,'0','0','耳罩式','無線','有','','鐵三角',12),
+	('鐵三角 HL7BT',5700,'0','0','耳罩式','無線','無','','鐵三角',15),
+	('鐵三角 SR50BT',7700,'0','0','耳罩式','無線','有','','鐵三角',11),
+	('鐵三角 WS660BT',5200,'0','0','耳罩式','無線','無','','鐵三角',16);
+
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `record`
---
+
+# 轉儲表 record
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `record`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `record` (
   `member_mail` varchar(45) NOT NULL DEFAULT '',
   `product_name` varchar(45) NOT NULL,
-  `sold_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `order_number` int NOT NULL,
-  `price` int NOT NULL,
-  `sold_quantity` int NOT NULL,
-  `total_money` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `sold_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `order_number` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `sold_quantity` int(11) NOT NULL,
+  `total_money` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `record`
---
 
-LOCK TABLES `record` WRITE;
-/*!40000 ALTER TABLE `record` DISABLE KEYS */;
-/*!40000 ALTER TABLE `record` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `server`
---
+# 轉儲表 server
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `server`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `server` (
   `server_email` varchar(319) NOT NULL DEFAULT '',
-  `server_name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+  `server_name` varchar(45) NOT NULL DEFAULT '',
   `server_pwd` varchar(20) NOT NULL DEFAULT '',
   PRIMARY KEY (`server_email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `server`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `server` WRITE;
 /*!40000 ALTER TABLE `server` DISABLE KEYS */;
-INSERT INTO `server` VALUES ('service@gmail.com','server','Server109*');
+
+INSERT INTO `server` (`server_email`, `server_name`, `server_pwd`)
+VALUES
+	('service@gmail.com','server','Server109*');
+
 /*!40000 ALTER TABLE `server` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `shopping_car`
---
+
+# 轉儲表 shopping_car
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `shopping_car`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `shopping_car` (
   `product_name` varchar(45) NOT NULL,
-  `price` int NOT NULL,
-  `car_quantity` int NOT NULL,
+  `price` int(11) NOT NULL,
+  `car_quantity` int(11) NOT NULL,
   `email` varchar(45) NOT NULL DEFAULT '',
-  `car_money` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `car_money` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `shopping_car`
---
 
-LOCK TABLES `shopping_car` WRITE;
-/*!40000 ALTER TABLE `shopping_car` DISABLE KEYS */;
-/*!40000 ALTER TABLE `shopping_car` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `user`
---
+# 轉儲表 user
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `user` (
   `email` varchar(100) NOT NULL DEFAULT '',
-  `username` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
-  `password` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+  `username` varchar(45) NOT NULL DEFAULT '',
+  `password` varchar(45) NOT NULL DEFAULT '',
   PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('haha@gmail.com','test','123456789');
+
+INSERT INTO `user` (`email`, `username`, `password`)
+VALUES
+	('haha@gmail.com','test','123456789');
+
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2021-12-29 13:35:43

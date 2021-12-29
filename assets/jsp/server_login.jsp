@@ -25,7 +25,7 @@
         if(rs.next()){
             session.setAttribute("server_email", strServerEmail);
             con.close();
-            response.sendRedirect("");
+            response.sendRedirect("../../managed_server.html");
         }
 
         else{
