@@ -11,7 +11,6 @@
     rs = con.createStatement().executeQuery(sql);
 
     if(rs.next()){
-
             // ...內容
         con.close();
     }
