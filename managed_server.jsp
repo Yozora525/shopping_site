@@ -78,25 +78,29 @@
                         <%
                             sql = "SELECT `product_name`, `price`, `status` FROM `product`";
                             ResultSet rsProductInfo = con.createStatement().executeQuery(sql);
+                            sql = "SELECT `inventory_quantity` FROM `inventory`";
+                            ResultSet rsInventory = con.createStatement().executeQuery(sql);
                             
-                            while (rsProductInfo.next()){
+
+                            while (rsProductInfo.next() && rsInventory.next()){
                                 out.println("<tr class='tdSet'>");
                                 out.println("<td class='tdSet'>" + rsProductInfo.getString(1) + "</td>");
                                 out.println("<td class='tdSet'> $" + rsProductInfo.getString(2) + "</td>");
+                                out.println("<td class='tdSet'>" + rsInventory.getString(1) + "個</td>");
 
                                 out.println("<td class='tdSet'>");
 
                                 out.println("<form action='assets/jsp/inventory_managed.jsp' method='post'>");
                                 out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "' checked/>上架");
                                 out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "'>下架");
-                                out.println("<td><input type='submit' value='提交'></td>");
+                                out.println("<td><input type='submit' value='更新'></td>");
                                 out.println("</form>");
                                 
                                 out.println("</td>");
                                 out.println("</tr>");
                             }
                         %>
-                            <%-- <td class="tdSet"> 15個</td>(這還沒弄) --%>
+                        
                     </tbody>
                 </table>
             </div>

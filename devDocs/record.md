@@ -22,10 +22,12 @@ server_login.jsp 完成, 尚未測試, 等待前端完成後端登入頁面
 
 ### 2021/12/29 ###
 新增 inventory_managed.jsp 用途為get存貨名稱
+正在寫 inventory_status.jsp 用途為處理存貨狀態(上架/下架)
 
 ### 2021/12/30 ###
-inventory_status.jsp 用途為處理存貨狀態(上架/下架), 完成但有小bug
-managed_server.jsp 判斷是否有登入
+inventory_status.jsp, 完成但有小bug
+managed_server.jsp 登入控制
+managed_server.jsp 商品存貨完成（存貨數量等待輸入...）
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
