@@ -74,21 +74,28 @@
                             <th>上架狀態</th>
                             <th>更新確認</th>
                         </tr>
-                        <tr class="tdSet">
-                            <td class="tdSet">鐵三角 ATH-M50xBT2</td>
-                            <td class="tdSet">$ 7600</td>
-                            <td class="tdSet"> 15個</td>
-                            <td class="tdSet">
-                                <form action="assets/jsp/inventory_managed.jsp" method="post">
-                                    <input type="radio" name="status" value="鐵三角 ATH-M50xBT2" checked/>上架
-                                    <input type="radio" name="status" value="鐵三角 ATH-M50xBT2">下架
-                                    <td>
-                                        <input type="submit" value="提交"></td>
-                                </form>
-                            </td>
-                            <!-- <td class="tdSet"><input type="button" value="確認"></td> -->
-                        </tr>
-                        
+
+                        <%
+                            sql = "SELECT `product_name`, `price`, `status` FROM `product`";
+                            ResultSet rsProductInfo = con.createStatement().executeQuery(sql);
+                            
+                            while (rsProductInfo.next()){
+                                out.println("<tr class='tdSet'>");
+                                out.println("<td class='tdSet'>" + rsProductInfo.getString(1) +"</td>");
+                                out.println("<td class='tdSet'> $" + rsProductInfo.getString(2) + "</td>");
+
+                                out.println("<td class='tdSet'>");
+
+                                out.println("<form action='assets/jsp/inventory_managed.jsp' method='post'>");
+                                out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "' checked/>上架");
+                                out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "'>下架");
+                                out.println("<td><input type='submit' value='提交'></td>");
+                                out.println("</form>");
+                                out.println("</td>");
+                                out.println("</tr>");
+                            }
+                        %>
+                            <%-- <td class="tdSet"> 15個</td>(這還沒弄) --%>
                     </tbody>
                 </table>
             </div>
