@@ -230,14 +230,8 @@
             <div class="footerlink">
                 <b>© Copyright 2022, in耳吉 All Rights Reserved <br>
                 <%
-                  try {
-                         Class.forName("com.mysql.jdbc.Driver");
                       try { 	   
-                              if(con.isClosed())
-                                  out.println("連線建立失敗");
-                              else{	        
-                                  sql="USE `headphones`";
-                                  con.createStatement().execute(sql);
+
                                   sql="SELECT * FROM `counter`" ;
                                   ResultSet rs=con.createStatement().executeQuery(sql); 
 
@@ -255,17 +249,12 @@
                                       out.println("網頁瀏覽人數: "+count+"人"+"</b>");
                                       con.close();//關閉連線 
                                   }
-                              }
+                              
                           }
                     catch (SQLException sExec)  { 
                           out.println("SQL錯誤"+sExec.toString());
-                          out.print(sql);
-                          out.close();
                       }
-                    }
-                    catch (ClassNotFoundException err) {
-                      out.println("class錯誤"+err.toString());
-                    }
+                    
                   %>
             </div>
         </footer>

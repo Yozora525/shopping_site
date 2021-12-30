@@ -30,7 +30,7 @@
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>
         </div>
-    </header>
+    </header>             
     <div class="productOverview">
         <button class="tablink" onclick="openPage('inEar', this, '#c4c3c37a')"  id="defaultOpen">入耳式</button>
         <button class="tablink" onclick="openPage('overEar', this, '#c4c3c37a')">耳罩式</button>
@@ -39,283 +39,30 @@
         <button class="tablink" onclick="openPage('noiseReduct', this, '#c4c3c37a')">降噪功能</button>
         <button class="tablink" onclick="openPage('microphone', this, '#c4c3c37a')">麥克風功能</button>
 
-        <div id="inEar" class="tabcontent">
-            <div class="commodity">
-                <img src="assets/img/MoonDrop_illumination1.jpg">
-                <p class="product_name">水月雨 光</p>
-                <p>有線入耳式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$26800</font></p>
-                <a href="product_introduction.html"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/MoonDrop_Blessing2.jpg">
-                <p class="product_name">水月雨 blessing2</p>
-                <p>有線入耳式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$11000</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/MoonDrop_KXXS.jpg">
-                <p class="product_name">水月雨 kxxs</p>
-                <p>有線入耳式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$4980</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/Moondrop_kato.jpg">
-                <p class="product_name">水月雨 KATO</p>
-                <p>有線入耳式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$5680</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/MoonDrop_SSR.jpg">
-                <p class="product_name">水月雨 SSR</p>
-                <p>有線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$1180</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WI-SP500.jpg">
-                <p class="product_name">SONY WI-SP500</p>
-                <p>無線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$2390</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WI-SP600N.jpg">
-                <p class="product_name">SONY WI-SP600N</p>
-                <p>無線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$4990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-        </div>
+    <%
+           /* sql="SELECT COUNT(wear) FROM `product` WHERE `wear`='入耳式' "; //算出共幾筆
+            ResultSet rs=con.createStatement().executeQuery(sql); //移到第一筆，使用rs.getInt(1)，1表第一個欄位，就可知道共有幾筆記錄，型別為整數
+            rs.next();
+		    //int total_content=rs.getInt(1); 
+            int total_content=Integer.parseInt(rs.getString(1));
+		    out.println("共"+total_content+"筆留言<p>"); //查看是否筆數符合*/
 
-        <div id="overEar" class="tabcontent">
-            <div class="commodity">
-                <img src="assets/img/AKG_K701.jpg">
-                <p class="product_name">AKG K701</p>
-                <p>有線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$4990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/AKG_K702.jpg">
-                <p class="product_name">AKG K702</p>
-                <p>有線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$9200</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/AKG_K712.jpg">
-                <p class="product_name">AKG K712</p>
-                <p>有線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7890</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/AKG_K240.jpg">
-                <p class="product_name">AKG K240</p>
-                <p>有線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$2200</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/ATH_SR50BT.jpg">
-                <p class="product_name">鐵三角 SR50BT</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7700</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/ATH_M50xBT2.jpg">
-                <p class="product_name">鐵三角 ATH-M50xBT2</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7600</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_MDRXB950N1.jpg">
-                <p class="product_name">SONY MDR-XB950N1</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7490</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WHH900N.jpg">
-                <p class="product_name">SONY WH-H900N</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7490</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-        </div>
+            sql="SELECT `product_name`, `price`, `product_image`, `wear` FROM `product` WHERE `wear`='入耳式' ";
+            ResultSet hr=con.createStatement().executeQuery(sql); 
+            while(hr.next()){			
 
-        <div id="wireless" class="tabcontent">
-            <div class="commodity">
-                <img src="assets/img/ATH_HL7BT.jpg">
-                <p class="product_name">鐵三角 HL7BT</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$5700</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/ATH_WS660BT.jpg">
-                <p class="product_name">鐵三角 WS660BT</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$5200</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/ATH_SR50BT.jpg">
-                <p class="product_name">鐵三角 SR50BT</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7700</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/ATH_M50xBT2.jpg">
-                <p class="product_name">鐵三角 ATH-M50xBT2</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7600</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WH1000XM4.jpg">
-                <p class="product_name">SONY WH-1000XM4</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$10900</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/Galaxy_Buds2.jpg">
-                <p class="product_name">Galaxy Buds2</p>
-                <p>無線入耳式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$4990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/Galaxy_BudsPro.jpg">
-                <p class="product_name">Galaxy Buds Pro</p>
-                <p>無線入耳式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$6990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-        </div>
+                //for(int i=1; i<= total_content; i++)
+               // {
+                    out.println(hr.getString(1));
+                    out.println(hr.getString(2));
+                    out.println(hr.getString(3));
+                    out.println(hr.getString(4));
+                //}
+            out.println("---------------------------------------<BR>");
+                                    
+                    }
 
-        <div id="sport" class="tabcontent">
-            <div class="commodity">
-                <img src="assets/img/SONY_WI-SP500.jpg">
-                <p class="product_name">SONY WI-SP500</p>
-                <p>無線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$2390</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WI-SP600N.jpg">
-                <p class="product_name">SONY WI-SP600N</p>
-                <p>無線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$4990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WISP510.jpg">
-                <p class="product_name">SONY WI-SP510</p>
-                <p>無線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$2690</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/MoonDrop_SSR.jpg">
-                <p class="product_name">水月雨 SSR</p>
-                <p>有線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$1180</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-        </div>
-        
-        <div id="noiseReduct" class="tabcontent">
-            <div class="commodity">
-                <img src="assets/img/SONY_MDRXB950N1.jpg">
-                <p class="product_name">SONY MDR-XB950N1</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7490</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WHH900N.jpg">
-                <p class="product_name">SONY WH-H900N</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7490</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WH1000XM4.jpg">
-                <p class="product_name">SONY WH-1000XM4</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$10900</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/Galaxy_Buds2.jpg">
-                <p class="product_name">Galaxy Buds2</p>
-                <p>無線入耳式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$4990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/Galaxy_BudsPro.jpg">
-                <p class="product_name">Galaxy Buds Pro</p>
-                <p>無線入耳式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$6990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-        </div>
-
-        <div id="microphone" class="tabcontent">
-            <div class="commodity">
-                <img src="assets/img/ATH_SR50BT.jpg">
-                <p class="product_name">鐵三角 SR50BT</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7700</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/ATH_M50xBT2.jpg">
-                <p class="product_name">鐵三角 ATH-M50xBT2</p>
-                <p>無線耳罩式耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7600</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WI-SP500.jpg">
-                <p class="product_name">SONY WI-SP500</p>
-                <p>無線入耳式運動耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$2390</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WI-SP600N.jpg">
-                <p class="product_name">SONY WI-SP600N</p>
-                <p>無線入耳式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$4990</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WHH900N.jpg">
-                <p class="product_name">SONY WH-H900N</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$7490</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-            <div class="commodity">
-                <img src="assets/img/SONY_WH1000XM4.jpg">
-                <p class="product_name">SONY WH-1000XM4</p>
-                <p>無線耳罩式降噪耳機</p>
-                <p>售價&nbsp;&nbsp;&nbsp;<font class="product_price">$10900</font></p>
-                <a href="#"><button class="productDetails"><b>查看商品</b></button></a>
-            </div>
-        </div>
-    </div>
+    %>
 
     <script type="text/javascript" src="assets/js/product_overview.js"></script>
 
