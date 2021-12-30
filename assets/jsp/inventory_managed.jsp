@@ -12,7 +12,7 @@
 
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
-
+    
     String strStatus = request.getParameter("status");
     String strResult;
     String strInventoryName;
