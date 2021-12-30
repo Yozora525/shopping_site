@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2021-12-30 15:26:44 +0000
+# 生成時間: 2021-12-30 16:01:06 +0000
 # ************************************************************
 
 
@@ -73,40 +73,36 @@ CREATE TABLE `inventory` (
   `product_name` varchar(45) NOT NULL,
   `import_quantity` int(11) DEFAULT NULL,
   `sold_quantity` int(11) DEFAULT NULL,
-  `import_date` date DEFAULT NULL,
-  `wear` varchar(45) NOT NULL DEFAULT '',
-  `link` varchar(45) NOT NULL DEFAULT '',
-  `mic` varchar(45) NOT NULL DEFAULT '',
-  `way` varchar(45) NOT NULL DEFAULT '',
+  `transaction_date` date DEFAULT NULL,
   `inventory_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `inventory` WRITE;
 /*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
 
-INSERT INTO `inventory` (`product_name`, `import_quantity`, `sold_quantity`, `import_date`, `wear`, `link`, `mic`, `way`, `inventory_quantity`)
+INSERT INTO `inventory` (`product_name`, `import_quantity`, `sold_quantity`, `transaction_date`, `inventory_quantity`)
 VALUES
-	('AKG K240',0,0,NULL,'耳罩式','有線','無','',0),
-	('AKG K701',0,0,NULL,'耳罩式','有線','無','',0),
-	('AKG K702',0,0,NULL,'耳罩式','有線','無','',0),
-	('AKG K712',0,0,NULL,'耳罩式','有線','無','',0),
-	('Galaxy Buds Pro',0,0,NULL,'入耳式','無線','無','',0),
-	('Galaxy Buds2',0,0,NULL,'入耳式','無線','無','',0),
-	('SONY MDR-XB950N1',0,0,NULL,'耳罩式','無線','無','',0),
-	('SONY WH-1000XM4',0,0,NULL,'耳罩式','無線','有','',0),
-	('SONY WH-H900N',0,0,NULL,'耳罩式','無線','有','',0),
-	('SONY WI-SP500',0,0,NULL,'入耳式','無線','有','',0),
-	('SONY WI-SP510',0,0,NULL,'入耳式','無線','無','',0),
-	('SONY WI-SP600N',0,0,NULL,'入耳式','無線','有','',0),
-	('水月雨 blessing2',0,0,NULL,'入耳式','有線','無','',0),
-	('水月雨 KATO',0,0,NULL,'入耳式','有線','無','',0),
-	('水月雨 kxxs',0,0,NULL,'入耳式','有線','無','',0),
-	('水月雨 SSR',0,0,NULL,'入耳式','有線','無','',0),
-	('水月雨 光',0,0,NULL,'入耳式','有線','無','',0),
-	('鐵三角 ATH-M50xBT2',0,0,NULL,'耳罩式','耳罩式','有','',0),
-	('鐵三角 HL7BT',0,0,NULL,'耳罩式','耳罩式','無','',0),
-	('鐵三角 SR50BT',0,0,NULL,'耳罩式','耳罩式','有','',0),
-	('鐵三角 WS660BT',0,0,NULL,'耳罩式','耳罩式','無','',0);
+	('AKG K240',0,0,NULL,0),
+	('AKG K701',0,0,NULL,0),
+	('AKG K702',0,0,NULL,0),
+	('AKG K712',0,0,NULL,0),
+	('Galaxy Buds Pro',0,0,NULL,0),
+	('Galaxy Buds2',0,0,NULL,0),
+	('SONY MDR-XB950N1',0,0,NULL,0),
+	('SONY WH-1000XM4',0,0,NULL,0),
+	('SONY WH-H900N',0,0,NULL,0),
+	('SONY WI-SP500',0,0,NULL,0),
+	('SONY WI-SP510',0,0,NULL,0),
+	('SONY WI-SP600N',0,0,NULL,0),
+	('水月雨 blessing2',0,0,NULL,0),
+	('水月雨 KATO',0,0,NULL,0),
+	('水月雨 kxxs',0,0,NULL,0),
+	('水月雨 SSR',0,0,NULL,0),
+	('水月雨 光',0,0,NULL,0),
+	('鐵三角 ATH-M50xBT2',0,0,NULL,0),
+	('鐵三角 HL7BT',0,0,NULL,0),
+	('鐵三角 SR50BT',0,0,NULL,0),
+	('鐵三角 WS660BT',0,0,NULL,0);
 
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;

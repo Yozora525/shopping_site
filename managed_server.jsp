@@ -53,7 +53,14 @@
                 <img src="assets/img/memberImg.png">
             </div>
             <div class="memberInfoContent">
-                <p><b>XXX，您好!</b></p>
+            <%
+                sql = "SELECT `server_name` FROM `server`";
+                ResultSet rsServer = con.createStatement().executeQuery(sql);
+
+                while(rsServer.next()){
+                out.println("<p><b>" + rsServer.getString(1) + "，您好!</b></p>");
+                }
+            %>
             </div>
             <div class="hr">
                 <hr>
@@ -107,7 +114,7 @@
         </div>
     </div>
 
-    <button class="accordion">訂單紀錄</button>
+    <button class="accordion">購買紀錄</button>
     <div class="panel">
         <table border="1">
             <tr>
@@ -120,14 +127,17 @@
             </tr>
             <tr>
             <%
-                sql = "SELECT `product_name`, `price`, `status` FROM `product`";
+                sql = "SELECT `username`, `email`, `address`, `product_name`, `price`, `sold_quantity` FROM `record`";
                 ResultSet rsRecord = con.createStatement().executeQuery(sql);
-                <td>王小明</td>
-                <td>asd123456789@gmail.com</td>
-                <td>桃園市龍潭區</td>
-                <td>水月雨 光</td>
-                <td>$ 26800</td>
-                <td>1個</td>
+
+                while(rsRecord.next()) {
+                out.println("<td>" + rsRecord.getString(1) + "</td>");
+                out.println("<td>" + rsRecord.getString(2) + "</td>");
+                out.println("<td>" + rsRecord.getString(3) + "</td>");
+                out.println("<td>" + rsRecord.getString(4) + "</td>");
+                out.println("<td>" + rsRecord.getString(5) + "</td>");
+                out.println("<td>" + rsRecord.getString(6) + "</td>");
+                }
             %>
             </tr>
             
@@ -144,6 +154,12 @@
                 <th>進貨數</th>
                 <th>目前庫存</th>
             </tr>
+            <%
+                sql = "SELECT `username`, `email`, `address`, `product_name`, `price`, `sold_quantity` FROM `record`";
+                ResultSet rsRecord = con.createStatement().executeQuery(sql);
+
+                
+            %>
             <tr>
                 <td>2021/12/29</td>
                 <td>SONY WI-SP500</td>
@@ -151,13 +167,7 @@
                 <td>1</td>
                 <td>15</td>
             </tr>
-            <tr>
-                <td>2021/12/28</td>
-                <td>SONY WI-SP500</td>
-                <td>1</td>
-                <td>0</td>
-                <td>14</td>
-            </tr>
+            
         </table>
     </div>
 

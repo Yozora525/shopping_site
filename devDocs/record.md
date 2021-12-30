@@ -28,6 +28,7 @@ server_login.jsp 完成, 尚未測試, 等待前端完成後端登入頁面
 inventory_status.jsp, 完成但有小bug
 managed_server.jsp 登入控制
 managed_server.jsp 商品存貨完成（存貨數量等待輸入...）
+managed_server.jsp 購買記錄完成
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
