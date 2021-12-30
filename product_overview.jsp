@@ -40,14 +40,8 @@
         <button class="tablink" onclick="openPage('microphone', this, '#c4c3c37a')">麥克風功能</button>
 
     <%
-            sql="SELECT COUNT(wear) FROM `product` WHERE `wear`='入耳式' "; //算出共幾筆
-            ResultSet rs=con.createStatement().executeQuery(sql); //移到第一筆，使用rs.getInt(1)，1表第一個欄位，就可知道共有幾筆記錄，型別為整數
-            rs.next();
-		    //int total_content=rs.getInt(1); 
-            int total_content=Integer.parseInt(rs.getString(1));
-		    //out.println("共"+total_content+"筆留言<p>"); //查看是否筆數符合*/
 
-            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `wear`='入耳式' ";
+            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `wear`='入耳式' AND `status` ='1' ";
             ResultSet hr=con.createStatement().executeQuery(sql); 
 	
             out.println("<div id='inEar' class='tabcontent'>");
@@ -58,10 +52,93 @@
                 out.println("<b><p>"+hr.getString(1)+"</b><br></p>");
                 out.println("<p>"+hr.getString(5)+hr.getString(4)+hr.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr.getString(2)+"<br></p></b>");
-                out.println("<a href='#''><button class='productDetails'><b>查看商品</b></button></a></div>");
+                out.println("<a href='product_introduction.html'><button class='productDetails'><b>查看商品</b></button></a></div>");
             }
 
             out.println("</div>");
+
+            
+            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `wear`='耳罩式'  AND `status` ='1' ";
+            ResultSet hr_overEar=con.createStatement().executeQuery(sql); 
+            out.println("<div id='overEar' class='tabcontent'>");
+            
+            while(hr_overEar.next()){			
+                out.println("<div class='commodity'>");
+                out.println("<img src="+hr_overEar.getString(3)+" ><br>");
+                out.println("<b><p>"+hr_overEar.getString(1)+"</b><br></p>");
+                out.println("<p>"+hr_overEar.getString(5)+hr_overEar.getString(4)+hr_overEar.getString(6)+"耳機<br></p>");
+                out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_overEar.getString(2)+"<br></p></b>");
+                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+            }
+
+            out.println("</div>");
+
+
+            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `link`='無線'  AND `status` ='1' ";
+            ResultSet hr_wireless=con.createStatement().executeQuery(sql); 
+            out.println("<div id='wireless' class='tabcontent'>");
+            
+            while(hr_wireless.next()){			
+                out.println("<div class='commodity'>");
+                out.println("<img src="+hr_wireless.getString(3)+" ><br>");
+                out.println("<b><p>"+hr_wireless.getString(1)+"</b><br></p>");
+                out.println("<p>"+hr_wireless.getString(5)+hr_wireless.getString(4)+hr_wireless.getString(6)+"耳機<br></p>");
+                out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_wireless.getString(2)+"<br></p></b>");
+                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+            }
+
+            out.println("</div>");
+
+
+            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `way` LIKE '運%'  AND `status` ='1' ";
+            ResultSet hr_sport=con.createStatement().executeQuery(sql); 
+            out.println("<div id='sport' class='tabcontent'>");
+            
+            while(hr_sport.next()){			
+                out.println("<div class='commodity'>");
+                out.println("<img src="+hr_sport.getString(3)+" ><br>");
+                out.println("<b><p>"+hr_sport.getString(1)+"</b><br></p>");
+                out.println("<p>"+hr_sport.getString(5)+hr_sport.getString(4)+hr_sport.getString(6)+"耳機<br></p>");
+                out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_sport.getString(2)+"<br></p></b>");
+                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+            }
+
+            out.println("</div>");
+
+
+            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `way`='降噪'  AND `status` ='1' ";
+            ResultSet hr_noiseReduct=con.createStatement().executeQuery(sql); 
+            out.println("<div id='noiseReduct' class='tabcontent'>");
+            
+            while(hr_noiseReduct.next()){			
+                out.println("<div class='commodity'>");
+                out.println("<img src="+hr_noiseReduct.getString(3)+" ><br>");
+                out.println("<b><p>"+hr_noiseReduct.getString(1)+"</b><br></p>");
+                out.println("<p>"+hr_noiseReduct.getString(5)+hr_noiseReduct.getString(4)+hr_noiseReduct.getString(6)+"耳機<br></p>");
+                out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_noiseReduct.getString(2)+"<br></p></b>");
+                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+            }
+
+            out.println("</div>");
+
+            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `mic`='有'  AND `status` ='1' ";
+            ResultSet hr_microphone=con.createStatement().executeQuery(sql); 
+            out.println("<div id='microphone' class='tabcontent'>");
+            
+            while(hr_microphone.next()){			
+                out.println("<div class='commodity'>");
+                out.println("<img src="+hr_microphone.getString(3)+" ><br>");
+                out.println("<b><p>"+hr_microphone.getString(1)+"</b><br></p>");
+                out.println("<p>"+hr_microphone.getString(5)+hr_microphone.getString(4)+hr_microphone.getString(6)+"耳機<br></p>");
+                out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_microphone.getString(2)+"<br></p></b>");
+                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+            }
+
+            out.println("</div>");
+
+
+
+
 
     %>
 
