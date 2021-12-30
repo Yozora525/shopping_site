@@ -81,7 +81,7 @@
                             
                             while (rsProductInfo.next()){
                                 out.println("<tr class='tdSet'>");
-                                out.println("<td class='tdSet'>" + rsProductInfo.getString(1) +"</td>");
+                                out.println("<td class='tdSet'>" + rsProductInfo.getString(1) + "</td>");
                                 out.println("<td class='tdSet'> $" + rsProductInfo.getString(2) + "</td>");
 
                                 out.println("<td class='tdSet'>");
@@ -91,6 +91,7 @@
                                 out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "'>下架");
                                 out.println("<td><input type='submit' value='提交'></td>");
                                 out.println("</form>");
+                                
                                 out.println("</td>");
                                 out.println("</tr>");
                             }
