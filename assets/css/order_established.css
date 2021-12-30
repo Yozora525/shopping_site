@@ -1,0 +1,83 @@
+.orderEstablished{
+    width: 100%;
+    margin: auto;
+}
+.orderEstablished img{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+}
+.orderTitle{
+    font-size: 45px;
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 25px;
+    position: relative;
+}
+.customerInformation{
+    width: 80%;
+    height: auto;
+    border: 1px solid black;
+    margin: 5% 10% 3% 10%;
+}
+.customerText{
+    width: 80%;
+    font-size: 30px;
+    margin: 5% 10% 3% 10%;
+}
+.customerText tr,
+.customerText td{
+    height: 75px;
+    font-weight: bolder;
+}
+.customerInformation input{
+    height: 30px;
+    font-size: 20px;
+    position: relative;
+    top: -5px;
+}
+.address{
+    width: 82%;
+}
+.orderList{
+    width: 80%;
+    font-size: 20px;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0% 10% 0% 10%;
+}
+.orderList th,
+.orderList td{
+    height: 30px;
+}
+.sum{
+    font-weight: bolder;
+    text-align: right;
+    padding-right: 20px;
+}
+.orderNumber{
+    font-size: 30px;
+    text-align: center;
+}
+.buttonBlock{
+    width: 80%;
+    height: auto;
+    margin: 0% 10% 5% 10%;
+}
+.goToIndex{
+    width: 15%;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    background-color: #0080FF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0% 42.5% 0% 42.5%;
+}
+.goToIndex:hover{
+    color: black;
+    background-color: white;
+}
