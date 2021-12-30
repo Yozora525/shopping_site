@@ -6,7 +6,7 @@ body, html {
   
   
   .bg-image {
-    opacity: 80%;
+    opacity: 85%;
     height: 80%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -14,10 +14,10 @@ body, html {
   }
   
   /* Images used */
-  .img1 { background-image: url("../img/about_us_0101.jpg"); }
-  .img2 { background-image: url("../img/about_us_0202.jpg"); }
-  .img3 { background-image: url("../img/about_us_03.jpg"); }
-  .img4 { background-image: url("../img/about_us_0404.jpg"); }
+  .img1 { background-image: url("../img/about_us_010101.jpg"); }
+  .img2 { background-image: url("../img/about_us_020202.jpg"); }
+  .img3 { background-image: url("../img/about_us_0404040404.jpg"); }
+  .img4 { background-image: url("../img/about_us_030303.jpg"); }
 
   
   /* Position text in the middle of the page/image */
@@ -26,7 +26,6 @@ body, html {
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-    font-size: 80px;
     border: 10px solid #f1f1f1;
     position: fixed;
     top: 50%;
