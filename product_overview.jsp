@@ -47,16 +47,17 @@
             int total_content=Integer.parseInt(rs.getString(1));
 		    out.println("共"+total_content+"筆留言<p>"); //查看是否筆數符合*/
 
-            sql="SELECT `product_name`, `price`, `product_image`, `wear` FROM `product` WHERE `wear`='入耳式' ";
+            sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `wear`='入耳式' ";
             ResultSet hr=con.createStatement().executeQuery(sql); 
             while(hr.next()){			
 
                 //for(int i=1; i<= total_content; i++)
                // {
-                    out.println(hr.getString(1));
-                    out.println(hr.getString(2));
-                    out.println(hr.getString(3));
-                    out.println(hr.getString(4));
+                    out.println("<img src="+hr.getString(3)+" >"+"<br>");
+                    out.println("<b><p>"+hr.getString(1)+"</b><br></p>");
+                    out.println("<p>"+hr.getString(5)+hr.getString(4)+hr.getString(6)+"耳機<br></p>");
+                    out.println("<p>售價<b> &nbsp $"+hr.getString(2)+"<br></p></b>");
+                    out.println("<a href='#''><button class='productDetails'><b>查看商品</b></button></a>");
                 //}
             out.println("---------------------------------------<BR>");
                                     
