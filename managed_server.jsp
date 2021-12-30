@@ -7,6 +7,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,22 +17,36 @@
 </head>
 
 <body>
+<%
+    if(session.getAttribute("server_email") == null) {
+        out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
+    }
+
+    else{
+        %>
+    
     <header class="mainHeader">
         <div class="container">
+
             <a href="index.html" class="logo">
                 <img src="assets/img/headphones.png" alt="earphonelogo">
             </a>
+
             <nav class="navBar">
                 <a href="product_overview.html">產品介紹</a>
                 <a href="login.html">後台管理</a>
             </nav>
+
             <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
+
             <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>
+
         </div>
     </header>
+
     <div class="managedServer">
         <div class="memberInfo">
             <div class="memberInfoImg">
@@ -73,30 +88,7 @@
                             </td>
                             <!-- <td class="tdSet"><input type="button" value="確認"></td> -->
                         </tr>
-                        <tr class="tdSet">
-                            <td class="tdSet">水月雨 光</td>
-                            <td class="tdSet">$ 26800</td>
-                            <td class="tdSet"> 15個</td>
-                            <td class="tdSet">
-                                <form action="assets/jsp/inventory_managed.jsp">
-                                    <input type="radio" name="status" value="1" checked/>上架
-                                    <input type="radio" name="status" value="0">下架
-                                </form>
-                            </td>
-                            <td class="tdSet"><input type="button" value="確認"></td>
-                        </tr>
-                        <tr class="tdSet">
-                            <td class="tdSet">水月雨 KATO</td>
-                            <td class="tdSet">$ 5680</td>
-                            <td class="tdSet"> 15個</td>
-                            <td class="tdSet">
-                                <form action="assets/jsp/inventory_managed.jsp">
-                                    <input type="radio" name="status" value="1" checked/>上架
-                                    <input type="radio" name="status" value="0">下架
-                                </form>
-                            </td>
-                            <td class="tdSet"><input type="button" value="確認"></td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
@@ -170,6 +162,9 @@
 
     <script type="text/javascript" src="assets/js/managed_server.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%
+    }
+    %>
 </body>
 
 </html>
