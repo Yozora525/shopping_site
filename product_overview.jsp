@@ -49,17 +49,6 @@
 
             sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `wear`='入耳式' ";
             ResultSet hr=con.createStatement().executeQuery(sql); 
-            
-              /*   for (int i=0;i<=3;i++){
-		             out.print("<tr>");
-                  for (int j=0;j<=2;j++)
-                      {
-	        	   out.print("<td>");
-                     out.print(X[i][j]);
-	        	   out.print("</td>");
-                 }
-	               out.print("</tr>"); */
-    
 	
             out.println("<div id='inEar' class='tabcontent'>");
             
