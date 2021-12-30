@@ -22,38 +22,35 @@
     session.removeAttribute("strInventory");
     session.removeAttribute("strStatus");
 
-    // out.println(strInventory);
-    out.println(strResult);
-    // out.println(Boolean.toString(strResult.equals("0")));
-        if(strResult.equals("1")){
-            sql = "UPDATE `product` SET `status` = '0' WHERE `product_name` LIKE '" + strInventory + "'";
-            //out.println(sql);
-            no=con.createStatement().executeUpdate(sql); //可回傳異動數
+
+    if(strResult.equals("1")){
+        sql = "UPDATE `product` SET `status` = '0' WHERE `product_name` LIKE '" + strInventory + "'";
+        //out.println(sql);
+        no=con.createStatement().executeUpdate(sql); //可回傳異動數
 			
+        if (no > 0){
+            out.println("下架更新成功");
+            con.close();
+        }
+
+        else{
+            out.println("更新失敗");
+        }
+    }
+
+    else if(strResult.equals("0")){
+            sql = "UPDATE `product` SET `status` = '1' WHERE `product_name` LIKE '" + strInventory + "'";
+            no=con.createStatement().executeUpdate(sql); //可回傳異動數
             if (no > 0){
-                out.println("下架更新成功");
-                
+                out.println("上架更新成功");
                 con.close();
             }
 
             else{
                 out.println("更新失敗");
+                con.close();
             }
-        }
-
-        else if(strResult.equals("0")){
-                sql = "UPDATE `product` SET `status` = '1' WHERE `product_name` LIKE '" + strInventory + "'";
-                no=con.createStatement().executeUpdate(sql); //可回傳異動數
-                if (no > 0){
-                    out.println("上架更新成功");
-                    con.close();
-                }
-
-                else{
-                    out.println("更新失敗");
-                    con.close();
-                }
-            }
+    }
 %>
 </body>
 </html>

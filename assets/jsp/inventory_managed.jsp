@@ -18,12 +18,13 @@
     String strInventoryName;
     ResultSet rs;
 
-    sql = "SELECT `product_name`, `status` FROM `product` WHERE `product_name` LIKE '" + strStatus + "'";
+    sql = "SELECT `product_name`, `status` FROM `product` WHERE `product_name` LIKE '" + strStatus + "%'";
     rs =  con.createStatement().executeQuery(sql);
 
     if(rs.next()){
         strInventoryName = rs.getString(1);
         strResult = rs.getString(2);
+
         session.setAttribute("strStatus", strStatus);
         session.setAttribute("strInventory", strInventoryName);
         session.setAttribute("strResult", strResult);
