@@ -125,22 +125,23 @@
                 <th>金額</th>
                 <th>數量</th>
             </tr>
-            <tr>
+            
             <%
                 sql = "SELECT `username`, `email`, `address`, `product_name`, `price`, `sold_quantity` FROM `record`";
                 ResultSet rsRecord = con.createStatement().executeQuery(sql);
 
                 while(rsRecord.next()) {
+                out.println("<tr>");
                 out.println("<td>" + rsRecord.getString(1) + "</td>");
                 out.println("<td>" + rsRecord.getString(2) + "</td>");
                 out.println("<td>" + rsRecord.getString(3) + "</td>");
                 out.println("<td>" + rsRecord.getString(4) + "</td>");
                 out.println("<td>" + rsRecord.getString(5) + "</td>");
                 out.println("<td>" + rsRecord.getString(6) + "</td>");
+                out.println("</tr>");
                 }
             %>
-            </tr>
-            
+        
         </table>
     </div>
 
@@ -154,19 +155,23 @@
                 <th>進貨數</th>
                 <th>目前庫存</th>
             </tr>
-            <%
-                sql = "SELECT `username`, `email`, `address`, `product_name`, `price`, `sold_quantity` FROM `record`";
-                ResultSet rsRecord = con.createStatement().executeQuery(sql);
 
-                
+            <%
+                sql = "SELECT `transaction`, `product_name`, `sold_quantity`, `import_quantity`, `inventory_quantity` FROM `inventory`";
+                ResultSet rsInventoryRecord = con.createStatement().executeQuery(sql);
+
+                while(rsInventoryRecord.next()) {
+                out.println("<tr>");
+
+                out.println("<td>" + rsInventoryRecord.getString(1) + "</td>");
+                out.println("<td>" + rsInventoryRecord.getString(2) + "</td>");
+                out.println("<td>" + rsInventoryRecord.getString(3) + "</td>");
+                out.println("<td>" + rsInventoryRecord.getString(4) + "</td>");
+                out.println("<td>" + rsInventoryRecord.getString(5) + "</td>");
+
+                out.println("</tr>");
+                }
             %>
-            <tr>
-                <td>2021/12/29</td>
-                <td>SONY WI-SP500</td>
-                <td>0</td>
-                <td>1</td>
-                <td>15</td>
-            </tr>
             
         </table>
     </div>
