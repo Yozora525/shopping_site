@@ -40,15 +40,28 @@
         <button class="tablink" onclick="openPage('microphone', this, '#c4c3c37a')">麥克風功能</button>
 
     <%
-           /* sql="SELECT COUNT(wear) FROM `product` WHERE `wear`='入耳式' "; //算出共幾筆
+            sql="SELECT COUNT(wear) FROM `product` WHERE `wear`='入耳式' "; //算出共幾筆
             ResultSet rs=con.createStatement().executeQuery(sql); //移到第一筆，使用rs.getInt(1)，1表第一個欄位，就可知道共有幾筆記錄，型別為整數
             rs.next();
 		    //int total_content=rs.getInt(1); 
             int total_content=Integer.parseInt(rs.getString(1));
-		    out.println("共"+total_content+"筆留言<p>"); //查看是否筆數符合*/
+		    //out.println("共"+total_content+"筆留言<p>"); //查看是否筆數符合*/
 
             sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `wear`='入耳式' ";
             ResultSet hr=con.createStatement().executeQuery(sql); 
+            
+              /*   for (int i=0;i<=3;i++){
+		             out.print("<tr>");
+                  for (int j=0;j<=2;j++)
+                      {
+	        	   out.print("<td>");
+                     out.print(X[i][j]);
+	        	   out.print("</td>");
+                 }
+	               out.print("</tr>"); */
+    
+	
+
             while(hr.next()){			
 
                 //for(int i=1; i<= total_content; i++)
@@ -59,8 +72,6 @@
                     out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr.getString(2)+"<br></p></b>");
                     out.println("<a href='#''><button class='productDetails'><b>查看商品</b></button></a>");
                 //}
-            out.println("---------------------------------------<BR>");
-                                    
                     }
 
     %>
