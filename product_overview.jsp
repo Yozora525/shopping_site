@@ -56,7 +56,7 @@
                     out.println("<img src="+hr.getString(3)+" >"+"<br>");
                     out.println("<b><p>"+hr.getString(1)+"</b><br></p>");
                     out.println("<p>"+hr.getString(5)+hr.getString(4)+hr.getString(6)+"耳機<br></p>");
-                    out.println("<p>售價<b> &nbsp $"+hr.getString(2)+"<br></p></b>");
+                    out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr.getString(2)+"<br></p></b>");
                     out.println("<a href='#''><button class='productDetails'><b>查看商品</b></button></a>");
                 //}
             out.println("---------------------------------------<BR>");
