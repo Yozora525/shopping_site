@@ -119,6 +119,32 @@
                         
                     </tbody>
                 </table>
+                <h2>進貨紀錄</h2>
+                    <form action="#" method="POST">
+                        <table border="1">
+                            <tr>
+                                <th>日期</th>
+                                <th>商品名稱</th>
+                                <th>數量</th>
+                                <th>確認更新</th>
+                            </tr>
+                            <tr>
+                            <td>2021/12/28</td>
+                            <td>
+                                <select size="1" name="Earphones">
+                                <option>SONY WI-SP500</option>
+                                <option>水月雨 KATO</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="addednumbers" value="0" min="1"/>
+                                <input type="text" name="addednumbers"> 
+                                /*我覺得這裡用number比較好，但是看你們後台方便，屆時記得二選一刪除*/
+                            </td>
+                            <td><input type="button" name="inventoryadd" value="送出"></td>
+                            </tr>
+                        </table>
+                    </form>
             </div>
         </div>
     </div>
