@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2021-12-30 15:05:15 +0000
+# 生成時間: 2021-12-30 15:26:44 +0000
 # ************************************************************
 
 
@@ -167,7 +167,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `record`;
 
 CREATE TABLE `record` (
-  `member_mail` varchar(45) NOT NULL DEFAULT '',
+  `email` varchar(45) NOT NULL DEFAULT '',
   `product_name` varchar(45) NOT NULL,
   `sold_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `order_number` int(11) NOT NULL,
@@ -181,7 +181,7 @@ CREATE TABLE `record` (
 LOCK TABLES `record` WRITE;
 /*!40000 ALTER TABLE `record` DISABLE KEYS */;
 
-INSERT INTO `record` (`member_mail`, `product_name`, `sold_date`, `order_number`, `price`, `sold_quantity`, `total_money`, `address`, `username`)
+INSERT INTO `record` (`email`, `product_name`, `sold_date`, `order_number`, `price`, `sold_quantity`, `total_money`, `address`, `username`)
 VALUES
 	('haha@gmail.com','水月雨 KATO','2021-12-30 23:05:03',0,5680,1,5680,'中壢國','test');
 

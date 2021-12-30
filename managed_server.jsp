@@ -119,29 +119,18 @@
                 <th>數量</th>
             </tr>
             <tr>
+            <%
+                sql = "SELECT `product_name`, `price`, `status` FROM `product`";
+                ResultSet rsRecord = con.createStatement().executeQuery(sql);
                 <td>王小明</td>
                 <td>asd123456789@gmail.com</td>
                 <td>桃園市龍潭區</td>
                 <td>水月雨 光</td>
                 <td>$ 26800</td>
                 <td>1個</td>
+            %>
             </tr>
-            <tr>
-                <td>陳小中</td>
-                <td>zxc987654321@gmail.com</td>
-                <td>新北市板橋區</td>
-                <td>鐵三角 ATH-M50xBT2</td>
-                <td>$ 7600</td>
-                <td>1個</td>
-            </tr>
-            <tr>
-                <td>黃小雅</td>
-                <td>qwe135792468@gmail.com</td>
-                <td>新竹縣竹北市</td>
-                <td>水月雨 KATO</td>
-                <td>$ 5680</td>
-                <td>1個</td>
-            </tr>
+            
         </table>
     </div>
 
