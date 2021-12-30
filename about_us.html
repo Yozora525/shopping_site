@@ -37,9 +37,27 @@
     <div class="bg-image img3"></div>
     <div class="bg-image img4"></div>
 
-    <div class="bg-text"><h1>關於我們</h1><br>
-        一群
+    <div class="bg-text">
 
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'AboutUs')" id="defaultOpen">關於我們</button>
+            <button class="tablinks" onclick="openCity(event, 'AboutIn')">關於【in耳吉】</button>
+            <button class="tablinks" onclick="openCity(event, 'Ideal')">品牌初衷</button>
+          </div>
+          
+          <div id="AboutUs" class="tabcontent">
+            <p>一群來自中原大學資訊管理學系的同學，素昧平生的彼此看似毫無交集，卻因著音樂品質的癡迷追求而相知相惜。無論是晨曦破曉、漫漫黑夜，抑或在通勤路上、課堂期間，我們渴望藉由鼓膜上的音符悸動，珍藏日常時分的吉光片羽。而當音樂的著迷遇見資管的熱情，轟轟烈烈的化學反應如是促使【in耳吉】的誕生，冀望能將千日千夜的故事耳語傳遍各地。</p>
+          </div>
+          
+          <div id="AboutIn" class="tabcontent">
+            <p>洋洋盈耳的樂曲悠揚，耳「吉」裡的連綿感動。在【in耳吉】，我們堅信音樂對於心靈的療癒慰藉，盼望能將作曲家最純粹真摯的深情告白，迴盪進聽眾的心坎深處。精挑細選出的21款耳機，承載著21份無盡堅持。快速便捷的購物流程，更象徵著熱忱懇切的盛情邀請，迫不及待您的細細傾聽。</p> 
+          </div>
+          
+          <div id="Ideal" class="tabcontent">
+            <p>太平洋裡的52赫茲鯨魚，<br>因著自身懸殊頻率，<br>成為「世界上最孤獨的鯨魚」。<br><br>
+                在【in耳吉】，<br>52赫茲不再孤寂，<br>日常生活的浪漫迷離更顯撫慰柔情。</p>
+          </div>
+          
     </div>
 
     <div id="myNav" class="overlay">
@@ -63,6 +81,21 @@
       
       <script type="text/javascript" src="assets/js/contact_us.js"></script> 
 
-    
+      <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+        </script>
 </body>
 </html>
