@@ -99,8 +99,16 @@
                                 out.println("<td class='tdSet'>");
 
                                 out.println("<form action='assets/jsp/inventory_managed.jsp' method='post'>");
-                                out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "' checked/>上架");
-                                out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "'>下架");
+                                if(rsProductInfo.getString(3).equals("1")){
+                                    out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "' checked/>上架");
+                                    out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "'>下架");
+                                }
+
+                                else if(rsProductInfo.getString(3).equals("0")){
+                                    out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "'>上架");
+                                    out.println("<input type='radio' name='status' value='" + rsProductInfo.getString(1) + "' checked/>下架");
+                                }
+                                
                                 out.println("<td><input type='submit' value='更新'></td>");
                                 out.println("</form>");
                                 
