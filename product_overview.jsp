@@ -3,7 +3,8 @@
 <%@page import = "java.sql.*" %> 
 <%@include file = "assets/jsp/consql.jsp" %>
 <head>
-    <meta charset="UTF-8">
+    <!DOCTYPE html>
+    <html lang="en">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -14,11 +15,11 @@
 <body>
     <header class="mainHeader">
         <div class="container">
-            <a href="index.html" class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="assets/img/headphones.png" alt="earphonelogo">
             </a>
             <nav class="navBar">
-                <a href="product_overview.html">產品介紹</a>
+                <a href="product_overview.jsp">產品介紹</a>
                 <a href="login.html">會員中心</a>
                 <a href="#">後台管理</a>
                 <a href="#">關於我們</a>
@@ -135,10 +136,6 @@
             }
 
             out.println("</div>");
-
-
-
-
 
     %>
 
