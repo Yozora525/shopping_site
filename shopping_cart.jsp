@@ -13,11 +13,9 @@
 </head>
 <body>
 <%
-    if(session.getAttribute("server_email") == null) {
+    if(session.getAttribute("user_email") == null) {
         out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
     }
-
-    else{
         %>
 
     <header class="mainHeader">
