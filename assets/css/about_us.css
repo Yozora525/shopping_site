@@ -6,7 +6,8 @@ body, html {
   
   
   .bg-image {
-    opacity: 88%;
+    filter: brightness(120%);
+    opacity: 90%;
     height: 84%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +24,7 @@ body, html {
   /* Position text in the middle of the page/image */
   .bg-text {
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    background-color: rgba(0, 0, 0, 0.568); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
     border: 5px solid #f1f1f1;
@@ -33,7 +34,6 @@ body, html {
     transform: translate(-50%, -50%);
     z-index: 1;
     width: 390px;
-  
     text-align: left;
   }
   h1{
