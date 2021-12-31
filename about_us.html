@@ -40,9 +40,10 @@
     <div class="bg-text">
 
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'AboutUs')" id="defaultOpen">關於我們</button>
-            <button class="tablinks" onclick="openCity(event, 'AboutIn')">關於【in耳吉】</button>
-            <button class="tablinks" onclick="openCity(event, 'Ideal')">品牌初衷</button>
+            <button class="tablinks" onclick="openCard(event, 'AboutUs')" >關於我們</button>
+            <button class="tablinks" onclick="openCard(event, 'AboutIn')">關於【in耳吉】</button>
+            <button class="tablinks" onclick="openCard(event, 'Ideal')">品牌初衷</button>
+            <button class="tablinks" onclick="openCard(event, 'Member')">成員介紹</button>
           </div>
           
           <div id="AboutUs" class="tabcontent">
@@ -56,6 +57,10 @@
           <div id="Ideal" class="tabcontent">
             <p>太平洋裡的52赫茲鯨魚，<br>因著自身懸殊頻率，<br>成為「世界上最孤獨的鯨魚」。<br><br>
                 在【in耳吉】，<br>52赫茲不再孤寂，<br>日常生活的浪漫迷離更顯撫慰柔情。</p>
+          </div>
+
+          <div id="Member" class="tabcontent">
+            <p>10944128 資管二甲 姜智森<br>10944153 資管二甲 張鈞量<br>10944234 資管二乙 廖庭萱<br>10944239 資管二乙 李世彥</p>
           </div>
           
     </div>
@@ -80,22 +85,8 @@
       </div>
       
       <script type="text/javascript" src="assets/js/contact_us.js"></script> 
+      <script type="text/javascript" src="assets/js/about_us.js"></script> 
+    
 
-      <script>
-        function openCity(evt, cityName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
-        document.getElementById("defaultOpen").click();
-        </script>
 </body>
 </html>

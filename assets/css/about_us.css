@@ -1,23 +1,23 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   
   .bg-image {
-    opacity: 85%;
-    height: 80%; 
+    opacity: 88%;
+    height: 84%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   
   /* Images used */
-  .img1 { background-image: url("../img/about_us_010101.jpg"); }
-  .img2 { background-image: url("../img/about_us_020202.jpg"); }
-  .img3 { background-image: url("../img/about_us_0404040404.jpg"); }
-  .img4 { background-image: url("../img/about_us_030303.jpg"); }
+  .img1 { background-image: url("../img/about_us_020202.jpg"); }
+  .img2 { background-image: url("../img/about_us_0404040404.jpg"); }
+  .img3 { background-image: url("../img/about_us_0303.jpg"); }
+  .img4 { background-image: url("../img/about_us_010101.jpg"); }
 
   
   /* Position text in the middle of the page/image */
@@ -28,19 +28,19 @@ body, html {
     font-weight: bold;
     border: 5px solid #f1f1f1;
     position: fixed;
-    top: 60%;
-    left: 49%;
+    top: 400px;
+    left: 49.5%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    width: 400px;
-    padding-right: 5px;
-    
+    width: 390px;
+  
     text-align: left;
   }
   h1{
     font-size: 13px;
   }
   p{
+    margin-top: 2px;
     font-size: 18px;
   }
 
@@ -50,25 +50,27 @@ body, html {
 
   /* Style the buttons inside the tab */
   .tab button {
-    background-color: inherit;
+    letter-spacing: 2px;
     float: left;
     border: none;
     outline: none;
+    font-weight: bolder;
     cursor: pointer;
-    padding: 10px 12px;
+    padding: 10px 8px ;
     transition: 0.3s;
     font-size: 15px;
+    background-color: rgb(143, 142, 142);
     color: rgb(255, 255, 255);
   }
 
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: rgb(72, 118, 245);
+    background-color: rgba(72, 118, 245, 0.61);
   }
 
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: #ccc;
+    background-color: rgb(72, 118, 245);
   }
 
   /* Style the tab content */
@@ -89,3 +91,5 @@ body, html {
     from {opacity: 0;}
     to {opacity: 1;}
   }
+
+  
