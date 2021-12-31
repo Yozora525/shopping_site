@@ -81,6 +81,7 @@ body{
 }
 .mainHeader .headerSearch button{
     border-radius: 0 200px 200px 0;
+    cursor: pointer;
 }
 .mainHeader .headerSearch input{
     border-radius: 200px 0 0 200px;
