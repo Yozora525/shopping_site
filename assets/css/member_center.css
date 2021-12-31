@@ -62,55 +62,53 @@ hr{
     background-color: #c4c3c37a;
     border-radius: 20px;
     float: left;
-    margin: 0px 0px 10px 40px;
+    margin: 0px 0px 0px 40px;
     padding: 0px 0px 10px 0px;
 }
 .memberRight table{
     width: 100%;
     border: none;
-    padding-top: 10px;
+    padding-top: 0px;
+    padding-left: 25px;
 }
-.memberRight table th,
+.memberRight table tr,
 .memberRight table td{
-    padding: 38px 15px 38px 15px;
+    padding: 25px 15px 30px 15px;
     font-size: 20px;
 }
 .memberRight input{
-    height: 25px;
+    height: 30px;
     border: none;
     border-radius: 5px;
     position: relative;
     top: -4px;
 }
 #name{
-    width: 55%;
+    width: 75%;
 }
 #nameModify{
-    width: 55%;
+    width: 75%;
 }
 #tel{
-    width: 55%;
+    width: 75%;
 }
 #telModify{
-    width: 55%;
-}
-#address{
-    width: 79%;
+    width: 75%;
 }
 #addressModify{
-    width: 55%;
+    width: 75%;
 }
 #email{
-    width: 55%;
+    width: 75%;
 }
 #emailModify{
-    width: 55%;
+    width: 75%;
 }
 #password{
-    width: 55%;
+    width: 75%;
 }
 #passwordModify{
-    width: 55%;
+    width: 75%;
 }
 #btt1{
     background-color: #0080FF;
@@ -118,16 +116,6 @@ hr{
     cursor: pointer;
 }
 #btt2{
-    background-color: #0080FF;
-    color: white;
-    cursor: pointer;
-}
-#btt3{
-    background-color: #0080FF;
-    color: white;
-    cursor: pointer;
-}
-#btt4{
     background-color: #0080FF;
     color: white;
     cursor: pointer;
@@ -141,38 +129,21 @@ hr{
     width: auto;
     clear: both;
 }
-.order{
-    width: 43%;
-    height: 300px;
-    background-color: #c4c3c37a;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 20px;
+.recordBtn{
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    background-color: #0080FF;
+    border: none;
+    border-radius: 10px;
     float: left;
+    cursor: pointer;
+    margin-left: 25%;
+    margin-top: 20px;
 }
-.orderTable{
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-    padding: 10px;
-}
-.orderTable tr td{
-    height: 45px;
-}
-.comment{
-    width: 43%;
-    height: 300px;
-    background-color: #c4c3c37a;
-    border-radius: 20px;
-    margin: 20px 20px 20px 15px;
-    padding: 20px;
-    float: left;
-}
-.commentTable{
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-}
-.commentTable tr td{
-    height: 45px;
+.recordBtn:hover{
+    color: black;
+    background-color: white;
 }
