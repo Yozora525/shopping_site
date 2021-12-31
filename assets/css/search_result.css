@@ -1,0 +1,96 @@
+.searchResult{
+    width: 100%;
+    margin: auto;
+}
+.category{
+    width: 20%;
+    height: auto;
+    margin: 2%;
+    background-color: #c4c3c37a;
+    border-radius: 10px;
+    position: relative;
+    float: left;
+}
+.categoryTitle{
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+}
+.classification{
+    margin-left: 25%;
+    margin-top: 20px;
+}
+.classBlock{
+    padding-bottom: 30px;
+}
+#brand{
+    cursor: pointer;
+}
+#price{
+    cursor: pointer;
+}
+.submit{
+    width: 75px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+    background-color: #0080FF;
+    border: none;
+    border-radius: 10px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.submit:hover{
+    color: black;
+    background-color: white;
+}
+.resultBlock{
+    width: 71%;
+    height: auto;
+    margin: 2%;
+    background-color: #c4c3c37a;
+    border-radius: 10px;
+    position: relative;
+    float: left;
+}
+.resultBlock table{
+    width: 95%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 2.5%;
+}
+.resultBlock img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+.name{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.price{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.resultBlock hr{
+    color: black;
+    width: 100%;
+    size: 3;
+}
+.resultBlock button{
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: #0080FF;
+    font-size: 15px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.resultBlock button:hover{
+    color: black;
+    background-color: white;
+}
