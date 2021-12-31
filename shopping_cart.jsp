@@ -1,7 +1,10 @@
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %> 
+<%@include file = "assets/jsp/consql.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -9,6 +12,14 @@
     <link rel="stylesheet" href="assets/css/shopping_cart.css">
 </head>
 <body>
+<%
+    if(session.getAttribute("server_email") == null) {
+        out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
+    }
+
+    else{
+        %>
+
     <header class="mainHeader">
         <div class="container">
             <a href="index.jsp" class="logo">
