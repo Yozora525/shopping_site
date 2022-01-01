@@ -17,16 +17,16 @@
         out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
     }
     else{
-        String cart_username=session.getAttribute("user_email").toString();
-        sql="SELECT * FROM `shopping_cart` WHERE `email`='"+cart_username+"'";
+        String cart_email=session.getAttribute("user_email").toString();
+        sql="SELECT * FROM `shopping_cart` WHERE `email`='"+cart_email+"'";
         ResultSet hr_cart=con.createStatement().executeQuery(sql);
        /*
             while(hr_cart.next())
         {
-            int cart_number=hr_number.getString("");
-            String cart_productName=hr_productName.getString("");
-            int cart_price=hr_price.getString("");
-           // int total+=cart_number*cart_price;
+            int cart_number=hr_number.getString(""); //取得商品數量
+            String cart_productName=hr_productName.getString(""); //取得商品名稱
+            int cart_price=hr_price.getString(""); //取得商品單價
+           // int total+=cart_number*cart_price; //計算總額
 
         } 
         */
@@ -64,15 +64,40 @@
                         <th>刪除</th>
                     </tr>
                     <%--
+
+                        <%
+
                         for(int i=1;i<= count;i++)
                         {
-                            out.println("");
+                            out.println("<tr class='tdSet'>");
+
                             for(int j=1;j<=count;j++)
                             {
-                                out.println("");
+                                out.println("<td class='tdSet'>"+cart_productName+"</td>");
+                                out.println("<td class='tdSet'>"+cart_price+"</td>");
+                                out.println("<td class='tdSet'>";
+                                out.println("<select name='quantity' id='number1'>");
+
+                                for(int n=1;n<=     ;n++)
+                                {
+                                    out.println("<option value='"+n+"'></option>");
+                                }
+                                
+                                out.println("</select>");
+                                out.println("</td>");
+                                out.println("<td class="deleteCol tdSet">");
+                                out.println("<button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>");
+                                out.println("</td></tr>");
                             }
                         }
-
+                        %>
+                     </tbody>
+                <tr>
+                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp;76500&nbsp;元</td>
+                </tr>
+            </table>
+        </form>
+    </div>
                     --%>
                     <tr class="tdSet">
                         <td class="tdSet">鐵三角 M50x</td>
@@ -152,6 +177,7 @@
                             <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
                         </td>
                     </tr>
+                     <!-- jsp到這邊結束-->
                 </tbody>
                 <tr>
                     <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp;76500&nbsp;元</td>
