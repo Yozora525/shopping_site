@@ -68,12 +68,12 @@ hr{
 .memberRight table{
     width: 100%;
     border: none;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-left: 25px;
 }
 .memberRight table tr,
 .memberRight table td{
-    padding: 25px 15px 30px 15px;
+    padding: 40px 15px 40px 15px;
     font-size: 20px;
 }
 .memberRight input{

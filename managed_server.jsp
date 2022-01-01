@@ -24,20 +24,20 @@
 
     else{
         %>
-    
+
     <header class="mainHeader">
         <div class="container">
 
-            <a href="index.jsp" class="logo">
+            <a href="index.html" class="logo">
                 <img src="assets/img/headphones.png" alt="earphonelogo">
             </a>
 
             <nav class="navBar">
-                <a href="product_overview.jsp">產品介紹</a>
-                <a href="managed_server_login.html">後台管理</a>
+                <a href="product_overview.html">產品介紹</a>
+                <a href="login.html">後台管理</a>
             </nav>
 
-            <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
+            <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
 
             <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
@@ -66,7 +66,7 @@
                 <hr>
             </div>
             <div class="logout">
-                <p><a href="index.html" class="logoutButton">登出</a></p>
+                <p><a href="index.jsp" class="logoutButton">登出</a></p>
             </div>
         </div>
         <div class="inventory">
@@ -115,36 +115,10 @@
                                 out.println("</td>");
                                 out.println("</tr>");
                             }
-                        %>
+                        %> 
                         
                     </tbody>
                 </table>
-                <h2>進貨紀錄</h2>
-                    <form action="#" method="POST">
-                        <table border="1">
-                            <tr>
-                                <th>日期</th>
-                                <th>商品名稱</th>
-                                <th>數量</th>
-                                <th>確認更新</th>
-                            </tr>
-                            <tr>
-                            <td>2021/12/28</td>
-                            <td>
-                                <select size="1" name="Earphones">
-                                <option>SONY WI-SP500</option>
-                                <option>水月雨 KATO</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="number" name="addednumbers" value="0" min="1"/>
-                                <input type="text" name="addednumbers"> 
-                                /*我覺得這裡用number比較好，但是看你們後台方便，屆時記得二選一刪除*/
-                            </td>
-                            <td><input type="button" name="inventoryadd" value="送出"></td>
-                            </tr>
-                        </table>
-                    </form>
             </div>
         </div>
     </div>
@@ -182,6 +156,31 @@
 
     <button class="accordion">存貨管理</button>
     <div class="panel">
+        <form action="#" method="POST">
+            <table border="1">
+                <tr>
+                    <th>日期</th>
+                    <th>商品名稱</th>
+                    <th>數量</th>
+                    <th>確認更新</th>
+                </tr>
+                <tr>
+                <td><input type="date"/></td>
+                <td>
+                    <select size="1" name="Earphones">
+                    <option>SONY WI-SP500</option>
+                    <option>水月雨 KATO</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="number" name="addednumbers" value="0" min="1"/> 
+                    <!--/*我覺得這裡用number比較好，但是看你們後台方便，屆時記得二選一刪除*/-->
+                </td>
+                <td><input type="button" name="inventoryadd" value="送出"></td>
+                </tr>
+            </table>
+        </form>
+
         <table border="1">
             <tr>
                 <th>日期</th>

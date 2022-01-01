@@ -1,0 +1,31 @@
+.recordlist{
+    margin: 10px 200px 10px 265px ;
+    padding: 40px 30px 60px 40px ;
+    position: absolute;
+    border-radius: 60px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(151, 231, 245, 0.616);
+    height: 60%;
+    transform: scale(1.0);
+    border: 10px double whitesmoke;
+}
+.recordlist:hover{
+    transform: scale(1.1);
+}
+h1{
+    font-size: 45px;
+    margin: 20px 10px 20px 10px ;
+    text-align: center;
+    color: rgb(0, 110, 255);
+    transform: scale(1.0);
+}
+h1:hover{
+    transform: scale(1.5);
+}
+td{
+    padding: 10px;
+}
+th{
+    padding: 5px;
+}
