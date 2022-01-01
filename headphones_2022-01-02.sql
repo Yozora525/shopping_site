@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Ace SQL dump
-# 版本號： 20019
+# 版本號： 20021
 #
 # https://sequel-ace.com/
 # https://github.com/Sequel-Ace/Sequel-Ace
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2021-12-30 16:01:06 +0000
+# 生成時間: 2022-01-01 17:26:51 +0000
 # ************************************************************
 
 
@@ -35,7 +35,7 @@ LOCK TABLES `counter` WRITE;
 
 INSERT INTO `counter` (`count`)
 VALUES
-	(101);
+	(103);
 
 /*!40000 ALTER TABLE `counter` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -71,8 +71,8 @@ DROP TABLE IF EXISTS `inventory`;
 
 CREATE TABLE `inventory` (
   `product_name` varchar(45) NOT NULL,
-  `import_quantity` int(11) DEFAULT NULL,
-  `sold_quantity` int(11) DEFAULT NULL,
+  `import_quantity` int(11) DEFAULT 0,
+  `sold_quantity` int(11) DEFAULT 0,
   `transaction_date` date DEFAULT NULL,
   `inventory_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -82,7 +82,7 @@ LOCK TABLES `inventory` WRITE;
 
 INSERT INTO `inventory` (`product_name`, `import_quantity`, `sold_quantity`, `transaction_date`, `inventory_quantity`)
 VALUES
-	('AKG K240',0,0,NULL,0),
+	('AKG K240',100,0,NULL,100),
 	('AKG K701',0,0,NULL,0),
 	('AKG K702',0,0,NULL,0),
 	('AKG K712',0,0,NULL,0),
@@ -102,7 +102,9 @@ VALUES
 	('鐵三角 ATH-M50xBT2',0,0,NULL,0),
 	('鐵三角 HL7BT',0,0,NULL,0),
 	('鐵三角 SR50BT',0,0,NULL,0),
-	('鐵三角 WS660BT',0,0,NULL,0);
+	('鐵三角 WS660BT',0,0,NULL,0),
+	('AKG K240',1000,NULL,'2022-01-01',1000),
+	('AKG K701',500,0,'2022-01-02',500);
 
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -132,7 +134,7 @@ LOCK TABLES `product` WRITE;
 INSERT INTO `product` (`product_name`, `price`, `product_introduce`, `product_image`, `wear`, `link`, `mic`, `way`, `brand`, `status`)
 VALUES
 	('AKG K240',2200,'0','assets/img/AKG_K240.jpg','耳罩式','有線','無','','AKG','1'),
-	('AKG K701',4990,'0','assets/img/AKG_K701.jpg','耳罩式','有線','無','','AKG','1'),
+	('AKG K701',4990,'0','assets/img/AKG_K701.jpg','耳罩式','有線','無','','AKG','0'),
 	('AKG K702',9200,'0','assets/img/AKG_K702.jpg','耳罩式','有線','無','','AKG','1'),
 	('AKG K712',7890,'0','assets/img/AKG_K712.jpg','耳罩式','有線','無','','AKG','1'),
 	('Galaxy Buds Pro',6990,'0','assets/img/Galaxy_BudsPro.jpg','入耳式','無線','無','降噪','Samsung','1'),

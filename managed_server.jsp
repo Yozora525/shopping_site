@@ -85,6 +85,7 @@
                         <%
                             sql = "SELECT `product_name`, `price`, `status` FROM `product`";
                             ResultSet rsProductInfo = con.createStatement().executeQuery(sql);
+                            ResultSet rsProductName = con.createStatement().executeQuery(sql);
                             sql = "SELECT `transaction_date`, `product_name`, `sold_quantity`, `import_quantity`, `inventory_quantity` FROM `inventory`";
                             ResultSet rsInventory = con.createStatement().executeQuery(sql);
                             ResultSet rsInventory1 = con.createStatement().executeQuery(sql);
@@ -156,7 +157,7 @@
 
     <button class="accordion">存貨管理</button>
     <div class="panel">
-        <form action="#" method="POST">
+        
             <table border="1">
                 <tr>
                     <th>日期</th>
@@ -165,18 +166,24 @@
                     <th>確認更新</th>
                 </tr>
                 <tr>
-                <td><input type="date"/></td>
+        <form action="assets/jsp/purchase.jsp" method="POST">
+                <td><input type="date" name="purchase_date"/></td>
                 <td>
-                    <select size="1" name="Earphones">
-                    <option>SONY WI-SP500</option>
-                    <option>水月雨 KATO</option>
+                    <select size="1" name="product_name">
+                    <%
+                        while(rsProductName.next()){
+                            out.println("<option>" + rsProductName.getString(1) + "</option>");
+                        }
+                    
+                    %>
                     </select>
                 </td>
+
                 <td>
-                    <input type="number" name="addednumbers" value="0" min="1"/> 
-                    <!--/*我覺得這裡用number比較好，但是看你們後台方便，屆時記得二選一刪除*/-->
+                    <input type="number" name="product_add" value="1" min="1"/> 
                 </td>
-                <td><input type="button" name="inventoryadd" value="送出"></td>
+                <td><input type="submit" value="送出"></td>
+                
                 </tr>
             </table>
         </form>

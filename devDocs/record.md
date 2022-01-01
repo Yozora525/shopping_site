@@ -31,6 +31,9 @@ managed_server.jsp 商品狀態完成（存貨數量等待輸入...）
 managed_server.jsp 購買記錄完成
 managed_server.jsp 存貨管理完成
 
+### 2021/01/02 ###
+managed_server.jsp 新增進貨完成
+
 ##  智森 ##
 ### 2021/12/25 20:17 ###
 商品總覽介面已上傳
