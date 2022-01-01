@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/all.css">
     <link rel="stylesheet" href="assets/css/search_result.css">
 </head>
+
 <body>
     <header class="mainHeader">
         <div class="container">
@@ -28,6 +30,7 @@
             </form>
         </div>
     </header>
+
     <div class="searchResult">
         <div class="category">
             <form method="POST" action="">
@@ -53,11 +56,12 @@
                             <option value="price5">10000 以上</option>
                         </select>
                     </p>
-                    <input type="submit" class="submit" value="送出"/>
+                    <input type="submit" class="submit" value="送出" />
                 </div>
             </form>
         </div>
     </div>
+
     <div class="resultBlock">
         <form action="">
             <table>
@@ -69,67 +73,18 @@
                         <p class="name">水月雨 光</p>
                         <p class="type">有線入耳式耳機</p>
                     </td>
-                    <td class="price">售價   $26800</td>
+                    <td class="price">售價 $26800</td>
                     <td><button>查看商品</button></td>
                 </tr>
                 <tr>
-                   <td colspan="4"><hr></td>
+                    <td colspan="4">
+                        <hr>
+                    </td>
                 </tr>
-                <tr>
-                    <td>
-                        <img src="assets/img/MoonDrop_Blessing2.jpg" alt="">
-                    </td>
-                    <td>
-                        <p class="name">水月雨 blessing2</p>
-                        <p class="type">有線入耳式耳機</p>
-                    </td>
-                    <td class="price">售價   $11000</td>
-                    <td><button>查看商品</button></td>
-                </tr>
-                <tr>
-                   <td colspan="4"><hr></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="assets/img/MoonDrop_KXXS.jpg" alt="">
-                    </td>
-                    <td>
-                        <p class="name">水月雨 kxxs</p>
-                        <p class="type">有線入耳式耳機</p>
-                    </td>
-                    <td class="price">售價   $4980</td>
-                    <td><button>查看商品</button></td>
-                </tr>
-                <tr>
-                   <td colspan="4"><hr></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="assets/img/Moondrop_kato.jpg" alt="">
-                    </td>
-                    <td>
-                        <p class="name">水月雨 KATO</p>
-                        <p class="type">有線入耳式耳機</p>
-                    </td>
-                    <td class="price">售價   $5680</td>
-                    <td><button>查看商品</button></td>
-                </tr>
-                <tr>
-                   <td colspan="4"><hr></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="assets/img/MoonDrop_SSR.jpg" alt="">
-                    </td>
-                    <td>
-                        <p class="name">水月雨 SSR</p>
-                        <p class="type">有線入耳式運動耳機</p>
-                    </td>
-                    <td class="price">售價   $1180</td>
-                    <td><button>查看商品</button></td>
                 </tr>
             </table>
         </form>
     </div>
 </body>
+
 </html>
