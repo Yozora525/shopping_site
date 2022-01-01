@@ -18,13 +18,18 @@
     }
     else{
         String cart_username=session.getAttribute("user_email").toString();
-        sql="SELECT * FROM `shopping_cart` WHERE `email`='"email+"'';
+        sql="SELECT * FROM `shopping_cart` WHERE `email`='"+cart_username+"'";
         ResultSet hr_cart=con.createStatement().executeQuery(sql);
-        int total=0;
-        while(hr_cart.next())
+       /*
+            while(hr_cart.next())
         {
-            String cart_productName=hr_cart.getString("")
-        }
+            int cart_number=hr_number.getString("");
+            String cart_productName=hr_productName.getString("");
+            int cart_price=hr_price.getString("");
+           // int total+=cart_number*cart_price;
+
+        } 
+        */
     }
         %>
 
@@ -58,6 +63,17 @@
                         <th>數量</th>
                         <th>刪除</th>
                     </tr>
+                    <%--
+                        for(int i=1;i<= count;i++)
+                        {
+                            out.println("");
+                            for(int j=1;j<=count;j++)
+                            {
+                                out.println("");
+                            }
+                        }
+
+                    --%>
                     <tr class="tdSet">
                         <td class="tdSet">鐵三角 M50x</td>
                         <td class="tdSet">$ 5600</td>
