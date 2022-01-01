@@ -90,7 +90,7 @@
                 <input class="number" type="number" min="1" value="1"/>
                 <p class="amount">尚餘15組</p>
                 <div class="buttonBlock">
-                    <a href="#"><button class="addToCart" name="toCart"><img src="assets/img/shopping_cart.png">&nbsp;&nbsp;加入購物車</button></a>
+                    <a href="#"><button class="addToCart"><img src="assets/img/shopping_cart.png">&nbsp;&nbsp;加入購物車</button></a>
                    <%--
                     <%
                         sql=INSERT 
