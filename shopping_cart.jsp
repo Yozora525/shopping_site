@@ -16,6 +16,16 @@
     if(session.getAttribute("user_email") == null) {
         out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
     }
+    else{
+        String cart_username=session.getAttribute("user_email").toString();
+        sql="SELECT * FROM `shopping_cart` WHERE `email`='"email+"'';
+        ResultSet hr_cart=con.createStatement().executeQuery(sql);
+        int total=0;
+        while(hr_cart.next())
+        {
+            String cart_productName=hr_cart.getString("")
+        }
+    }
         %>
 
     <header class="mainHeader">
