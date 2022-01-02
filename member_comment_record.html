@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>in耳吉|訂單紀錄</title>
     <link rel="stylesheet" href="assets/css/all.css">
-    <link rel="stylesheet" href="assets/css/managed_server_record.css">
+    <link rel="stylesheet" href="assets/css/member_comment_record.css">
 </head>
 
 <body>
@@ -30,42 +30,73 @@
         </div>
     </header>
     <h1>訂單紀錄</h1>
-    <div class="recordlist">
-        <table border="1">
-            <tr>
-                <th>姓名</th>
-                <th>email</th>
-                <th>地址</th>
-                <th>商品名稱</th>
-                <th>金額</th>
-                <th>數量</th>
-            </tr>
-            <tr>
-                <td>王小明</td>
-                <td>asd123456789@gmail.com</td>
-                <td>桃園市龍潭區</td>
-                <td>鐵三角 M50x</td>
-                <td>$ 5600</td>
-                <td>1個</td>
-            </tr>
-            <tr>
-                <td>陳小中</td>
-                <td>zxc987654321@gmail.com</td>
-                <td>新北市板橋區</td>
-                <td>SONY IER-Z1R</td>
-                <td>$ 55900</td>
-                <td>1個</td>
-            </tr>
-            <tr>
-                <td>黃小雅</td>
-                <td>qwe135792468@gmail.com</td>
-                <td>新竹縣竹北市</td>
-                <td>水月雨 KATO</td>
-                <td>$ 6000</td>
-                <td>1個</td>
-            </tr>
-        </table>
-    </div>
+        <div class="recordlist" >
+                <table border="1">
+                    <tr>
+                        <th>日期</th>
+                        <th>商品</th>
+                        <th>星等</th>
+                        <th>評論</th>
+                    </tr>
+                    <tr>
+                        <td>2021/01/01</td>
+                        <td>鐵三角 M50x</td>
+                        <td class="starsCol">
+                            <div class="stars">
+                                <input type="radio" id="five1" name="rate" value="5">
+                                <label for="five"></label>
+                                <input type="radio" id="four1" name="rate" value="4">
+                                <label for="four"></label>
+                                <input type="radio" id="three1" name="rate" value="3">
+                                <label for="three"></label>
+                                <input type="radio" id="two1" name="rate" value="2">
+                                <label for="two"></label>
+                                <input type="radio" id="one1" name="rate" value="1">
+                                <label for="one"></label>
+                            </div>
+                        </td>
+                        <td class="commentCol">隔音效果做得特別好!!</td>
+                    </tr>
+                    <tr>
+                        <td>2021/06/30</td>
+                        <td>SONY IER-Z1R</td>
+                        <td>
+                            <div class="stars">
+                                <input type="radio" id="five2" name="rate" value="5">
+                                <label for="five"></label>
+                                <input type="radio" id="four2" name="rate" value="4">
+                                <label for="four"></label>
+                                <input type="radio" id="three2" name="rate" value="3">
+                                <label for="three"></label>
+                                <input type="radio" id="two2" name="rate" value="2">
+                                <label for="two"></label>
+                                <input type="radio" id="one2" name="rate" value="1">
+                                <label for="one"></label>
+                            </div>
+                        </td>
+                        <td>音質細節部分表現的超級好!!</td>
+                    </tr>
+                    <tr>
+                        <td>2021/12/31</td>
+                        <td>水月雨 KATO</td>
+                        <td>
+                            <div class="stars">
+                                <input type="radio" id="five3" name="rate" value="5">
+                                <label for="five"></label>
+                                <input type="radio" id="four3" name="rate" value="4">
+                                <label for="four"></label>
+                                <input type="radio" id="three3" name="rate" value="3">
+                                <label for="three"></label>
+                                <input type="radio" id="two3" name="rate" value="2">
+                                <label for="two"></label>
+                                <input type="radio" id="one3" name="rate" value="1">
+                                <label for="one"></label>
+                            </div>
+                        </td>
+                        <td>沒有因為是無線耳機而帶來很重的延遲感!!</td>
+                    </tr>
+                </table>
+            </div>
 </body>
 
 </html>

@@ -1,31 +1,53 @@
 .recordlist{
-    margin: 10px 200px 10px 265px ;
-    padding: 40px 30px 60px 40px ;
-    position: absolute;
-    border-radius: 60px;
+    width: 90%;
+    margin: 0% 5% 5% 5%;
+    border-radius: 10px;
     vertical-align: middle;
     text-align: center;
     background-color: rgba(151, 231, 245, 0.616);
     height: 60%;
-    transform: scale(1.0);
     border: 10px double whitesmoke;
 }
-.recordlist:hover{
-    transform: scale(1.1);
+.recordlist table{
+    width: 100%;
+    border-collapse: collapse;
 }
 h1{
-    font-size: 45px;
+    font-size: 40px;
     margin: 20px 10px 20px 10px ;
     text-align: center;
     color: rgb(0, 110, 255);
-    transform: scale(1.0);
-}
-h1:hover{
-    transform: scale(1.5);
 }
 td{
     padding: 10px;
 }
 th{
     padding: 5px;
+}
+.stars{
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    top: -13px;
+    left: -5px;
+}
+.starsCol{
+    width: 30%;
+}
+.commentCol{
+    width: 20%;
+}
+.stars input{
+    display: none;
+}
+.stars label{
+    font-size: 30px;
+    color: gold;
+    margin: 0px 2px;
+    text-shadow: 1px 1px #bbb;
+}
+.stars label:before{
+    content: '★';
 }
