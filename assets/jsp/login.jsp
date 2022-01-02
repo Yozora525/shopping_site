@@ -25,7 +25,7 @@
         if(rs.next()){
             session.setAttribute("email", strUserEmail);
             con.close();
-            out.println("OK!");
+            response.sendRedirect("../../member_center.jsp");
         }
 
         else{
