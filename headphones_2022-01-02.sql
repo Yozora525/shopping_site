@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2022-01-01 17:26:51 +0000
+# 生成時間: 2022-01-02 14:44:56 +0000
 # ************************************************************
 
 
@@ -35,7 +35,7 @@ LOCK TABLES `counter` WRITE;
 
 INSERT INTO `counter` (`count`)
 VALUES
-	(103);
+	(104);
 
 /*!40000 ALTER TABLE `counter` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -102,9 +102,7 @@ VALUES
 	('鐵三角 ATH-M50xBT2',0,0,NULL,0),
 	('鐵三角 HL7BT',0,0,NULL,0),
 	('鐵三角 SR50BT',0,0,NULL,0),
-	('鐵三角 WS660BT',0,0,NULL,0),
-	('AKG K240',1000,NULL,'2022-01-01',1000),
-	('AKG K701',500,0,'2022-01-02',500);
+	('鐵三角 WS660BT',0,0,NULL,0);
 
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -225,6 +223,29 @@ CREATE TABLE `shopping_car` (
   `username` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+
+# 轉儲表 transaction
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `transaction`;
+
+CREATE TABLE `transaction` (
+  `product_name` varchar(45) NOT NULL,
+  `import_quantity` int(11) DEFAULT 0,
+  `sold_quantity` int(11) DEFAULT 0,
+  `transaction_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `transaction` WRITE;
+/*!40000 ALTER TABLE `transaction` DISABLE KEYS */;
+
+INSERT INTO `transaction` (`product_name`, `import_quantity`, `sold_quantity`, `transaction_date`)
+VALUES
+	('AKG K240',500,0,'2022-01-02');
+
+/*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # 轉儲表 user

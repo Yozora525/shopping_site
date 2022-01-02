@@ -38,6 +38,8 @@
             out.println("新增資料失敗, 回<a href='../../managed_server.jsp'>後台管理</a>");
             con.close();
         }
+
+        
         
     }
     
