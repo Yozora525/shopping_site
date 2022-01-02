@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/all.css">
     <link rel="stylesheet" href="assets/css/member_center.css">
 </head>
+
 <body>
     <header class="mainHeader">
         <div class="container">
@@ -22,7 +24,7 @@
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
             <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
-            <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
+            <form class="headerSearch" method="POST" action="search_result.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>
@@ -46,17 +48,17 @@
             </div>
             <div class="memberRight">
                 <form action="">
-                <table>
-                    <tr>
-                        <td>姓名  :&nbsp;&nbsp;<input type="text" id="name" readonly/><input type="text" id="nameModify" style="display:none;"/><input type="button" onclick="edit1();" id="btt1" name="btt1" value="Edit"/></td>
-                    </tr>
-                    <tr>
-                        <td>Email  :&nbsp;&nbsp;<input type="email" id="email" readonly/><input type="email" id="emailModify" style="display:none;"/></td>
-                    </tr>
-                    <tr>
-                        <td>密碼   :&nbsp;&nbsp;<input type="text" id="password" readonly/><input type="text" id="passwordModify" style="display:none;"/><input type="button" onclick="edit5();" id="btt5" name="btt5" value="Edit"/></td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr>
+                            <td>姓名 :&nbsp;&nbsp;<input type="text" id="name" readonly/><input type="text" id="nameModify" style="display:none;" /><input type="button" onclick="edit1();" id="btt1" name="btt1" value="Edit" /></td>
+                        </tr>
+                        <tr>
+                            <td>Email :&nbsp;&nbsp;<input type="email" id="email" readonly/><input type="email" id="emailModify" style="display:none;" /></td>
+                        </tr>
+                        <tr>
+                            <td>密碼 :&nbsp;&nbsp;<input type="text" id="password" readonly/><input type="text" id="passwordModify" style="display:none;" /><input type="button" onclick="edit5();" id="btt5" name="btt5" value="Edit" /></td>
+                        </tr>
+                    </table>
                 </form>
             </div>
         </div>
@@ -71,4 +73,5 @@
     </div>
     <script type="text/javascript" src="assets/js/member_center.js"></script>
 </body>
+
 </html>

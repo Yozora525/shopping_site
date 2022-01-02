@@ -1,3 +1,7 @@
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %> 
+<%@include file = "assets/jsp/consql.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +15,10 @@
 </head>
 
 <body>
+<%
+    String strKeyWord = request.getParameter("key_word");
+    ResultSet rs;
+%>
     <header class="mainHeader">
         <div class="container">
             <a href="index.jsp" class="logo">
@@ -24,7 +32,7 @@
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
             <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
-            <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
+            <form class="headerSearch" method="POST" action="search_result.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>

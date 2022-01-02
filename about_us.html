@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,28 +10,29 @@
     <link rel="stylesheet" href="assets/css/about_us.css">
     <link rel="stylesheet" href="assets/css/contact_us.css">
 </head>
+
 <body>
-<div class="header" id="myHeader">
-    <header class="mainHeader">
-        <div class="container">
-            <a href="index.jsp" class="logo">
-                <img src="assets/img/headphones.png" alt="earphonelogo">
-            </a>
-            <nav class="navBar">
-                <a href="product_overview.jsp">產品介紹</a>
-                <a href="member_center.html">會員中心</a>
-                <a href="managed_server_login.html">後台管理</a>
-                <a href="about_us.html">關於我們</a>
-                <a href="#" onclick="openNav()">聯絡我們</a>
-            </nav>
-            <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
-            <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
-                <input type="search" name="key_word" placeholder="請輸入產品名稱">
-                <button><img src="assets/img/magnifying-glass.png"></button>
-            </form>
-        </div>
-    </header>
-</div>
+    <div class="header" id="myHeader">
+        <header class="mainHeader">
+            <div class="container">
+                <a href="index.jsp" class="logo">
+                    <img src="assets/img/headphones.png" alt="earphonelogo">
+                </a>
+                <nav class="navBar">
+                    <a href="product_overview.jsp">產品介紹</a>
+                    <a href="member_center.html">會員中心</a>
+                    <a href="managed_server_login.html">後台管理</a>
+                    <a href="about_us.html">關於我們</a>
+                    <a href="#" onclick="openNav()">聯絡我們</a>
+                </nav>
+                <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
+                <form class="headerSearch" method="POST" action="search_result.jsp">
+                    <input type="search" name="key_word" placeholder="請輸入產品名稱">
+                    <button><img src="assets/img/magnifying-glass.png"></button>
+                </form>
+            </div>
+        </header>
+    </div>
 
     <div class="bg-image img1"></div>
     <div class="bg-image img2"></div>
@@ -40,53 +42,54 @@
     <div class="bg-text">
 
         <div class="tab">
-            <button class="tablinks" onclick="openCard(event, 'AboutUs')" >關於我們</button>
+            <button class="tablinks" onclick="openCard(event, 'AboutUs')">關於我們</button>
             <button class="tablinks" onclick="openCard(event, 'AboutIn')">關於【in耳吉】</button>
             <button class="tablinks" onclick="openCard(event, 'Ideal')">品牌初衷</button>
             <button class="tablinks" onclick="openCard(event, 'Member')">成員介紹</button>
-          </div>
-          
-          <div id="AboutUs" class="tabcontent">
-            <p>一群來自中原大學資訊管理學系的同學，素昧平生的彼此看似毫無交集，卻因著音樂品質的癡迷追求而相知相惜。無論是晨曦破曉、漫漫黑夜，抑或在通勤路上、課堂期間，我們渴望藉由鼓膜上的音符悸動，珍藏日常時分的吉光片羽。而當音樂的著迷遇見資管的熱情，轟轟烈烈的化學反應如是促使【in耳吉】的誕生，冀望能將千日千夜的故事耳語傳遍各地。</p>
-          </div>
-          
-          <div id="AboutIn" class="tabcontent">
-            <p>洋洋盈耳的樂曲悠揚，耳「吉」裡的連綿感動。在【in耳吉】，我們堅信音樂對於心靈的療癒慰藉，盼望能將作曲家最純粹真摯的深情告白，迴盪進聽眾的心坎深處。精挑細選出的21款耳機，承載著21份無盡堅持。快速便捷的購物流程，更象徵著熱忱懇切的盛情邀請，迫不及待您的細細傾聽。</p> 
-          </div>
-          
-          <div id="Ideal" class="tabcontent">
-            <p>太平洋裡的52赫茲鯨魚，<br>因著自身懸殊頻率，<br>成為「世界上最孤獨的鯨魚」。<br><br>
-                在【in耳吉】，<br>52赫茲不再孤寂，<br>日常生活的浪漫迷離更顯撫慰柔情。</p>
-          </div>
+        </div>
 
-          <div id="Member" class="tabcontent">
+        <div id="AboutUs" class="tabcontent">
+            <p>一群來自中原大學資訊管理學系的同學，素昧平生的彼此看似毫無交集，卻因著音樂品質的癡迷追求而相知相惜。無論是晨曦破曉、漫漫黑夜，抑或在通勤路上、課堂期間，我們渴望藉由鼓膜上的音符悸動，珍藏日常時分的吉光片羽。而當音樂的著迷遇見資管的熱情，轟轟烈烈的化學反應如是促使【in耳吉】的誕生，冀望能將千日千夜的故事耳語傳遍各地。</p>
+        </div>
+
+        <div id="AboutIn" class="tabcontent">
+            <p>洋洋盈耳的樂曲悠揚，耳「吉」裡的連綿感動。在【in耳吉】，我們堅信音樂對於心靈的療癒慰藉，盼望能將作曲家最純粹真摯的深情告白，迴盪進聽眾的心坎深處。精挑細選出的21款耳機，承載著21份無盡堅持。快速便捷的購物流程，更象徵著熱忱懇切的盛情邀請，迫不及待您的細細傾聽。</p>
+        </div>
+
+        <div id="Ideal" class="tabcontent">
+            <p>太平洋裡的52赫茲鯨魚，<br>因著自身懸殊頻率，<br>成為「世界上最孤獨的鯨魚」。<br><br> 在【in耳吉】，
+                <br>52赫茲不再孤寂，<br>日常生活的浪漫迷離更顯撫慰柔情。</p>
+        </div>
+
+        <div id="Member" class="tabcontent">
             <p>10944128 資管二甲 姜智森<br>10944153 資管二甲 張鈞量<br>10944234 資管二乙 廖庭萱<br>10944239 資管二乙 李世彥</p>
-          </div>
-          
+        </div>
+
     </div>
 
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2668942752266!2d121.24136351423672!3d24.957032547528176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z5Lit5Y6f5aSn5a246LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1640762486119!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2668942752266!2d121.24136351423672!3d24.957032547528176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z5Lit5Y6f5aSn5a246LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1640762486119!5m2!1szh-TW!2stw"
+                allowfullscreen="" loading="lazy"></iframe>
             <h3>
-                隸屬學系：中原大學資訊管理學系<br>
-                聯絡地址：320314 桃園市中壢區中北路200號 <br>
-                電話：886-3-265-5401<br>
-            <hr class="contacthr">
-            <form method="post" action=" ">
-                <input class="contact" type="text" name="contact_name" placeholder="姓名"><br>
-                <input class="contact" type="email" name="contact_email" placeholder="Email"><br>
-            <textarea name="contact" cols="52" rows="10" wrap="hard" placeholder="歡迎留下任何鼓勵或意見回饋，謝謝您！"></textarea><br>
-            <input class="contactbutton" type="submit" value="確認送出" />
-            </form>
+                隸屬學系：中原大學資訊管理學系<br> 聯絡地址：320314 桃園市中壢區中北路200號 <br> 電話：886-3-265-5401
+                <br>
+                <hr class="contacthr">
+                <form method="post" action=" ">
+                    <input class="contact" type="text" name="contact_name" placeholder="姓名"><br>
+                    <input class="contact" type="email" name="contact_email" placeholder="Email"><br>
+                    <textarea name="contact" cols="52" rows="10" wrap="hard" placeholder="歡迎留下任何鼓勵或意見回饋，謝謝您！"></textarea><br>
+                    <input class="contactbutton" type="submit" value="確認送出" />
+                </form>
             </h3>
         </div>
-      </div>
-      
-      <script type="text/javascript" src="assets/js/contact_us.js"></script> 
-      <script type="text/javascript" src="assets/js/about_us.js"></script> 
-    
+    </div>
+
+    <script type="text/javascript" src="assets/js/contact_us.js"></script>
+    <script type="text/javascript" src="assets/js/about_us.js"></script>
+
 
 </body>
+
 </html>

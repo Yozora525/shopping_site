@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/all.css">
     <link rel="stylesheet" href="assets/css/shopping_cart.css">
 </head>
+
 <body>
     <header class="mainHeader">
         <div class="container">
@@ -22,7 +24,7 @@
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
             <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
-            <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
+            <form class="headerSearch" method="POST" action="search_result.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>
@@ -129,7 +131,7 @@
             <table>
                 <tr>
                     <td rowspan="2" class="addressCol">收件地址</td>
-                    <td class="postalCodeCol"><input class="postalCode" type="text" name="postalCode" placeholder="請輸入郵遞區號"/></td>
+                    <td class="postalCodeCol"><input class="postalCode" type="text" name="postalCode" placeholder="請輸入郵遞區號" /></td>
                     <td class="cityCol">
                         <select name="city" id="city">
                             <option value="臺北市">臺北市</option>
@@ -156,7 +158,7 @@
                             <option value="嘉義市">嘉義市</option>
                         </select>
                     </td>
-                    <td class="checkoutCol" rowspan="2"><input class="checkout" type="submit" value="結帳  ▶"/></td>
+                    <td class="checkoutCol" rowspan="2"><input class="checkout" type="submit" value="結帳  ▶" /></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="detailedAddressCol"><input class="detailedAddress" type="text" name="detailedAddress" placeholder="請輸入詳細地址"></td>
@@ -167,4 +169,5 @@
     <script type="text/javascript" src="assets/js/shopping_cart.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
+
 </html>

@@ -39,7 +39,7 @@
 
             <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
 
-            <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
+            <form class="headerSearch" method="POST" action="search_result.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/product_introduction.css">
     <link rel="stylesheet" href="assets/css/contact_us.css">
 </head>
+
 <body>
     <header class="mainHeader">
         <div class="container">
@@ -23,7 +25,7 @@
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
             <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
-            <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
+            <form class="headerSearch" method="POST" action="search_result.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>
@@ -47,18 +49,18 @@
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
+
 
             <!-- Thumbnail images -->
             <div class="row">
                 <div class="column">
-                <img class="demo cursor" src="assets/img/MoonDrop_illumination1.jpg" style="width:100%" onclick="currentSlide(1)">
+                    <img class="demo cursor" src="assets/img/MoonDrop_illumination1.jpg" style="width:100%" onclick="currentSlide(1)">
                 </div>
                 <div class="column">
-                <img class="demo cursor" src="assets/img/MoonDrop_illumination2.jpg" style="width:100%" onclick="currentSlide(2)">
+                    <img class="demo cursor" src="assets/img/MoonDrop_illumination2.jpg" style="width:100%" onclick="currentSlide(2)">
                 </div>
                 <div class="column1">
-                <img class="demo cursor" src="assets/img/MoonDrop_illumination3.jpg" style="width:100%" onclick="currentSlide(3)">
+                    <img class="demo cursor" src="assets/img/MoonDrop_illumination3.jpg" style="width:100%" onclick="currentSlide(3)">
                 </div>
             </div>
         </div>
@@ -82,8 +84,8 @@
                     <li>LCP液晶高分子聚合物球頂，PEEK高阻尼懸邊</li>
                     <li>標配可更換插頭單晶銅內芯，銅鍍銀屏蔽同軸線材</li>
                 </ul>
-                <p class="priceShow">售價   :&nbsp;&nbsp;&nbsp;<b class="price">$26800</b></p>
-                <input class="number" type="number" min="1" value="1"/>
+                <p class="priceShow">售價 :&nbsp;&nbsp;&nbsp;<b class="price">$26800</b></p>
+                <input class="number" type="number" min="1" value="1" />
                 <p class="amount">尚餘15組</p>
                 <div class="buttonBlock">
                     <a href="#"><button class="addToCart"><img src="assets/img/shopping_cart.png">&nbsp;&nbsp;加入購物車</button></a>
@@ -176,28 +178,29 @@
             </tr>
         </table>
     </div>
-    
+
     <script type="text/javascript" src="assets/js/product_introduction.js"></script>
 
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2668942752266!2d121.24136351423672!3d24.957032547528176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z5Lit5Y6f5aSn5a246LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1640762486119!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2668942752266!2d121.24136351423672!3d24.957032547528176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346822143c046009%3A0x63e3ef21e3beebac!2z5Lit5Y6f5aSn5a246LOH6KiK566h55CG5a2457O7!5e0!3m2!1szh-TW!2stw!4v1640762486119!5m2!1szh-TW!2stw"
+                allowfullscreen="" loading="lazy"></iframe>
             <h3>
-                隸屬學系：中原大學資訊管理學系<br>
-                聯絡地址：320314 桃園市中壢區中北路200號 <br>
-                電話：886-3-265-5401<br>
-            <hr class="contacthr">
-            <form method="post" action=" ">
-                <input class="contact" type="text" name="contact_name" placeholder="姓名"><br>
-                <input class="contact" type="email" name="contact_email" placeholder="Email"><br>
-            <textarea name="contact" cols="52" rows="10" wrap="hard" placeholder="歡迎留下任何鼓勵或意見回饋，謝謝您！"></textarea><br>
-            <input class="contactbutton" type="submit" value="確認送出" />
-            </form>
+                隸屬學系：中原大學資訊管理學系<br> 聯絡地址：320314 桃園市中壢區中北路200號 <br> 電話：886-3-265-5401
+                <br>
+                <hr class="contacthr">
+                <form method="post" action=" ">
+                    <input class="contact" type="text" name="contact_name" placeholder="姓名"><br>
+                    <input class="contact" type="email" name="contact_email" placeholder="Email"><br>
+                    <textarea name="contact" cols="52" rows="10" wrap="hard" placeholder="歡迎留下任何鼓勵或意見回饋，謝謝您！"></textarea><br>
+                    <input class="contactbutton" type="submit" value="確認送出" />
+                </form>
             </h3>
         </div>
-      </div>
-      
-      <script type="text/javascript" src="assets/js/contact_us.js"></script>  
+    </div>
+
+    <script type="text/javascript" src="assets/js/contact_us.js"></script>
 </body>
+
 </html>
