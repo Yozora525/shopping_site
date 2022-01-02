@@ -7,6 +7,7 @@
 <html>
 <head></head>
 <body>
+
 <%
 
     request.setCharacterEncoding("UTF-8");
@@ -31,16 +32,29 @@
 
         if(no > 0){
             out.println("新增資料成功, 回<a href='../../managed_server.jsp'>後台管理</a>");
-            con.close();
+            //con.close();
         }
 
         else{
             out.println("新增資料失敗, 回<a href='../../managed_server.jsp'>後台管理</a>");
             con.close();
         }
+        
+        sql = "SELECT * FROM `transaction` WHERE `product_name` LIKE '" + strProductName + "'";
+        ResultSet rs = con.createStatement().executeQuery(sql);
+        int iInventoryQuantity = 0;
 
-        
-        
+        while(rs.next()){
+            iInventoryQuantity += rs.getInt(2);
+        }
+
+        sql = "UPDATE `inventory` SET `inventory_quantity` = '" + iInventoryQuantity + "' WHERE `product_name` LIKE '" + strProductName + "'";
+
+        int c=con.createStatement().executeUpdate(sql); //可回傳異動數
+        if (c > 0){
+            out.println("");
+            con.close();
+        }
     }
     
 %>

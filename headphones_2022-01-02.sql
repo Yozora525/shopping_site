@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2022-01-02 14:44:56 +0000
+# 生成時間: 2022-01-02 15:22:40 +0000
 # ************************************************************
 
 
@@ -71,38 +71,35 @@ DROP TABLE IF EXISTS `inventory`;
 
 CREATE TABLE `inventory` (
   `product_name` varchar(45) NOT NULL,
-  `import_quantity` int(11) DEFAULT 0,
-  `sold_quantity` int(11) DEFAULT 0,
-  `transaction_date` date DEFAULT NULL,
   `inventory_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `inventory` WRITE;
 /*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
 
-INSERT INTO `inventory` (`product_name`, `import_quantity`, `sold_quantity`, `transaction_date`, `inventory_quantity`)
+INSERT INTO `inventory` (`product_name`, `inventory_quantity`)
 VALUES
-	('AKG K240',100,0,NULL,100),
-	('AKG K701',0,0,NULL,0),
-	('AKG K702',0,0,NULL,0),
-	('AKG K712',0,0,NULL,0),
-	('Galaxy Buds Pro',0,0,NULL,0),
-	('Galaxy Buds2',0,0,NULL,0),
-	('SONY MDR-XB950N1',0,0,NULL,0),
-	('SONY WH-1000XM4',0,0,NULL,0),
-	('SONY WH-H900N',0,0,NULL,0),
-	('SONY WI-SP500',0,0,NULL,0),
-	('SONY WI-SP510',0,0,NULL,0),
-	('SONY WI-SP600N',0,0,NULL,0),
-	('水月雨 blessing2',0,0,NULL,0),
-	('水月雨 KATO',0,0,NULL,0),
-	('水月雨 kxxs',0,0,NULL,0),
-	('水月雨 SSR',0,0,NULL,0),
-	('水月雨 光',0,0,NULL,0),
-	('鐵三角 ATH-M50xBT2',0,0,NULL,0),
-	('鐵三角 HL7BT',0,0,NULL,0),
-	('鐵三角 SR50BT',0,0,NULL,0),
-	('鐵三角 WS660BT',0,0,NULL,0);
+	('AKG K240',4700),
+	('AKG K701',1300),
+	('AKG K702',1500),
+	('AKG K712',0),
+	('Galaxy Buds Pro',0),
+	('Galaxy Buds2',0),
+	('SONY MDR-XB950N1',0),
+	('SONY WH-1000XM4',0),
+	('SONY WH-H900N',0),
+	('SONY WI-SP500',0),
+	('SONY WI-SP510',0),
+	('SONY WI-SP600N',0),
+	('水月雨 blessing2',0),
+	('水月雨 KATO',0),
+	('水月雨 kxxs',0),
+	('水月雨 SSR',0),
+	('水月雨 光',0),
+	('鐵三角 ATH-M50xBT2',0),
+	('鐵三角 HL7BT',0),
+	('鐵三角 SR50BT',0),
+	('鐵三角 WS660BT',0);
 
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -242,7 +239,18 @@ LOCK TABLES `transaction` WRITE;
 
 INSERT INTO `transaction` (`product_name`, `import_quantity`, `sold_quantity`, `transaction_date`)
 VALUES
-	('AKG K240',500,0,'2022-01-02');
+	('AKG K240',500,0,'2022-01-02'),
+	('AKG K240',100,0,'2022-01-02'),
+	('AKG K240',100,0,'2022-01-02'),
+	('AKG K240',300,0,'2022-01-02'),
+	('AKG K240',400,0,'2022-01-02'),
+	('AKG K240',600,0,'2022-01-02'),
+	('AKG K240',600,0,'2022-01-02'),
+	('AKG K240',1000,0,'2022-01-02'),
+	('AKG K240',400,0,'2022-01-02'),
+	('AKG K240',700,0,'2022-01-02'),
+	('AKG K701',1300,0,'2022-01-02'),
+	('AKG K702',1500,0,'2022-01-02');
 
 /*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
 UNLOCK TABLES;

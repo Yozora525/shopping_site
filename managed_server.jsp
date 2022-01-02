@@ -86,8 +86,7 @@
                             sql = "SELECT `product_name`, `price`, `status` FROM `product`";
                             ResultSet rsProductInfo = con.createStatement().executeQuery(sql);
                             ResultSet rsProductName = con.createStatement().executeQuery(sql);
-                            sql = "SELECT `transaction_date`, `product_name`, `sold_quantity`, `import_quantity`, `inventory_quantity` FROM `inventory`";
-                            // ResultSet rsInventory = con.createStatement().executeQuery(sql);
+                            sql = "SELECT `inventory_quantity` FROM `inventory`";
                             ResultSet rsInventory1 = con.createStatement().executeQuery(sql);
                             
 
@@ -95,7 +94,7 @@
                                 out.println("<tr class='tdSet'>");
                                 out.println("<td class='tdSet'>" + rsProductInfo.getString(1) + "</td>");
                                 out.println("<td class='tdSet'> $" + rsProductInfo.getString(2) + "</td>");
-                                out.println("<td class='tdSet'>" + rsInventory1.getString(5) + "個</td>");
+                                out.println("<td class='tdSet'>" + rsInventory1.getString(1) + "個</td>");
 
                                 out.println("<td class='tdSet'>");
 
