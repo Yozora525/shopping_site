@@ -15,10 +15,7 @@
 </head>
 
 <body>
-<%
-    String strKeyWord = request.getParameter("key_word");
-    ResultSet rs;
-%>
+
     <header class="mainHeader">
         <div class="container">
             <a href="index.jsp" class="logo">
@@ -34,7 +31,8 @@
             <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
             <form class="headerSearch" method="POST" action="search_result.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
-                <button><img src="assets/img/magnifying-glass.png"></button>
+                <button ><img src="assets/img/magnifying-glass.png"></button>
+                <%-- <input type="submit" value="<img src='assets/img/magnifying-glass.png'>"> --%>
             </form>
         </div>
     </header>
@@ -70,27 +68,48 @@
         </div>
     </div>
 
+
     <div class="resultBlock">
         <form action="">
-            <table>
-                <tr>
-                    <td>
-                        <img src="assets/img/MoonDrop_illumination1.jpg" alt="">
-                    </td>
-                    <td>
-                        <p class="name">水月雨 光</p>
-                        <p class="type">有線入耳式耳機</p>
-                    </td>
-                    <td class="price">售價 $26800</td>
-                    <td><button>查看商品</button></td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <hr>
-                    </td>
-                </tr>
-                </tr>
-            </table>
+            
+            <%
+                request.setCharacterEncoding("UTF-8");
+                response.setCharacterEncoding("UTF-8");
+                String strKeyWord = request.getParameter("key_word");
+
+                // out.println(strKeyWord);
+                ResultSet rs;
+
+                sql = "SELECT * FROM `product` WHERE `product_name` LIKE '%" + strKeyWord + "%' OR `product_introduce` LIKE '%" + strKeyWord + "%'";
+                rs = con.createStatement().executeQuery(sql);
+
+                while(rs.next()){
+                    out.println("<table>");
+                    out.println("<tr>");
+                    out.println("<td>");
+                    out.println("<img src='" + rs.getString(4) + "' >");
+                    out.println("</td>");
+
+                    out.println("<td>");
+                    out.println("<p class='name'>" + rs.getString(1) + "</p>");
+                    out.println("<p class='type'>" + rs.getString(6) + rs.getString(5) + "耳機</p>");
+                    out.println("</td>");
+
+                    out.println("<td class='price'>售價 $" + rs.getString(2) + "</td>");
+                    out.println("<td><button>查看商品</button></td>");
+                    
+                    out.println("</tr>");
+                    out.println("<tr>");
+                    out.println("<td colspan='4'>");
+                    out.println("<hr>");
+                    out.println("</td>");
+                    out.println("</tr>");
+                    out.println("</tr>");
+                    out.println("</table>");
+                }
+            %>
+                
+                
         </form>
     </div>
 </body>

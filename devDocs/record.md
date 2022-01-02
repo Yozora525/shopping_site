@@ -33,6 +33,7 @@ managed_server.jsp 存貨管理完成
 
 ### 2021/01/02 ###
 managed_server.jsp 新增進貨完成
+search_result.jsp 產品搜尋完成 接下來做篩選
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
