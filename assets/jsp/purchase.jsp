@@ -24,8 +24,8 @@
     else{
         // out.println(strTransactionDate);
 
-        sql = "INSERT `inventory`(`product_name`,`import_quantity`, `sold_quantity` ,`transaction_date`,`inventory_quantity`) " + 
-        "VALUES ('"+ strProductName + "','" + iProductAdd + "', '0' ,'" + strTransactionDate + "','" + iProductAdd + "')";
+        sql = "INSERT `transaction`(`product_name`,`import_quantity`, `transaction_date`) " + 
+        "VALUES ('"+ strProductName + "','" + iProductAdd + "','" + strTransactionDate + "')";
 
         no=con.createStatement().executeUpdate(sql);
 

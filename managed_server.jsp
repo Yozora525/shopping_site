@@ -83,14 +83,11 @@
                         </tr>
 
                         <%
-                            int iInventory= 0;
-
                             sql = "SELECT `product_name`, `price`, `status` FROM `product`";
                             ResultSet rsProductInfo = con.createStatement().executeQuery(sql);
                             ResultSet rsProductName = con.createStatement().executeQuery(sql);
-
                             sql = "SELECT `transaction_date`, `product_name`, `sold_quantity`, `import_quantity`, `inventory_quantity` FROM `inventory`";
-                            ResultSet rsInventory = con.createStatement().executeQuery(sql);
+                            // ResultSet rsInventory = con.createStatement().executeQuery(sql);
                             ResultSet rsInventory1 = con.createStatement().executeQuery(sql);
                             
 
@@ -98,7 +95,6 @@
                                 out.println("<tr class='tdSet'>");
                                 out.println("<td class='tdSet'>" + rsProductInfo.getString(1) + "</td>");
                                 out.println("<td class='tdSet'> $" + rsProductInfo.getString(2) + "</td>");
-                                //
                                 out.println("<td class='tdSet'>" + rsInventory1.getString(5) + "個</td>");
 
                                 out.println("<td class='tdSet'>");
@@ -198,10 +194,12 @@
                 <th>品名</th>
                 <th>售出數</th>
                 <th>進貨數</th>
-                <th>目前庫存</th>
             </tr>
 
             <%
+                sql = "SELECT `transaction_date`, `product_name`, `sold_quantity`, `import_quantity` FROM `transaction`";
+                ResultSet rsInventory = con.createStatement().executeQuery(sql);
+                
                 while(rsInventory.next()) {
                 out.println("<tr>");
 
@@ -209,7 +207,6 @@
                 out.println("<td>" + rsInventory.getString(2) + "</td>");
                 out.println("<td>" + rsInventory.getString(3) + "</td>");
                 out.println("<td>" + rsInventory.getString(4) + "</td>");
-                out.println("<td>" + rsInventory.getString(5) + "</td>");
 
                 out.println("</tr>");
                 }
