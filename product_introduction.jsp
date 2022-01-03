@@ -89,7 +89,12 @@
             <div class="productContent">
                 <%-- <p class="name">水月雨 光</p> --%>
                 <%
+                while(rsProduct.next()) {
+                                out.println("<b><p class='name'> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:25px; text-align:left' value='"+rsProduct.getString(1)+"'readonly/></b><br></p>");
+                }
+                /*
                     out.println("<p class='name'>" + strProductNameItroduce + "</p>");
+                */
                 %>
                 <div class="stars">
                     <input type="radio" id="five" name="rate" value="5">
@@ -124,17 +129,19 @@
                     }
                 %>
                 <div class="buttonBlock">
-                 <%
+                <%--
+                <%
                    out.println(" <a href='shopping_cart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='addToCart'><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a>");
                 %> 
-                   
+                --%>   
                    <%--
                     <%
                         sql=INSERT 
                     
                     %> 
                     --%>
-                    <a href="#"><button class="checkout">直接結帳</button></a>
+                    <a href="#"><button class="addToCart" type="submit"><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a>
+                    <a href="#"><button class="checkout" type="submit">直接結帳</button></a>
                 </div>
             </div>
         </div>
@@ -149,10 +156,71 @@
             <p>頸帶設計輕巧柔軟有彈性，專為全天穿戴舒適度打造。耳塞式耳機內建防纏結磁鐵，收納攜帶更俐落。</p>
         </div>
     </div>
+
+    <%--留言板--%>
+
     <h2 class="commentTitle">留言評價</h2>
     <div class="comment">
+    <%
+        sql="SELECT * FROM `evaluation`";
+        ResultSet hs_comment=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
+        hs_comment.last();
+        int total_content=hs_comment.getRow();
+        //out.println("共"+total_content+"筆留言<p>"); //留言總筆數
+
+
+        //java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis()); 留言日期
+
+           sql="INSERT INTO evaluation (`email`, `procuct_name`, `score`, `comment`, `comment_date`)";
+           sql+="VALUES ('" + request.getParameter("user_email") + "', ";
+           sql+="'"+request.getParameter("strProductNameItroduce")+"', ";
+           sql+="'"+null+"', ";
+         //  sql+="'"+new_content+"', ";   
+       //    sql+="'"+new_date+"',";   
+//INSERT INTO customers (C_Id, Name, City, Address, Phone)
+//VALUES (3, '李三', '高雄縣', 'ZZ路300號', '07-12345678');
+
+        /*
+        while(hs_comment.next())
+        {
+            out.println("訪客姓名:"+hs_comment.getString(2)+"<br>");
+            out.println("E-mail:"+hs_comment.getString(1)+"<br>");
+            out.println("留言內容:"+hs_comment.getString(4)+"<br>");
+            out.println("留言時間:"+hs_comment.getString(5)+"<br><hr>");
+                }
+                */
+    %>
         <table>
-            <tr>
+        <%
+        for(int i=1;i<=total_content;i++)
+        {
+            out.println("<tr>");
+            while(hs_comment.next())
+            {
+                out.println("<td><div class='commentPerson'>");
+                out.println("<img src='assets/img/profile1.png'>");
+                out.println("<p><b>"+hs_comment.getString(1)+"</b></p>");    //名字
+                out.println("<div class='stars1'>");
+
+                out.println("<input type='radio' id='five1' name='rate' value='5'>"); //星星
+                out.println("<label for='five'></label>");
+                out.println("<input type='radio' id='four1' name='rate' value='4'>");
+                out.println("<label for='four'></label>");
+                out.println("<input type='radio' id='three1' name='rate' value='3'>");
+                out.println("<label for='three'></label>");
+                out.println("<input type='radio' id='two1' name='rate' value='2'>");
+                out.println("<label for='two'></label>");
+                out.println("<input type='radio' id='one1' name='rate' value='1'>");
+                out.println("<label for='one'></label>");
+
+                out.println("</div> </div> <div class='commentText'>");
+                out.println("<p>"+hs_comment.getString(4)+"</p>");  //評論內容
+                out.println("</div> </td> </tr>");
+            }    
+        }
+        %>
+          <!-- -->
+                <tr>
                 <td>
                     <div class="commentPerson">
                         <img src="assets/img/profile1.png">
@@ -197,7 +265,8 @@
                         <p>音質細節部分表現的超級好!!</p>
                     </div>
                 </td>
-            </tr>
+            </tr> 
+           
             <tr>
                 <td>
                     <div class="commentPerson">

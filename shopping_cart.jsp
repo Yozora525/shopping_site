@@ -13,13 +13,18 @@
 </head>
 <body>
 <%
-    if(session.getAttribute("user_email") == null) {
-        out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
-    }
-    else{
-        String cart_email=session.getAttribute("user_email").toString();
-        sql="SELECT * FROM `shopping_cart` WHERE `email`='"+cart_email+"'";
-        ResultSet hr_cart=con.createStatement().executeQuery(sql);
+  //  if(session.getAttribute("user_email") == null) {
+ //       out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
+  //  }
+  //  else{
+        
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        sql="SELECT `price` FROM `product` WHERE `product_name` = '" + request.getParameter("strProductNameItroduce") + "'";
+        ResultSet rsProduct_1=con.createStatement().executeQuery(sql);
+        int strPrice =0;
+        //strPrice= rsProduct_1.getInt("price"); //取得商品單價
+        out.println(strPrice);
        /*
             while(hr_cart.next())
         {
@@ -30,7 +35,7 @@
 
         } 
         */
-    }
+    
         %>
 
     <header class="mainHeader">
@@ -67,13 +72,14 @@
 
                         <%
 
+
                         for(int i=1;i<= count;i++)
                         {
                             out.println("<tr class='tdSet'>");
 
                             for(int j=1;j<=count;j++)
                             {
-                                out.println("<td class='tdSet'>"+cart_productName+"</td>");
+                                out.println("<td class='tdSet'>"+request.getParameter("strProductNameItroduce")+"</td>");
                                 out.println("<td class='tdSet'>"+cart_price+"</td>");
                                 out.println("<td class='tdSet'>";
                                 out.println("<select name='quantity' id='number1'>");
