@@ -23,6 +23,12 @@
 .classBlock{
     padding-bottom: 30px;
 }
+.priceUpper{
+    width: 75px;
+}
+.priceFloor{
+    width: 75px;
+}
 #brand{
     cursor: pointer;
 }

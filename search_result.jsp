@@ -52,15 +52,14 @@
                             <option value="SAMSUNG">SAMSUNG</option>
                         </select>
                     </p>
+                    <p>
+                        價格範圍: 
+                    </p>
+                    <p>
+                        <input type="text" class="priceUpper" name="priceUpper" placeholder="$最小值">
+                    </p>
                     <p class="classBlock">
-                        價格:&nbsp;&nbsp;&nbsp;
-                        <select id="price" name="price">
-                            <option value="price1">2500 以下</option>
-                            <option value="price2">2500 ~ 5000</option>
-                            <option value="price3">5000 ~ 7500</option>
-                            <option value="price4">7500 ~ 10000</option>
-                            <option value="price5">10000 以上</option>
-                        </select>
+                        <input type="text" class="priceFloor" name="priceFloor" placeholder="$最大值">
                     </p>
                     <p class="classBlock">
                         <input type="text" class="keyword" name="keyword" placeholder="請輸入關鍵字">
