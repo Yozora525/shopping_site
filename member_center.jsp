@@ -52,6 +52,7 @@
                 <%
                     sql = "SELECT * FROM `user` WHERE `email` = '" + session.getAttribute("email") + "'";
                     ResultSet rs = con.createStatement().executeQuery(sql);
+                    ResultSet rsUser = con.createStatement().executeQuery(sql);
                     
                     while (rs.next()) {
                         out.println("<p>" + rs.getString(2) + "，您好!</p>");
@@ -67,17 +68,25 @@
                 </div>
             </div>
             <div class="memberRight">
-                <form action="">
+                <form action="assets/jsp/modify.jsp">
                     <table>
-                        <tr>
-                            <td>姓名 :&nbsp;&nbsp;<input type="text" id="name" readonly/><input type="text" id="nameModify" style="display:none;" /><input type="button" onclick="edit1();" id="btt1" name="btt1" value="Edit" /></td>
-                        </tr>
-                        <tr>
-                            <td>Email :&nbsp;&nbsp;<input type="email" id="email" readonly/><input type="email" id="emailModify" style="display:none;" /></td>
-                        </tr>
-                        <tr>
-                            <td>密碼 :&nbsp;&nbsp;<input type="text" id="password" readonly/><input type="text" id="passwordModify" style="display:none;" /><input type="button" onclick="edit5();" id="btt5" name="btt5" value="Edit" /></td>
-                        </tr>
+                        <%
+
+                            while(rsUser.next()){
+                                out.println("<tr>");
+                                out.println("<td>姓名 :&nbsp;&nbsp;<input type='text' id='name' value='" + rsUser.getString(2) + "' readonly/><input type='text' id='nameModify' style='display:none;' /><input type='button' onclick='edit1();' id='btt1' name='btt1' value='Edit' /></td>");
+                                out.println("</tr>");
+
+                                out.println("<tr>");
+                                out.println("<td>Email :&nbsp;&nbsp;<input type='email' id='email' value='" + rsUser.getString(1) + "' readonly/><input type='email' id='emailModify' style='display:none;' /></td>");
+                                out.println("</tr>");
+
+                                out.println("<tr>");
+                                out.println("<td>密碼 :&nbsp;&nbsp;<input type='text' id='password' readonly/><input type='text' id='passwordModify' style='display:none;' /><input type='button' onclick='edit5();' id='btt5' name='btt5' value='Edit' /></td>");
+                                out.println("</tr>");
+                            }
+                        
+                        %>
                     </table>
                 </form>
             </div>
