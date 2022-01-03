@@ -178,6 +178,30 @@
             </tr>
         </table>
     </div>
+    <form action="">
+        <h2 class="commentTitle">商品評價區</h2>
+        <div class="productComment">
+            <h1>請給分!!</h1>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" hidden/>
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4" hidden/>
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3" hidden/>
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2" hidden/>
+                <label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1" hidden/>
+                <label for="star1"></label>
+            </div>
+            <div class="commentInput">
+                <textarea name="commentContent" id="commentContent" cols="50" rows="10" placeholder="請留下你寶貴的意見!!"></textarea>
+            </div>
+            <div class="buttonBlock1">
+                <input class="submitComment" type="submit" value="送出">
+            </div>
+        </div>
+    </form>
 
     <script type="text/javascript" src="assets/js/product_introduction.js"></script>
 
@@ -201,6 +225,12 @@
     </div>
 
     <script type="text/javascript" src="assets/js/contact_us.js"></script>
+    <script src="assets/js/jquery.star-rating-svg.js"></script>
+    <script src="assets/js/jquery.star-rating-svg.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="assets/js/star_rating.js"></script>
+
 </body>
 
 </html>

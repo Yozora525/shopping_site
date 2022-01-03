@@ -232,3 +232,77 @@
     font-size: 20px;
     margin: 15px;
 }
+.productComment{
+    width: 95%;
+    height: 400px;
+    margin: 2.5%;
+    background-color: #c4c3c37a;
+    border-radius: 10px;
+    position: relative;
+}
+.productComment h1{
+    padding-left: 20%;
+    padding-top: 2%;
+    color: #0080FF;
+}
+.commentInput{
+    position: relative;
+    float: left;
+    margin-left: 13%;
+    top: -8%;
+}
+.commentInput textarea{
+    font-size: 16px;
+    resize: vertical;
+}
+.rating {
+    font-size: 0;
+    display: table;
+    margin-left: 10%;
+    padding-top: 2%;
+    float: left;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+.rating > label:before {
+    padding: 5px;
+    font-size: 75px;
+    line-height: 1em;
+    display: inline-block;
+    content: "★";
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #FFD700;
+}
+
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+    opacity: 0.5;
+}
+.buttonBlock1{
+    clear: both;
+    margin: 20%;
+}
+.submitComment{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    background-color: #0080FF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.submitComment:hover{
+    color: black;
+    background-color: white;
+}
