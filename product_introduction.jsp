@@ -17,7 +17,7 @@
 <body>
 <%
     request.setCharacterEncoding("UTF-8");
-    response.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
     String strProductNameItroduce = request.getParameter("product_name_introduce");
     
     
@@ -124,7 +124,10 @@
                     }
                 %>
                 <div class="buttonBlock">
-                    <a href="#"><button class="addToCart"><img src="assets/img/shopping_cart.png">&nbsp;&nbsp;加入購物車</button></a>
+                 <%
+                   out.println(" <a href='shopping_cart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='addToCart'><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a>");
+                %> 
+                   
                    <%--
                     <%
                         sql=INSERT 
