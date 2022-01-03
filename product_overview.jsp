@@ -59,10 +59,10 @@
             while(hr.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr.getString(3)+" ><br>");
-                out.println("<form><b><p>"+hr.getString(1)+"</b><br></p>");
+                out.println("<form action='product_introduction.jsp' method='post' target='_blank'><b><p>"+hr.getString(1)+"</b><br></p>");
                 out.println("<p>"+hr.getString(5)+hr.getString(4)+hr.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr.getString(2)+"<br></p></b>");
-                out.println("<a href='product_introduction.html'><button class='productDetails'><b>查看商品</b></button></form></a></div>");
+                out.println("<button class='productDetails'><b>查看商品</b></button></form></div>");
             }
 
             out.println("</div>");
