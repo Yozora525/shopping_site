@@ -38,7 +38,7 @@ search_result.jsp 產品搜尋完成 接下來做篩選
 ### 2021/01/03 ###
 logout.jsp
 server_logout.jsp
-會員、後台 登出完成
+會員、後台 登出完成, 
 產品介紹傳值
 
 ##  智森 ##

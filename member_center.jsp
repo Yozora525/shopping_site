@@ -31,7 +31,7 @@
             <nav class="navBar">
                 <a href="product_overview.jsp">產品介紹</a>
                 <a href="member_center.jsp">會員中心</a>
-                <a href="managed_server_login.html">後台管理</a>
+                <a href="managed_server.jsp">後台管理</a>
                 <a href="about_us.html">關於我們</a>
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
@@ -68,21 +68,21 @@
                 </div>
             </div>
             <div class="memberRight">
-                <form action="assets/jsp/modify.jsp">
+                <form action="">
                     <table>
                         <%
 
                             while(rsUser.next()){
                                 out.println("<tr>");
-                                out.println("<td>姓名 :&nbsp;&nbsp;<input type='text' id='name' value='" + rsUser.getString(2) + "' readonly/><input type='text' id='nameModify' style='display:none;' /><input type='button' onclick='edit1();' id='btt1' name='btt1' value='Edit' /></td>");
+                                out.println("<td>姓名  :&nbsp;&nbsp;<input type='text' id=name' readonly/><input type='button' onclick='start1()' id='displaysign1' name='btt1' value='Edit'/></td>");
                                 out.println("</tr>");
 
                                 out.println("<tr>");
-                                out.println("<td>Email :&nbsp;&nbsp;<input type='email' id='email' value='" + rsUser.getString(1) + "' readonly/><input type='email' id='emailModify' style='display:none;' /></td>");
+                                out.println("<td>Email  :&nbsp;&nbsp;<input type='email' id='email' readonly/></td>");
                                 out.println("</tr>");
 
                                 out.println("<tr>");
-                                out.println("<td>密碼 :&nbsp;&nbsp;<input type='text' id='password' readonly/><input type='text' id='passwordModify' style='display:none;' /><input type='button' onclick='edit5();' id='btt5' name='btt5' value='Edit' /></td>");
+                                out.println("<td>密碼   :&nbsp;&nbsp;<input type='text' id='password' readonly/><input type='button' onclick='start()' id='displaysign' name='btt5' value='Edit'/></td>");
                                 out.println("</tr>");
                             }
                         
@@ -99,8 +99,51 @@
                 <a href="member_comment_record.html"><button class="recordBtn">評論紀錄</button></a>
             </div>
         </div>
+        <form action="assets/jsp/modify_username.jsp">
+            <div class="signform1" id="signform1" style="display: none">
+                <div class="signclose1">
+                    <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose1()">
+                </div>
+                <div class="userdiv1">
+                <p>目前名稱:&nbsp;&nbsp;&nbsp;<input id="user1" class="signinput1" type="text" placeholder="請輸入目前的名稱" name="modify_user" ></p>
+                </div>
+                <div class="pwddiv1">
+                <p>新名稱:&nbsp;&nbsp;&nbsp;<input id="pwd1" class="signinput1" type="text" placeholder="請輸入新名稱" name="modify_pwd"></p>
+                </div>
+                <div class="postdiv1">
+                <input type="submit" value="確認"/>
+                <input type="reset" value="重填"/>
+                </div>
+                <br>
+            </div>
+        </form>
+
+        <form action="">
+            <div class="signform" id="signform" style="display: none">
+                <div class="signclose">
+                    <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose()">
+                </div>
+                <div class="userdiv">
+                <p>目前密碼:&nbsp;&nbsp;&nbsp;<input id="user" class="signinput" type="password" placeholder="請輸入目前的密碼" name="user" min="8" max="16"></p>
+                </div>
+                <div class="pwddiv">
+                <p>新密碼:&nbsp;&nbsp;&nbsp;<input id="pwd" class="signinput" type="password" placeholder="請輸入新密碼" name="pwd" min="8" max="16"></p>
+                </div>
+                <div class="pwddiv">
+                    <p>確認新密碼:&nbsp;&nbsp;&nbsp;<input id="newPwd" class="signinput" type="password" placeholder="請再次輸入新密碼" name="pwd" min="8" max="16"></p>
+                </div>
+                <div class="postdiv">
+                <input type="submit" value="確認"/>
+                <input type="reset" value="重填"/>
+                </div>
+                <br>
+            </div>
+        </form>
     </div>
-    <script type="text/javascript" src="assets/js/member_center.js"></script>
+    <%-- <script type="text/javascript" src="assets/js/member_center.js"></script> --%>
+    <script type="text/javascript" src="assets/js/member_center1.js"></script>
+    <script type="text/javascript" src="assets/js/member_center2.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <%
     }
     %>
