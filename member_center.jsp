@@ -102,6 +102,8 @@
     </div>
     <script type="text/javascript" src="assets/js/member_center.js"></script>
     <%
+    // out.println("fail");
+    response.sendRedirect("login.html");
     }
     %>
 </body>

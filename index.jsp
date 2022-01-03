@@ -21,7 +21,7 @@
             </a>
             <nav class="navBar">
                 <a href="product_overview.jsp">產品介紹</a>
-                <a href="login.html">會員中心</a>
+                <a href="member_center.jsp">會員中心</a>
                 <a href="managed_server_login.html">後台管理</a>
                 <a href="about_us.html">關於我們</a>
                 <a href="#" onclick="openNav()">聯絡我們</a>
