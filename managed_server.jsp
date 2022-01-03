@@ -28,7 +28,7 @@
     <header class="mainHeader">
         <div class="container">
 
-            <a href="index.html" class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="assets/img/headphones.png" alt="earphonelogo">
             </a>
 

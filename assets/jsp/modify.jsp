@@ -4,7 +4,13 @@
 <%@include file = "consql.jsp" %>
 
 <%
+    if(session.getAttribute("email") != null) {
 
-    out.println(session.getAttribute("email"));
+    }
+
+    else {
+        out.println("請確實登入, 點<a href='../../index.jsp'>我</a>回首頁");
+    }
+    
     
 %>
