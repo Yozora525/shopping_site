@@ -17,7 +17,7 @@
 <body>
 <%
     if(session.getAttribute("email") == null) {
-        out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
+        out.println("請確實登入, 點<a href='login.html'>我</a>回登入頁");
     }
 
     else{
@@ -30,7 +30,7 @@
             </a>
             <nav class="navBar">
                 <a href="product_overview.jsp">產品介紹</a>
-                <a href="login.html">會員中心</a>
+                <a href="member_center.jsp">會員中心</a>
                 <a href="managed_server_login.html">後台管理</a>
                 <a href="about_us.html">關於我們</a>
                 <a href="#" onclick="openNav()">聯絡我們</a>
@@ -102,8 +102,6 @@
     </div>
     <script type="text/javascript" src="assets/js/member_center.js"></script>
     <%
-    // out.println("fail");
-    response.sendRedirect("login.html");
     }
     %>
 </body>
