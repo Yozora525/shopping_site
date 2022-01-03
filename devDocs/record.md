@@ -39,6 +39,7 @@ search_result.jsp 產品搜尋完成 接下來做篩選
 logout.jsp
 server_logout.jsp
 會員、後台 登出完成
+產品介紹傳值
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
