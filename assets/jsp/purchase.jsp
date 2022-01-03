@@ -45,7 +45,7 @@
         int iInventoryQuantity = 0;
 
         while(rs.next()){
-            iInventoryQuantity += rs.getInt(2);
+            iInventoryQuantity += rs.getInt(2) - rs.getInt(3);
         }
 
         sql = "UPDATE `inventory` SET `inventory_quantity` = '" + iInventoryQuantity + "' WHERE `product_name` LIKE '" + strProductName + "'";
