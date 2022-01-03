@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/member_center.css">
+</head>
+<body>
+    <header class="mainHeader">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/headphones.png" alt="earphonelogo">
+            </a>
+            <nav class="navBar">
+                <a href="product_overview.html">產品介紹</a>
+                <a href="login.html">會員中心</a>
+                <a href="#">後台管理</a>
+                <a href="#">關於我們</a>
+                <a href="#" onclick="openNav()">聯絡我們</a>
+            </nav>
+            <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
+            <form class="headerSearch" method="POST" action="assets/jsp/search.jsp">
+                <input type="search" name="key_word" placeholder="請輸入產品名稱">
+                <button><img src="assets/img/magnifying-glass.png"></button>
+            </form>
+        </div>
+    </header>
+    <div class="memberCenter">
+        <div class="memberInfo">
+            <div class="memberLeft">
+                <div class="memberInfoImg">
+                    <img src="assets/img/memberImg.png">
+                </div>
+                <div class="memberInfoContent">
+                    <p>XXX，您好!</p>
+                </div>
+                <div class="hr">
+                    <hr>
+                </div>
+                <div class="logout">
+                    <p><a href="#" class="logoutButton">登出</a></p>
+                </div>
+            </div>
+            <div class="memberRight">
+                <form action="">
+                <table>
+                    <tr>
+                        <td>姓名  :&nbsp;&nbsp;<input type="text" id="name" readonly/><input type="button" onclick="start1()" id="displaysign1" name="btt1" value="Edit"/></td>
+                    </tr>
+                    <tr>
+                        <td>Email  :&nbsp;&nbsp;<input type="email" id="email" readonly/></td>
+                    </tr>
+                    <tr>
+                        <td>密碼   :&nbsp;&nbsp;<input type="text" id="password" readonly/><input type="button" onclick="start()" id="displaysign" name="btt5" value="Edit"/></td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+        </div>
+        <div class="record">
+            <div class="order">
+                <button class="recordBtn">訂單紀錄</button>
+            </div>
+            <div class="comment">
+                <button class="recordBtn">評論紀錄</button>
+            </div>
+        </div>
+        <form action="">
+            <div class="signform" id="signform" style="display: none">
+                <div class="signclose">
+                    <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose()">
+                </div>
+                <div class="userdiv">
+                <p>目前密碼:&nbsp;&nbsp;&nbsp;<input id="user" class="signinput" type="password" placeholder="請輸入目前的密碼" name="user" min="8" max="16"></p>
+                </div>
+                <div class="pwddiv">
+                <p>新密碼:&nbsp;&nbsp;&nbsp;<input id="pwd" class="signinput" type="password" placeholder="請輸入新密碼" name="pwd" min="8" max="16"></p>
+                </div>
+                <div class="pwddiv">
+                    <p>確認新密碼:&nbsp;&nbsp;&nbsp;<input id="newPwd" class="signinput" type="password" placeholder="請再次輸入新密碼" name="pwd" min="8" max="16"></p>
+                </div>
+                <div class="postdiv">
+                <input type="submit" value="確認"/>
+                <input type="reset" value="重填"/>
+                </div>
+                <br>
+            </div>
+        </form>
+        <form action="">
+            <div class="signform1" id="signform1" style="display: none">
+                <div class="signclose1">
+                    <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose1()">
+                </div>
+                <div class="userdiv1">
+                <p>目前名稱:&nbsp;&nbsp;&nbsp;<input id="user1" class="signinput1" type="text" placeholder="請輸入目前的名稱" name="user" ></p>
+                </div>
+                <div class="pwddiv1">
+                <p>新名稱:&nbsp;&nbsp;&nbsp;<input id="pwd1" class="signinput1" type="text" placeholder="請輸入新名稱" name="pwd"></p>
+                </div>
+                <div class="postdiv1">
+                <input type="submit" value="確認"/>
+                <input type="reset" value="重填"/>
+                </div>
+                <br>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="assets/js/member_center1.js"></script>
+    <script type="text/javascript" src="assets/js/member_center2.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
