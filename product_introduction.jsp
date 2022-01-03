@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="assets/css/contact_us.css">
 </head>
 <body>
+<%
+    out.println(request.getParameter("product_name_introduce"));
+%>
     <header class="mainHeader">
         <div class="container">
             <a href="index.jsp" class="logo">
