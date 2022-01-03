@@ -118,19 +118,19 @@
             </div>
         </form>
 
-        <form action="">
+        <form action="assets/jsp/modify_pwd.jsp">
             <div class="signform" id="signform" style="display: none">
                 <div class="signclose">
                     <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose()">
                 </div>
                 <div class="userdiv">
-                <p>目前密碼:&nbsp;&nbsp;&nbsp;<input id="user" class="signinput" type="password" placeholder="請輸入目前的密碼" name="user" min="8" max="16"></p>
+                <p>目前密碼:&nbsp;&nbsp;&nbsp;<input id="user" class="signinput" type="password" placeholder="請輸入目前的密碼" name="original_pwd" min="8" max="16"></p>
                 </div>
                 <div class="pwddiv">
-                <p>新密碼:&nbsp;&nbsp;&nbsp;<input id="pwd" class="signinput" type="password" placeholder="請輸入新密碼" name="pwd" min="8" max="16"></p>
+                <p>新密碼:&nbsp;&nbsp;&nbsp;<input id="pwd" class="signinput" type="password" placeholder="請輸入新密碼" name="new_pwd" min="8" max="16"></p>
                 </div>
                 <div class="pwddiv">
-                    <p>確認新密碼:&nbsp;&nbsp;&nbsp;<input id="newPwd" class="signinput" type="password" placeholder="請再次輸入新密碼" name="pwd" min="8" max="16"></p>
+                    <p>確認新密碼:&nbsp;&nbsp;&nbsp;<input id="newPwd" class="signinput" type="password" placeholder="請再次輸入新密碼" name="check_pwd" min="8" max="16"></p>
                 </div>
                 <div class="postdiv">
                 <input type="submit" value="確認"/>
