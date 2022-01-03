@@ -117,37 +117,7 @@
                     out.println("</tr>");
                     out.println("</table>");
                 }
-/*
 
-                sql = "SELECT * FROM `product` WHERE `product_name` LIKE '%" + strKeyWords + "%' OR `product_introduce` LIKE '%" + strKeyWords + "%' AND `brand` LIKE '" +  strBrand + "' ";
-                rsSearch = con.createStatement().executeQuery(sql);
-
-                while(rs.next()){
-                    out.println("<table>");
-                    out.println("<tr>");
-                    out.println("<td>");
-                    out.println("<img src='" + rsSearch.getString(4) + "' >");
-                    out.println("</td>");
-
-                    out.println("<form action='product_introduction.jsp' method='post'>");
-                    out.println("<td>");
-                    out.println("<p ><input class='name' type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; text-align:center' value='" + rsSearch.getString(1) + "'readonly/></p>");
-                    out.println("<p class='type'>" + rsSearch.getString(6) + rsSearch.getString(5) + "耳機</p>");
-                    out.println("</td>");
-
-                    out.println("<td class='price'>售價 $" + rsSearch.getString(2) + "</td>");
-                    out.println("<td><button class='productDetails' type='submit'>查看商品</button></td>");
-                    out.println("</form>");
-                    
-                    out.println("</tr>");
-                    out.println("<tr>");
-                    out.println("<td colspan='4'>");
-                    out.println("<hr>");
-                    out.println("</td>");
-                    out.println("</tr>");
-                    out.println("</tr>");
-                    out.println("</table>");
-                }*/
             %>
         
     </div>
