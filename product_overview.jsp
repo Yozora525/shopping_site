@@ -56,6 +56,7 @@
                 out.println("<a href='product_introduction.html'><button class='productDetails'><b>查看商品</b></button></a></div>");
             }*/
 
+            // shiyan
             while(hr.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr.getString(3)+" ><br>");
