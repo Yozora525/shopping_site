@@ -17,6 +17,7 @@
 <%
     String strProductNameItroduce = request.getParameter("product_name_introduce");
     
+    
 %>
     <header class="mainHeader">
         <div class="container">

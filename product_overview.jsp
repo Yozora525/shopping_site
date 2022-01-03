@@ -41,7 +41,7 @@
         <button class="tablink" onclick="openPage('microphone', this, '#c4c3c37a')">麥克風功能</button>
 
     <%
-
+            
             sql="SELECT `product_name`, `price`, `product_image`, `wear`,`link` ,`way` FROM `product` WHERE `wear`='入耳式' AND `status` ='1' ";
             ResultSet hr=con.createStatement().executeQuery(sql); 
 	
@@ -57,6 +57,7 @@
             }*/
 
             // shiyan
+            
             while(hr.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr.getString(3)+" ><br>");
