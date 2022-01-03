@@ -1,3 +1,7 @@
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %> 
+<%@include file = "assets/jsp/consql.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +15,14 @@
 </head>
 
 <body>
+<%
+    if(session.getAttribute("email") == null) {
+        out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
+    }
+
+    else{
+        %>
+
     <header class="mainHeader">
         <div class="container">
             <a href="index.jsp" class="logo">
@@ -37,13 +49,21 @@
                     <img src="assets/img/memberImg.png">
                 </div>
                 <div class="memberInfoContent">
-                    <p>XXX，您好!</p>
+                <%
+                    sql = "SELECT * FROM `user` WHERE `email` = '" + session.getAttribute("email") + "'";
+                    ResultSet rs = con.createStatement().executeQuery(sql);
+                    
+                    while (rs.next()) {
+                        out.println("<p>" + rs.getString(2) + "，您好!</p>");
+                    }
+                %>
+                    
                 </div>
                 <div class="hr">
                     <hr>
                 </div>
                 <div class="logout">
-                    <p><a href="#" class="logoutButton">登出</a></p>
+                    <p><a href="assets/jsp/logout.jsp" class="logoutButton">登出</a></p>
                 </div>
             </div>
             <div class="memberRight">
@@ -72,6 +92,9 @@
         </div>
     </div>
     <script type="text/javascript" src="assets/js/member_center.js"></script>
+    <%
+    }
+    %>
 </body>
 
 </html>

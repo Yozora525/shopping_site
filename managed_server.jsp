@@ -66,7 +66,7 @@
                 <hr>
             </div>
             <div class="logout">
-                <p><a href="index.jsp" class="logoutButton">登出</a></p>
+                <p><a href="assets/jsp/server_logout.jsp" class="logoutButton">登出</a></p>
             </div>
         </div>
         <div class="inventory">
