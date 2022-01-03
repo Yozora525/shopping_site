@@ -106,7 +106,7 @@
                 </ul>
                 <%
                     while(rsProduct2.next()){
-                        out.println("<p class='priceShow'>售價   c<b class='price'>$" + rsProduct2.getString(2) + "</b></p>");
+                        out.println("<p class='priceShow'>售價   <b class='price'>$" + rsProduct2.getString(2) + "</b></p>");
                     }
                     
                 %>

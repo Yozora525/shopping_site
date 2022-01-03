@@ -82,10 +82,16 @@
             while(hr_overEar.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr_overEar.getString(3)+" ><br>");
-                out.println("<b><p>"+hr_overEar.getString(1)+"</b><br></p>");
+
+                out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
+
+                out.println("<b><p> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:16px; text-align:center' value='"+hr_overEar.getString(1)+"'readonly/></b><br></p>");
                 out.println("<p>"+hr_overEar.getString(5)+hr_overEar.getString(4)+hr_overEar.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_overEar.getString(2)+"<br></p></b>");
-                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+                out.println("<button class='productDetails' type='submit'><b>查看商品</b></button>");
+
+                out.println("</form>");
+                out.println("</div>");
             }
 
             out.println("</div>");
@@ -98,10 +104,16 @@
             while(hr_wireless.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr_wireless.getString(3)+" ><br>");
-                out.println("<b><p>"+hr_wireless.getString(1)+"</b><br></p>");
+
+                out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
+
+                out.println("<b><p> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:16px; text-align:center' value='"+hr_wireless.getString(1)+"'readonly/></b><br></p>");
                 out.println("<p>"+hr_wireless.getString(5)+hr_wireless.getString(4)+hr_wireless.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_wireless.getString(2)+"<br></p></b>");
-                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+                out.println("<button class='productDetails' type='submit'><b>查看商品</b></button>");
+
+                out.println("</form>");
+                out.println("</div>");
             }
 
             out.println("</div>");
@@ -114,10 +126,16 @@
             while(hr_sport.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr_sport.getString(3)+" ><br>");
-                out.println("<b><p>"+hr_sport.getString(1)+"</b><br></p>");
+
+                out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
+
+                out.println("<b><p> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:16px; text-align:center' value='"+hr_sport.getString(1)+"'readonly/></b><br></p>");
                 out.println("<p>"+hr_sport.getString(5)+hr_sport.getString(4)+hr_sport.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_sport.getString(2)+"<br></p></b>");
-                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+                out.println("<button class='productDetails' type='submit'><b>查看商品</b></button>");
+
+                out.println("</form>");
+                out.println("</div>");
             }
 
             out.println("</div>");
@@ -130,10 +148,16 @@
             while(hr_noiseReduct.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr_noiseReduct.getString(3)+" ><br>");
-                out.println("<b><p>"+hr_noiseReduct.getString(1)+"</b><br></p>");
+
+                out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
+
+                out.println("<b><p> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:16px; text-align:center' value='"+hr_noiseReduct.getString(1)+"'readonly/></b><br></p>");
                 out.println("<p>"+hr_noiseReduct.getString(5)+hr_noiseReduct.getString(4)+hr_noiseReduct.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_noiseReduct.getString(2)+"<br></p></b>");
-                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+                out.println("<button class='productDetails' type='submit'><b>查看商品</b></button>");
+
+                out.println("</form>");
+                out.println("</div>");
             }
 
             out.println("</div>");
@@ -145,10 +169,16 @@
             while(hr_microphone.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr_microphone.getString(3)+" ><br>");
-                out.println("<b><p>"+hr_microphone.getString(1)+"</b><br></p>");
+
+                out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
+
+                out.println("<b><p> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:16px; text-align:center' value='"+hr_microphone.getString(1)+"'readonly/></b><br></p>");
                 out.println("<p>"+hr_microphone.getString(5)+hr_microphone.getString(4)+hr_microphone.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr_microphone.getString(2)+"<br></p></b>");
-                out.println("<a href='product_introduction.html''><button class='productDetails'><b>查看商品</b></button></a></div>");
+                out.println("<button class='productDetails' type='submit'><b>查看商品</b></button>");
+
+                out.println("</form>");
+                out.println("</div>");
             }
 
             out.println("</div>");
