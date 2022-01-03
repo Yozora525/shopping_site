@@ -15,7 +15,8 @@
 </head>
 <body>
 <%
-    out.println(request.getParameter("product_name_introduce"));
+    String strProductNameItroduce = request.getParameter("product_name_introduce");
+    
 %>
     <header class="mainHeader">
         <div class="container">
@@ -39,17 +40,27 @@
     <div class="productIntro">
         <div class="productImg">
             <!-- Full-width images with number text -->
-            <div class="mySlides">
-                <img src="assets/img/MoonDrop_illumination1.jpg" style="width:100%">
-            </div>
 
-            <div class="mySlides">
+            <%
+            sql="SELECT * FROM `product` WHERE `product_name` = '" + strProductNameItroduce + "'";
+            ResultSet rsProduct=con.createStatement().executeQuery(sql);
+            ResultSet rsProduct1=con.createStatement().executeQuery(sql);
+            out.println("<div class='mySlides'>");
+
+            while(rsProduct1.next()) {
+                out.println("<img src='" + rsProduct1.getString(4) + "' style='width:100%'>");
+            }
+            
+            out.println("</div>");
+
+            %>
+            <%-- <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination2.jpg" style="width:100%">
             </div>
 
             <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination3.jpg" style="width:100%">
-            </div>
+            </div> --%>
 
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -71,7 +82,10 @@
         </div>
         <div class="productDescription">
             <div class="productContent">
-                <p class="name">水月雨 光</p>
+                <%-- <p class="name">水月雨 光</p> --%>
+                <%
+                    out.println("<p class='name'>" + strProductNameItroduce + "</p>");
+                %>
                 <div class="stars">
                     <input type="radio" id="five" name="rate" value="5">
                     <label for="five"></label>

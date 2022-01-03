@@ -63,7 +63,7 @@
 
                 out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
 
-                out.println("<b><p> <input type='' name='product_name_introduce' value='"+hr.getString(1)+"'></b><br></p>");
+                out.println("<b><p> <input type='text' name='product_name_introduce' value='"+hr.getString(1)+"'readonly/></b><br></p>");
                 out.println("<p>"+hr.getString(5)+hr.getString(4)+hr.getString(6)+"耳機<br></p>");
                 out.println("<p>售價<b>&nbsp;&nbsp;&nbsp;$"+hr.getString(2)+"<br></p></b>");
                 out.println("<button class='productDetails' type='submit'><b>查看商品</b></button>");
