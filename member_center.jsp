@@ -105,10 +105,10 @@
                     <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose1()">
                 </div>
                 <div class="userdiv1">
-                <p>目前名稱:&nbsp;&nbsp;&nbsp;<input id="user1" class="signinput1" type="text" placeholder="請輸入目前的名稱" name="modify_user" ></p>
+                <p>目前名稱:&nbsp;&nbsp;&nbsp;<input id="user1" class="signinput1" type="text" placeholder="請輸入目前的名稱" name="original_username" ></p>
                 </div>
                 <div class="pwddiv1">
-                <p>新名稱:&nbsp;&nbsp;&nbsp;<input id="pwd1" class="signinput1" type="text" placeholder="請輸入新名稱" name="modify_pwd"></p>
+                <p>新名稱:&nbsp;&nbsp;&nbsp;<input id="pwd1" class="signinput1" type="text" placeholder="請輸入新名稱" name="new_username"></p>
                 </div>
                 <div class="postdiv1">
                 <input type="submit" value="確認"/>
