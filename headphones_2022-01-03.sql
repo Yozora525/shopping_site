@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2022-01-02 15:22:40 +0000
+# 生成時間: 2022-01-03 03:57:39 +0000
 # ************************************************************
 
 
@@ -35,7 +35,7 @@ LOCK TABLES `counter` WRITE;
 
 INSERT INTO `counter` (`count`)
 VALUES
-	(104);
+	(106);
 
 /*!40000 ALTER TABLE `counter` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -82,8 +82,8 @@ VALUES
 	('AKG K240',4700),
 	('AKG K701',1300),
 	('AKG K702',1500),
-	('AKG K712',0),
-	('Galaxy Buds Pro',0),
+	('AKG K712',300),
+	('Galaxy Buds Pro',300),
 	('Galaxy Buds2',0),
 	('SONY MDR-XB950N1',0),
 	('SONY WH-1000XM4',0),
@@ -152,6 +152,18 @@ VALUES
 
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# 轉儲表 product_img
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `product_img`;
+
+CREATE TABLE `product_img` (
+  `product_name` varchar(45) NOT NULL,
+  `product_image` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 
 # 轉儲表 record
@@ -250,7 +262,9 @@ VALUES
 	('AKG K240',400,0,'2022-01-02'),
 	('AKG K240',700,0,'2022-01-02'),
 	('AKG K701',1300,0,'2022-01-02'),
-	('AKG K702',1500,0,'2022-01-02');
+	('AKG K702',1500,0,'2022-01-02'),
+	('AKG K712',300,0,'2022-01-02'),
+	('Galaxy Buds Pro',300,0,'2022-01-03');
 
 /*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
 UNLOCK TABLES;
