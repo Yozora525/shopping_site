@@ -53,7 +53,7 @@
             out.println("<div class='mySlides'>");
 
             while(rsProduct1.next()) {
-                out.println("<img src='" + rsProduct1.getString(4) + "' style='width:100%'>");
+                out.println("<img src='" + rsProduct1.getString(4) + "' style='width:70%;height:70%'>");
             }
             
             out.println("</div>");

@@ -32,7 +32,7 @@
 .next {
     cursor: pointer;
     position: absolute;
-    top: 40%;
+    top: 50%;
     width: auto;
     padding: 16px;
     margin-top: -50px;
@@ -46,7 +46,7 @@
   
   /* Position the "next button" to the right */
 .next {
-    right: 0;
+    right: 30%;
     border-radius: 3px 0 0 3px;
 }
   
@@ -171,7 +171,7 @@
     height: 40%;
     text-align: center;
     float: left;
-    margin: 0% 4% 4% 4%;
+    margin: 4% 4% 4% 4%;
 }
 .commentTitle{
     margin: 0% 4% 0% 4%;

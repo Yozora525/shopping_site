@@ -5,7 +5,7 @@ body, html {
 .productOverview{
     width: 90%;
     padding: 0% 5% 0% 5%;
-    height: 1450px;
+    height: 1400px;
 }
 /* Style tab links */
 .tablink {
@@ -57,16 +57,17 @@ body, html {
   #microphone {background-color: #c4c3c37a;}
 
 .commodity{
-    width: 300px;
+    width: 22.5%;
     height: 430px;
     text-align: center;
     border: 1px solid gray;
     border-radius: 10px;
     float: left;
-    margin: 30px;
+    margin-left: 2%;
+    margin-bottom: 2%;
 }
 .commodity img{
-    width: 270px;
+    width: 85%;
     height: 200px;
     border-radius: 10px;
     margin: 15px;
