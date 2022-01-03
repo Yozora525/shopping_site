@@ -35,6 +35,11 @@ managed_server.jsp 存貨管理完成
 managed_server.jsp 新增進貨完成
 search_result.jsp 產品搜尋完成 接下來做篩選
 
+### 2021/01/03 ###
+logout.jsp
+server_logout.jsp
+會員、後台 登出完成
+
 ##  智森 ##
 ### 2021/12/25 20:17 ###
 商品總覽介面已上傳
