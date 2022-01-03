@@ -45,6 +45,7 @@
             sql="SELECT * FROM `product` WHERE `product_name` = '" + strProductNameItroduce + "'";
             ResultSet rsProduct=con.createStatement().executeQuery(sql);
             ResultSet rsProduct1=con.createStatement().executeQuery(sql);
+            ResultSet rsProduct2=con.createStatement().executeQuery(sql);
             out.println("<div class='mySlides'>");
 
             while(rsProduct1.next()) {
@@ -103,9 +104,21 @@
                     <li>LCP液晶高分子聚合物球頂，PEEK高阻尼懸邊</li>
                     <li>標配可更換插頭單晶銅內芯，銅鍍銀屏蔽同軸線材</li>
                 </ul>
-                <p class="priceShow">售價   :&nbsp;&nbsp;&nbsp;<b class="price">$26800</b></p>
+                <%
+                    while(rsProduct2.next()){
+                        out.println("<p class='priceShow'>售價   :&nbsp;&nbsp;&nbsp;<b class='price'>$" + rsProduct2.getString(2) + "</b></p>");
+                    }
+                    
+                %>
                 <input class="number" type="number" min="1" value="1"/>
-                <p class="amount">尚餘15組</p>
+                <%
+                    sql="SELECT * FROM `inventory` WHERE `product_name` = '" + strProductNameItroduce + "'";
+                    ResultSet rsInventoryQuantity=con.createStatement().executeQuery(sql);
+
+                    while(rsInventoryQuantity.next()){
+                        out.println("<p class='amount'>尚餘" + rsInventoryQuantity.getString(2) + "組</p>");
+                    }
+                %>
                 <div class="buttonBlock">
                     <a href="#"><button class="addToCart"><img src="assets/img/shopping_cart.png">&nbsp;&nbsp;加入購物車</button></a>
                    <%--
