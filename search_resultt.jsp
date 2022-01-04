@@ -78,39 +78,12 @@
                 request.setCharacterEncoding("UTF-8");
                 response.setCharacterEncoding("UTF-8");
                 String strKeyWord = request.getParameter("key_word");
-                String strKeyWords = request.getParameter("keyword");
-                String strBrand = request.getParameter("brand");
-                String strPriceMin = request.getParameter("priceUpper");
-                String strPriceMax = request.getParameter("priceFloor");
-
-                if(strPriceMin == null || strPriceMin.equals("")){
-                    strPriceMin = "0";
-
-                    if(strPriceMax == null || strPriceMax.equals("")){
-                        strPriceMax = "999999999999999999999999";
-                    }
-                }
-
-                else{
-                    if(strPriceMax == null || strPriceMax.equals("")){
-                        strPriceMax = "0";
-                    }
-
-                    else{
-                        if(Integer.parseInt(strPriceMax) < Integer.parseInt(strPriceMin)){
-                            String tmpPrice = strPriceMax;
-                            strPriceMax = strPriceMin;
-                            strPriceMin = tmpPrice;
-                        }
-                    }
-                }
-                
 
                 // out.println(strKeyWord);
                 ResultSet rs;
                 ResultSet rsSearch;
 
-                sql = "SELECT * FROM `product` WHERE (`product_name` LIKE '%" + strKeyWord + "%' OR `product_introduce` LIKE '%" + strKeyWord + "%'  OR `product_name` LIKE '%" + strKeyWords + "%' OR `product_introduce` LIKE '%" + strKeyWords + "%' )AND `brand` LIKE '" +  strBrand + "' AND `price` BETWEEN '"+ strPriceMin + "' AND '" + strPriceMax + "'";
+                sql = "SELECT * FROM `product` WHERE (`product_name` LIKE '%" + strKeyWord + "%' OR `product_introduce` LIKE '%" + strKeyWord + "%')";
                 rs = con.createStatement().executeQuery(sql);
 
                 while(rs.next()){
