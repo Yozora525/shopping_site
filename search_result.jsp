@@ -62,7 +62,7 @@
                         <input type="text" class="priceFloor" name="priceFloor" placeholder="$最大值">
                     </p>
                     <p class="classBlock">
-                        <input type="text" class="keyword" name="keyword" placeholder="請輸入關鍵字">
+                        <input type="text" class="keyword" name="key_word" placeholder="請輸入關鍵字">
                     </p>
                     <input type="submit" class="submit" value="送出" />
                 </div>
@@ -78,16 +78,38 @@
                 request.setCharacterEncoding("UTF-8");
                 response.setCharacterEncoding("UTF-8");
                 String strKeyWord = request.getParameter("key_word");
-                String strKeyWords = request.getParameter("keyword");
                 String strBrand = request.getParameter("brand");
-                String strPrice = request.getParameter("price");
+                String strPriceMin = request.getParameter("priceUpper");
+                String strPriceMax = request.getParameter("priceFloor");
+
+                if(strPriceMin == null || strPriceMin.equals("")){
+                    strPriceMin = "0";
+
+                    if(strPriceMax == null || strPriceMax.equals("")){
+                        strPriceMax = "999999999999999999999999";
+                    }
+                }
+
+                else{
+                    if(strPriceMax == null || strPriceMax.equals("")){
+                        strPriceMax = "0";
+                    }
+
+                    else{
+                        if(Integer.parseInt(strPriceMax) < Integer.parseInt(strPriceMin)){
+                            String tmpPrice = strPriceMax;
+                            strPriceMax = strPriceMin;
+                            strPriceMin = tmpPrice;
+                        }
+                    }
+                }
                 
 
                 // out.println(strKeyWord);
                 ResultSet rs;
                 ResultSet rsSearch;
 
-                sql = "SELECT * FROM `product` WHERE `product_name` LIKE '%" + strKeyWord + "%' OR `product_introduce` LIKE '%" + strKeyWord + "%' OR `brand` LIKE '" +  strBrand + "' ";
+                sql = "SELECT * FROM `product` WHERE (`product_name` LIKE '%" + strKeyWord + "%' OR `product_introduce` LIKE '%" + strKeyWord + "%' )AND `brand` LIKE '" +  strBrand + "' AND `price` BETWEEN '"+ strPriceMin + "' AND '" + strPriceMax + "'";
                 rs = con.createStatement().executeQuery(sql);
 
                 while(rs.next()){
