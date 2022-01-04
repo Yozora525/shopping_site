@@ -13,7 +13,8 @@
 }
 .shoppingCart table th,
 .shoppingCart table td{
-    padding: 15px;
+    padding: 10px;
+    text-align: center;
 }
 .shoppingCart table button{
     cursor: pointer;

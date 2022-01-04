@@ -135,23 +135,7 @@
                         <td class="tdSet">鐵三角 M50x</td>
                         <td class="tdSet">$ 5600</td>
                         <td class="tdSet">
-                            <select name="quantity" id="number1">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
+                            <input type="number" value="1" min="1" />
                         </td>
                         <td class="deleteCol tdSet">
                             <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
@@ -161,23 +145,7 @@
                         <td class="tdSet">SONY IER-Z1R</td>
                         <td class="tdSet">$ 55900</td>
                         <td class="tdSet">
-                            <select name="quantity" id="number2">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
+                            <input type="number" value="1" min="1" />
                         </td>
                         <td class="deleteCol tdSet">
                             <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
@@ -187,23 +155,7 @@
                         <td class="tdSet">水月雨 KATO</td>
                         <td class="tdSet">$ 6000</td>
                         <td class="tdSet">
-                            <select name="quantity" id="number3">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
+                            <input type="number" value="1" min="1" />
                         </td>
                         <td class="deleteCol tdSet">
                             <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
