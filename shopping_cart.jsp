@@ -15,12 +15,18 @@
 <%
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String strShoppingCar =session.getAttribute("strProductNameItroduce").toString();
-        out.println(strShoppingCar);
-        /*session.setAttribute("strProductNameItroduce", strProductNameItroduce);
-        String strProductNameItroduce = request.getParameter("product_price_introduce");
-        session.setAttribute("strProductPriceItroduce", strProductPriceItroduce);
-*/
+        String strShoppingCarName =session.getAttribute("strProductNameItroduce").toString();
+       // out.println(strShoppingCarName);
+        
+        sql="SELECT `product_name` `price` FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
+        ResultSet rs_Product=con.createStatement().executeQuery(sql);
+
+        while(rs_Product.next()){
+            out.println( rs_Product.getString("price"));
+        }
+        
+        
+        //int strshoppingCartPrice = Integer.parseInt(strPrice);
 %>
 <%
   //  if(session.getAttribute("email") == null) {
