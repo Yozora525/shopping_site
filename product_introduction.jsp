@@ -163,6 +163,7 @@
     <%--留言板--%>
         <h2 class='commentTitle'>留言評價</h2>
 <div class='comment'>
+<table>
     <%
         sql="SELECT * FROM `evaluation` WHERE `product_name` = '" + strProductNameItroduce + "'";
         // ResultSet hs_comment=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
@@ -174,7 +175,7 @@
                 
        // out.println("<h2 class='commentTitle'>留言評價</h2>");
         //out.println("<div class='comment'>");
-            out.println("<table>");
+            
             while(rsComment.next())
             {
               //  out.println("<div class='comment'>");
