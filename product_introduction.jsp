@@ -177,43 +177,31 @@
             out.println("<table>");
             while(rsComment.next())
             {
+              //  out.println("<div class='comment'>");
                 out.println("<tr>");
                 out.println("<td>");
 
                 out.println("<div class='commentPerson'>");
 
                 out.println("<img src='assets/img/profile1.png'>"); //圖片
-                out.println("<p><b>"+rsComment.getString(1)+"</b></p>");    //名字
-
-                out.println("<div class='stars1'>");
-
-                out.println("<input type='radio' id='five1' name='rate' value='5'>"); //星星
-                out.println("<label for='five'></label>");
-                out.println("<input type='radio' id='four1' name='rate' value='4'>");
-                out.println("<label for='four'></label>");
-                out.println("<input type='radio' id='three1' name='rate' value='3'>");
-                out.println("<label for='three'></label>");
-                out.println("<input type='radio' id='two1' name='rate' value='2'>");
-                out.println("<label for='two'></label>");
-                out.println("<input type='radio' id='one1' name='rate' value='1'>");
-                out.println("<label for='one'></label>");
-
-                out.println("</div> ");
+                out.println("<p><b>"+rsComment.getString("email")+"</b></p>");    //名字
 
                 out.println("<div class='commentText'>");
-                out.println("<p>"+rsComment.getString(4)+"</p>");  //評論內容
+                out.println("<p>"+rsComment.getString("comment")+"</p>");  //評論內容
                 out.println("</div>");
 
-                out.println("</div> ");
+               out.println("</div> ");
 
                 out.println("</td>");
-                out.println("</tr>");
+               out.println("</tr>");
+               // out.println("</td>");
             }    
-                //out.println("</table>");
-                //out.println("</div> ");
+                out.println("</table>");
+                out.println("</div> ");
+                out.println("</div> ");
     %>
      </table>
-                </div> 
+                <%-- </div>  --%>
             <%-- <tr>
                 <td>
                     <div class="commentPerson">
