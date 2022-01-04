@@ -13,17 +13,23 @@
 </head>
 <body>
 <%
-  //  if(session.getAttribute("user_email") == null) {
- //       out.println("請確實登入, 點<a href='index.jsp'>我</a>回首頁");
-  //  }
-  //  else{
-        
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        sql="SELECT `price` FROM `product` WHERE `product_name` = '" + request.getParameter("strProductNameItroduce") + "'";
-        ResultSet rsProduct_1=con.createStatement().executeQuery(sql);
-        int strPrice =0;
-        //strPrice= rsProduct_1.getInt("price"); //取得商品單價
+        String strProductNameItroduce = request.getParameter("product_name_introduce");
+        session.setAttribute("strProductNameItroduce", strProductNameItroduce);
+        String strProductNameItroduce = request.getParameter("product_price_introduce");
+        session.setAttribute("strProductPriceItroduce", strProductPriceItroduce);
+%>
+<%
+  //  if(session.getAttribute("email") == null) {
+ //       out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
+  //  }
+  //  else{
+
+
+        sql="SELECT `product_name` `price` FROM `product` WHERE `product_name` = '" + strProductNameItroduce + "'";
+        ResultSet rs_Product=con.createStatement().executeQuery(sql);
+        int strPrice= rs_Product.getInt("strProductPriceItroduce"); //取得商品單價
         out.println(strPrice);
        /*
             while(hr_cart.next())
@@ -35,6 +41,12 @@
 
         } 
         */
+
+        sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`,`email`)";
+        sql+="VALUES ('" + session.getAttribute("strProductNameItroduce") + "', ";
+        sql+="'"+ session.getAttribute("") +"', "; //單價
+        sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
+        sql+="'"+ session.getAttribute("email") +"')";
     
         %>
 
@@ -79,8 +91,8 @@
 
                             for(int j=1;j<=count;j++)
                             {
-                                out.println("<td class='tdSet'>"+request.getParameter("strProductNameItroduce")+"</td>");
-                                out.println("<td class='tdSet'>"+cart_price+"</td>");
+                                out.println("<td class='tdSet'>"+rs_product.getString("product_name")+"</td>");
+                                out.println("<td class='tdSet'>"+rs_product.getString("price")+"</td>");
                                 out.println("<td class='tdSet'>";
                                 out.println("<select name='quantity' id='number1'>");
 

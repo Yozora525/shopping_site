@@ -61,8 +61,8 @@
             while(hr.next()){			
                 out.println("<div class='commodity'>");
                 out.println("<img src="+hr.getString(3)+" ><br>");
-
-                out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
+               // out.println("<form action='product_introduction.jsp' method='post' target='_blank'>");
+                out.println("<form action='product_introductionBackup.jsp' method='post' target='_blank'>");
 
                 out.println("<b><p> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:16px; text-align:center' value='"+hr.getString(1)+"'readonly/></b><br></p>");
                 out.println("<p>"+hr.getString(5)+hr.getString(4)+hr.getString(6)+"耳機<br></p>");
