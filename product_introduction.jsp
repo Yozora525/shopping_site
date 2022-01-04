@@ -15,20 +15,14 @@
     <link rel="stylesheet" href="assets/css/contact_us.css">
 </head>
 <body>
-<%!
-	String newline(String str)
-	{
-	 int index=0;
-	 while((index=str.indexOf("\n")) !=-1)
-	 str=str.substring	 (0,index)+"<br>"+str.substring(index+1);
-	 return(str);
-	}
-%>
+
 <%
     request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+
     String strProductNameItroduce = request.getParameter("product_name_introduce");
-    
+
+    session.setAttribute("strProductNameItroduce", strProductNameItroduce);
     
 %>
     <header class="mainHeader">
@@ -38,8 +32,8 @@
             </a>
             <nav class="navBar">
                 <a href="product_overview.jsp">產品介紹</a>
-                <a href="member_center.html">會員中心</a>
-                <a href="managed_server_login.html">後台管理</a>
+                <a href="member_center.jsp">會員中心</a>
+                <a href="managed_server.jsp">後台管理</a>
                 <a href="about_us.html">關於我們</a>
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
@@ -167,48 +161,30 @@
     </div>
 
     <%--留言板--%>
-
-    <h2 class="commentTitle">留言評價</h2>
-    <div class="comment">
-       <table>
-        <%
-         
-        sql="SELECT * FROM `evaluation`";
-        ResultSet hs_comment=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
-        hs_comment.last();
-        int total_content=hs_comment.getRow();
+        <h2 class='commentTitle'>留言評價</h2>
+<div class='comment'>
+    <%
+        sql="SELECT * FROM `evaluation` WHERE `product_name` = '" + strProductNameItroduce + "'";
+        // ResultSet hs_comment=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
+        ResultSet rsComment=con.createStatement().executeQuery(sql);
+        //hs_comment.last();
+        //int total_content=hs_comment.getRow();
         //out.println("共"+total_content+"筆留言<p>"); //留言總筆數
-   
         //java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis()); 留言日期
-
-           sql="INSERT INTO evaluation (`email`, `procuct_name`, `score`, `comment`)";
-           sql+="VALUES ('" + request.getParameter("user_email") + "', ";
-           sql+="'"+request.getParameter("strProductNameItroduce")+"', ";
-           sql+="'"+null+"', ";
-           sql+="'"+newline(request.getParameter("commentContent"))+"";
-        //  sql+="'"+new_content+"', ";   
-        //    sql+="'"+new_date+"',";   
-        //INSERT INTO customers (C_Id, Name, City, Address, Phone)
-        //VALUES (3, '李三', '高雄縣', 'ZZ路300號', '07-12345678');
-
-        /*
-        while(hs_comment.next())
-        {
-            out.println("訪客姓名:"+hs_comment.getString(2)+"<br>");
-            out.println("E-mail:"+hs_comment.getString(1)+"<br>");
-            out.println("留言內容:"+hs_comment.getString(4)+"<br>");
-            out.println("留言時間:"+hs_comment.getString(5)+"<br><hr>");
-                }
-                */
                 
-        for(int i=1;i<=total_content;i++)
-        {
-            out.println("<tr>");
-            while(hs_comment.next())
+       // out.println("<h2 class='commentTitle'>留言評價</h2>");
+        //out.println("<div class='comment'>");
+            out.println("<table>");
+            while(rsComment.next())
             {
-                out.println("<td><div class='commentPerson'>");
+                out.println("<tr>");
+                out.println("<td>");
+
+                out.println("<div class='commentPerson'>");
+
                 out.println("<img src='assets/img/profile1.png'>"); //圖片
-                out.println("<p><b>"+hs_comment.getString(1)+"</b></p>");    //名字
+                out.println("<p><b>"+rsComment.getString(1)+"</b></p>");    //名字
+
                 out.println("<div class='stars1'>");
 
                 out.println("<input type='radio' id='five1' name='rate' value='5'>"); //星星
@@ -222,17 +198,23 @@
                 out.println("<input type='radio' id='one1' name='rate' value='1'>");
                 out.println("<label for='one'></label>");
 
-                out.println("</div> </div> <div class='commentText'>");
-                out.println("<p>"+hs_comment.getString(4)+"</p>");  //評論內容
-                out.println("</div> </td> </tr>");
+                out.println("</div> ");
+
+                out.println("<div class='commentText'>");
+                out.println("<p>"+rsComment.getString(4)+"</p>");  //評論內容
+                out.println("</div>");
+
+                out.println("</div> ");
+
+                out.println("</td>");
+                out.println("</tr>");
             }    
-        }
-  
-        %>
-        </table>
-             </div> 
-          <!-- -->
-                <%-- <tr>
+                //out.println("</table>");
+                //out.println("</div> ");
+    %>
+     </table>
+                </div> 
+            <%-- <tr>
                 <td>
                     <div class="commentPerson">
                         <img src="assets/img/profile1.png">
@@ -254,58 +236,10 @@
                         <p>隔音效果做得特別好!!</p>
                     </div>
                 </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="commentPerson">
-                        <img src="assets/img/profile2.png">
-                        <p><b>陳小中</b></p>
-                        <div class="stars1">
-                            <input type="radio" id="five2" name="rate" value="5">
-                            <label for="five"></label>
-                            <input type="radio" id="four2" name="rate" value="4">
-                            <label for="four"></label>
-                            <input type="radio" id="three2" name="rate" value="3">
-                            <label for="three"></label>
-                            <input type="radio" id="two2" name="rate" value="2">
-                            <label for="two"></label>
-                            <input type="radio" id="one2" name="rate" value="1">
-                            <label for="one"></label>
-                        </div>
-                    </div>
-                    <div class="commentText">
-                        <p>音質細節部分表現的超級好!!</p>
-                    </div>
-                </td>
-            </tr> 
-           
-            <tr>
-                <td>
-                    <div class="commentPerson">
-                        <img src="assets/img/profile3.png">
-                        <p><b>黃小雅</b></p>
-                        <div class="stars1">
-                            <input type="radio" id="five3" name="rate" value="5">
-                            <label for="five"></label>
-                            <input type="radio" id="four3" name="rate" value="4">
-                            <label for="four"></label>
-                            <input type="radio" id="three3" name="rate" value="3">
-                            <label for="three"></label>
-                            <input type="radio" id="two3" name="rate" value="2">
-                            <label for="two"></label>
-                            <input type="radio" id="one3" name="rate" value="1">
-                            <label for="one"></label>
-                        </div>
-                    </div>
-                    <div class="commentText">
-                        <p>沒有因為是無線耳機而帶來很重的延遲感!!</p>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div> --%>
+            </tr> --%>
 
-    <form action="">
+
+    <form action="assets/jsp/board.jsp">
         <h2 class="commentTitle">商品評價區</h2>
         <div class="productComment">
             <h1>請給分!!</h1>
@@ -345,12 +279,14 @@
                 聯絡地址：320314 桃園市中壢區中北路200號 <br>
                 電話：886-3-265-5401<br>
             <hr class="contacthr">
+
             <form method="post" action=" ">
                 <input class="contact" type="text" name="contact_name" placeholder="姓名"><br>
                 <input class="contact" type="email" name="contact_email" placeholder="Email"><br>
             <textarea name="contact" cols="52" rows="10" wrap="hard" placeholder="歡迎留下任何鼓勵或意見回饋，謝謝您！"></textarea><br>
             <input class="contactbutton" type="submit" value="確認送出" />
             </form>
+
             </h3>
         </div>
       </div>
