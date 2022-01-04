@@ -43,7 +43,7 @@ server_logout.jsp
 更新名稱、密碼 完成
 
 ### 2021/01/04 ###
-search_result.jsp 搜尋結果完成
+search_result.jsp 篩選完成
 
 ##  智森 ##
 ### 2021/12/25 20:17 ###
