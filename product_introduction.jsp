@@ -162,8 +162,8 @@
 
     <%--留言板--%>
         <h2 class='commentTitle'>留言評價</h2>
-<div class='comment'>
-<table>
+    <div class='comment'>
+    <table>
     <%
         sql="SELECT * FROM `evaluation` WHERE `product_name` = '" + strProductNameItroduce + "'";
         // ResultSet hs_comment=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
@@ -173,12 +173,9 @@
         //out.println("共"+total_content+"筆留言<p>"); //留言總筆數
         //java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis()); 留言日期
                 
-       // out.println("<h2 class='commentTitle'>留言評價</h2>");
-        //out.println("<div class='comment'>");
             
             while(rsComment.next())
             {
-              //  out.println("<div class='comment'>");
                 out.println("<tr>");
                 out.println("<td>");
 
@@ -187,22 +184,34 @@
                 out.println("<img src='assets/img/profile1.png'>"); //圖片
                 out.println("<p><b>"+rsComment.getString("email")+"</b></p>");    //名字
 
+                out.println("<div class='stars1'>");
+                            out.println("<input type='radio' id='five1' name='rate' value='5'>");
+                            out.println("<label for='five'></label>");
+                            out.println("<input type='radio' id='four1' name='rate' value='4'>");
+                            out.println("<label for='four'></label>");
+                            out.println("<input type='radio' id='three1' name='rate' value='3'>");
+                            out.println("<label for='three'></label>");
+                            out.println("<input type='radio' id='two1' name='rate' value='2'>");
+                            out.println("<label for='two'></label>");
+                            out.println("<input type='radio' id='one1' name='rate' value='1'>");
+                            out.println("<label for='one'></label>");
+                        out.println("</div>");
+
+                        out.println("</div>");
+
                 out.println("<div class='commentText'>");
                 out.println("<p>"+rsComment.getString("comment")+"</p>");  //評論內容
                 out.println("</div>");
 
-               out.println("</div> ");
 
                 out.println("</td>");
                out.println("</tr>");
                // out.println("</td>");
             }    
-                out.println("</table>");
-                out.println("</div> ");
-                out.println("</div> ");
+
     %>
      </table>
-                <%-- </div>  --%>
+    </div> 
             <%-- <tr>
                 <td>
                     <div class="commentPerson">
