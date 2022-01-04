@@ -132,18 +132,16 @@
                     }
                 %>
                 <div class="buttonBlock">
-                <%--
                 <%
                    out.println(" <a href='shopping_cart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='addToCart'><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a>");
-                %> 
-                --%>   
+                %>  
                    <%--
                     <%
                         sql=INSERT 
                     
                     %> 
                     --%>
-                    <a href="#"><button class="addToCart" type="submit"><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a>
+                    <%-- <a href="#"><button class="addToCart" type="submit"><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a> --%>
                     <a href="#"><button class="checkout" type="submit">直接結帳</button></a>
                 </div>
             </div>
