@@ -100,7 +100,11 @@
                             for(int j=1;j<=count;j++)
                             {
                                 out.println("<td class='tdSet'>"+rs_product.getString("product_name")+"</td>");
-                                out.println("<td class='tdSet'>"+rs_product.getString("price")+"</td>");
+                                
+                                while(rs_Product.next()){
+                                  out.println("<td class='tdSet'>"+rs_Product.getString("price")+"</td>");
+                                }
+
                                 out.println("<td class='tdSet'>";
                                 out.println("<select name='quantity' id='number1'>");
 
