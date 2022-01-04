@@ -18,7 +18,7 @@
         String strShoppingCarName =session.getAttribute("strProductNameItroduce").toString();
        // out.println(strShoppingCarName);
         
-        sql="SELECT `product_name` `price` FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
+        sql="SELECT * FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
         ResultSet rs_Product=con.createStatement().executeQuery(sql);
 
         while(rs_Product.next()){

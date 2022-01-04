@@ -93,11 +93,9 @@
                 <%-- <p class="name">水月雨 光</p> --%>
                 <%
                 while(rsProduct.next()) {
-                     out.println("<b><p class='name'> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:25px; text-align:left' value='"+rsProduct.getString(1)+"'readonly/></b><br></p>");
-                }
-                /*
                     out.println("<p class='name'>" + strProductNameItroduce + "</p>");
-                */
+                }
+
                 %>
                 <div class="stars">
                     <input type="radio" id="five" name="rate" value="5">
