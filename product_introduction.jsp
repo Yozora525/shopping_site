@@ -55,37 +55,66 @@
             ResultSet rsProduct2=con.createStatement().executeQuery(sql);
             out.println("<div class='mySlides'>");
 
+            sql="SELECT * FROM `product_img` WHERE `product_name` = '" + strProductNameItroduce + "'";
+            ResultSet rsIMG=con.createStatement().executeQuery(sql);
+            ResultSet rsIMG1=con.createStatement().executeQuery(sql);
+
+
             while(rsProduct1.next()) {
                 out.println("<img src='" + rsProduct1.getString(4) + "' style='width:70%;height:70%'>");
             }
             
             out.println("</div>");
 
+            while(rsIMG.next()) {
+                out.println("<div class='mySlides'>");
+                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:100%'>");
+                out.println("</div>");               
+            }
             %>
-            <div class="mySlides">
+            <%-- <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination2.jpg" style="width:100%">
-            </div>
+            </div> 
 
-            <div class="mySlides">
+             <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination3.jpg" style="width:100%">
-            </div>
-
+            </div>  --%>
+            
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
             
 
             <!-- Thumbnail images -->
-            <div class="row">
-                <div class="column">
-                <img class="demo cursor" src="assets/img/MoonDrop_illumination1.jpg" style="width:100%" onclick="currentSlide(1)">
+            <%
+            while(rsIMG1.next()){
+                int i=0;
+                i++;
+                if(i>3){
+                out.println("<div class='row'>");
+                out.println("<div class='column'>");
+                out.println("<img class='demo cursor' src='"+ rsIMG.getString("product_image") +" style='width:100%' onclick='currentSlide(i)'>" );
+                out.println("</div>");
+                }
+            }
+            %>
+            <%-- <div class="row">
+                <div class="column"> --%>
+                
+                <%-- out.println("<img class='demo cursor' src='"+ rsIMG.getString("product_image") +" style='width:100%' onclick='currentSlide(1)'>" );  //三個產品圖片 --%>
+
+                
+                <%-- <img class="demo cursor" src="assets/img/MoonDrop_illumination1.jpg" style="width:100%" onclick="currentSlide(1)">
                 </div>
+
                 <div class="column">
                 <img class="demo cursor" src="assets/img/MoonDrop_illumination2.jpg" style="width:100%" onclick="currentSlide(2)">
                 </div>
-                <div class="column1">
+
+                <div class="column">
                 <img class="demo cursor" src="assets/img/MoonDrop_illumination3.jpg" style="width:100%" onclick="currentSlide(3)">
-                </div>
+                </div> --%>
+                
             </div>
         </div>
         <div class="productDescription">

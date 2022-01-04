@@ -91,13 +91,11 @@
         <div class="productDescription">
             <div class="productContent">
                 <%-- <p class="name">水月雨 光</p> --%>
-                
-                <%-- while(rsProduct.next()) {
-                     out.println("<b><p class='name'> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:25px; text-align:left' value='"+rsProduct.getString(1)+"'readonly/></b><br></p>");
-                } --%>
                 <%
-                    out.println("<p class='name'>" + strProductNameItroduce + "</p>"); //產品名
-                
+                while(rsProduct.next()) {
+                    out.println("<p class='name'>" + strProductNameItroduce + "</p>");
+                }
+
                 %>
                 <div class="stars">
                     <input type="radio" id="five" name="rate" value="5">
@@ -116,15 +114,9 @@
                     <li>LCP液晶高分子聚合物球頂，PEEK高阻尼懸邊</li>
                     <li>標配可更換插頭單晶銅內芯，銅鍍銀屏蔽同軸線材</li>
                 </ul>
-                <%-- <%
+                <%
                     while(rsProduct2.next()){
-                        out.println("<p class='priceShow'>售價   <b class='price'>$" + rsProduct2.getString(2) + "</b></p>"); //單價
-                    }
-                    
-                %> --%>
-                 <%
-                    while(rsProduct2.next()){
-                        out.println("<b><p> <input type='text' name='product_price_introduce'  style='background-color:transparent; border-style:none none none none; font-size:16px; text-align:center' value='"+rsProduct2.getString(2)+"'readonly/></b><br></p>"); //單價
+                        out.println("<p class='priceShow'>售價   <b class='price'>$" + rsProduct2.getString(2) + "</b></p>");
                     }
                     
                 %>
@@ -148,7 +140,10 @@
                     %> 
                     --%>
                     <%-- <a href="#"><button class="addToCart" type="submit"><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a> --%>
-                    <a href="#"><button class="checkout" type="submit">直接結帳</button></a>
+                <%
+                   out.println(" <a href='shopping_cart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='checkout' type='submit'>直接結帳</button></a>");
+                %>  
+                <%-- <a href="#"><button class="checkout" type="submit">直接結帳</button></a> --%>
                 </div>
             </div>
         </div>
