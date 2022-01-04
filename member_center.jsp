@@ -74,15 +74,15 @@
 
                             while(rsUser.next()){
                                 out.println("<tr>");
-                                out.println("<td>姓名  :&nbsp;&nbsp;<input type='text' id=name' readonly/><input type='button' onclick='start1()' id='displaysign1' name='btt1' value='Edit'/></td>");
+                                out.println("<td>姓名  :&nbsp;&nbsp;<input type='text' id=name' value='" + rsUser.getString("username") +"' readonly/><input type='button' onclick='start1()' id='displaysign1' name='btt1' value='Edit'/></td>");
                                 out.println("</tr>");
 
                                 out.println("<tr>");
-                                out.println("<td>Email  :&nbsp;&nbsp;<input type='email' id='email' readonly/></td>");
+                                out.println("<td>Email  :&nbsp;&nbsp;<input type='email' id='email' value='" + rsUser.getString("email") + "' readonly/></td>");
                                 out.println("</tr>");
 
                                 out.println("<tr>");
-                                out.println("<td>密碼   :&nbsp;&nbsp;<input type='text' id='password' readonly/><input type='button' onclick='start()' id='displaysign' name='btt5' value='Edit'/></td>");
+                                out.println("<td>密碼   :&nbsp;&nbsp;<input type='password' id='password' value='0000000000000000'readonly/><input type='button' onclick='start()' id='displaysign' name='btt5' value='Edit'/></td>");
                                 out.println("</tr>");
                             }
                         
