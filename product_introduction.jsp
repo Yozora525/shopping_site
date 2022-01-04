@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="assets/css/contact_us.css">
 </head>
 <body>
+<%!
+	String newline(String str)
+	{
+	 int index=0;
+	 while((index=str.indexOf("\n")) !=-1)
+	 str=str.substring	 (0,index)+"<br>"+str.substring(index+1);
+	 return(str);
+	}
+%>
 <%
     request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -90,7 +99,7 @@
                 <%-- <p class="name">水月雨 光</p> --%>
                 <%
                 while(rsProduct.next()) {
-                                out.println("<b><p class='name'> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:25px; text-align:left' value='"+rsProduct.getString(1)+"'readonly/></b><br></p>");
+                     out.println("<b><p class='name'> <input type='text' name='product_name_introduce'  style='background-color:transparent; border-style:none none none none; font-size:25px; text-align:left' value='"+rsProduct.getString(1)+"'readonly/></b><br></p>");
                 }
                 /*
                     out.println("<p class='name'>" + strProductNameItroduce + "</p>");
@@ -161,24 +170,26 @@
 
     <h2 class="commentTitle">留言評價</h2>
     <div class="comment">
-    <%
+       <table>
+        <%
+         
         sql="SELECT * FROM `evaluation`";
         ResultSet hs_comment=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
         hs_comment.last();
         int total_content=hs_comment.getRow();
         //out.println("共"+total_content+"筆留言<p>"); //留言總筆數
-
-
+   
         //java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis()); 留言日期
 
-           sql="INSERT INTO evaluation (`email`, `procuct_name`, `score`, `comment`, `comment_date`)";
+           sql="INSERT INTO evaluation (`email`, `procuct_name`, `score`, `comment`)";
            sql+="VALUES ('" + request.getParameter("user_email") + "', ";
            sql+="'"+request.getParameter("strProductNameItroduce")+"', ";
            sql+="'"+null+"', ";
-         //  sql+="'"+new_content+"', ";   
-       //    sql+="'"+new_date+"',";   
-//INSERT INTO customers (C_Id, Name, City, Address, Phone)
-//VALUES (3, '李三', '高雄縣', 'ZZ路300號', '07-12345678');
+           sql+="'"+newline(request.getParameter("commentContent"))+"";
+        //  sql+="'"+new_content+"', ";   
+        //    sql+="'"+new_date+"',";   
+        //INSERT INTO customers (C_Id, Name, City, Address, Phone)
+        //VALUES (3, '李三', '高雄縣', 'ZZ路300號', '07-12345678');
 
         /*
         while(hs_comment.next())
@@ -189,16 +200,14 @@
             out.println("留言時間:"+hs_comment.getString(5)+"<br><hr>");
                 }
                 */
-    %>
-        <table>
-        <%
+                
         for(int i=1;i<=total_content;i++)
         {
             out.println("<tr>");
             while(hs_comment.next())
             {
                 out.println("<td><div class='commentPerson'>");
-                out.println("<img src='assets/img/profile1.png'>");
+                out.println("<img src='assets/img/profile1.png'>"); //圖片
                 out.println("<p><b>"+hs_comment.getString(1)+"</b></p>");    //名字
                 out.println("<div class='stars1'>");
 
@@ -218,9 +227,12 @@
                 out.println("</div> </td> </tr>");
             }    
         }
+  
         %>
+        </table>
+             </div> 
           <!-- -->
-                <tr>
+                <%-- <tr>
                 <td>
                     <div class="commentPerson">
                         <img src="assets/img/profile1.png">
@@ -291,7 +303,36 @@
                 </td>
             </tr>
         </table>
-    </div>
+    </div> --%>
+
+    <form action="">
+        <h2 class="commentTitle">商品評價區</h2>
+        <div class="productComment">
+            <h1>請給分!!</h1>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" hidden/>
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4" hidden/>
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3" hidden/>
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2" hidden/>
+                <label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1" hidden/>
+                <label for="star1"></label>
+            </div>
+            <div class="commentInput">
+                <textarea name="commentContent" id="commentContent" cols="50" rows="10" placeholder="請留下你寶貴的意見!!"></textarea>
+            </div>
+            <div class="buttonBlock1">
+                <input class="submitComment" type="submit" value="送出">
+            </div>
+        </div>
+    </form>
+
+     
+
+
     
     <script type="text/javascript" src="assets/js/product_introduction.js"></script>
 
