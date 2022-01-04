@@ -62,13 +62,13 @@
             out.println("</div>");
 
             %>
-            <%-- <div class="mySlides">
+            <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination2.jpg" style="width:100%">
             </div>
 
             <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination3.jpg" style="width:100%">
-            </div> --%>
+            </div>
 
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
