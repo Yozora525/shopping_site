@@ -206,35 +206,11 @@
 
                 out.println("</td>");
                out.println("</tr>");
-               // out.println("</td>");
             }    
 
     %>
      </table>
     </div> 
-            <%-- <tr>
-                <td>
-                    <div class="commentPerson">
-                        <img src="assets/img/profile1.png">
-                        <p><b>王小明</b></p>
-                        <div class="stars1">
-                            <input type="radio" id="five1" name="rate" value="5">
-                            <label for="five"></label>
-                            <input type="radio" id="four1" name="rate" value="4">
-                            <label for="four"></label>
-                            <input type="radio" id="three1" name="rate" value="3">
-                            <label for="three"></label>
-                            <input type="radio" id="two1" name="rate" value="2">
-                            <label for="two"></label>
-                            <input type="radio" id="one1" name="rate" value="1">
-                            <label for="one"></label>
-                        </div>
-                    </div>
-                    <div class="commentText">
-                        <p>隔音效果做得特別好!!</p>
-                    </div>
-                </td>
-            </tr> --%>
 
 
     <form action="assets/jsp/board.jsp">
