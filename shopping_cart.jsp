@@ -71,10 +71,12 @@
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
             <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
+
             <form class="headerSearch" method="POST" action="search_resultt.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>
+            
         </div>
     </header>
     <div class="shoppingCart">
@@ -99,8 +101,8 @@
 
                             for(int j=1;j<=count;j++)
                             {
-                                out.println("<td class='tdSet'>"+rs_product.getString("product_name")+"</td>");
-                                
+                                out.println("<td class='tdSet'>"+strShoppingCarName+"</td>");
+
                                 while(rs_Product.next()){
                                   out.println("<td class='tdSet'>"+rs_Product.getString("price")+"</td>");
                                 }
