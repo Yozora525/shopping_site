@@ -33,8 +33,8 @@
             </a>
 
             <nav class="navBar">
-                <a href="product_overview.html">產品介紹</a>
-                <a href="login.html">後台管理</a>
+                <a href="product_overview.jsp">產品介紹</a>
+                <a href="managed_server.jsp">後台管理</a>
             </nav>
 
             <a class="cart" href="#"><img src="assets/img/shopping-cart.png"></a>
