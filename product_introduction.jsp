@@ -70,7 +70,7 @@
                 out.println("<div class='mySlides'>");
                 out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:100%'>");
                 out.println("</div>");               
-            }
+            } 
             %>
             <%-- <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination2.jpg" style="width:100%">
@@ -96,6 +96,7 @@
                     out.println("<div class='column'>");
                     out.println("<img class='demo cursor' src='"+ rsIMG1.getString("product_image") +"' style='width:100%' onclick='currentSlide(" + i + ")'>" );
                     out.println("</div>"); //三個產品圖片
+                    out.println(i);
             }
                 out.println("</div>");
             %>
