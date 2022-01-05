@@ -33,7 +33,7 @@
             </form>
         </div>
     </header>
-    <div class="slideshow-container">
+    <div class="slideshow-container" style="margin-left:19%; margin-bottom:9%;">
         <div class="mySlides fade">
             <img src="assets/img/colorfulheadphone.jpg" style="width:100%">
         </div>
@@ -62,7 +62,7 @@
         <span class="dot" ></span>
        </div>
     </div>    
-       <div class="hotsales">
+       <div class="hotsales" style="margin-left:7%;">
            <h2>熱銷商品排行榜</h2>
         <div class="flip-card">
             <a href=" /*產品網址*/ ">
@@ -227,7 +227,7 @@
         <script type="text/javascript" src="assets/js/contact_us.js"></script> 
 
         <footer >
-            <div class="footerlink">
+            <div class="footerlink" >
                 <b>© Copyright 2022, in耳吉 All Rights Reserved <br>
                 <%
                       try { 	   
