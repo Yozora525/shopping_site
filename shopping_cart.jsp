@@ -89,7 +89,7 @@
 
         </div>
     </header>
-<%
+<%  /*
      out.println("<div class='shoppingCart'>");
          out.println("<h2>購物車</h2>");
          out.println("<form method='POST' action=''>");
@@ -101,18 +101,30 @@
                     out.println("<th>數量</th>");
                     out.println("<th>刪除</th>");
                     out.println("</tr>");                                          
-
+*/
 
                         sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // 購物車裡 產品名都一樣 用於更新
                         ResultSet hr_allcart=con.createStatement().executeQuery(sql);  //用於下面表格
 
-                        while(hr_allcart.next())
+                        sql= "Select Count(*) From `shopping_car`  WHERE `product_name` =  strShoppingCarName"
+                        if (("Select Count(*) From `shopping_car`  WHERE `product_name` =  + strShoppingCarName" ) > 0 )
+                            {
+                                out.println("true");
+                                Return True;
+                            }
+                            else
+                            {
+                                out.println("false");
+                                Return False;
+                            }
+                   /*     while(hr_allcart.next())
                         {
-                            "SELECT `product_name` FROM `shopping_car` WHERE `product_name` = '" + strShoppingCarName + "'";
+ 
+                         //   "SELECT `product_name` FROM `shopping_car` WHERE `product_name` = '" + strShoppingCarName + "'";
 
                                  if(  `strShoppingCarName= )    //在sql裡找到相同名稱的產品 更新數量
                                     {   //總數量=迴圈總數量+這次的數量
-                                    sql="UPDATE `shopping_car` SET `car_quantity`= (strShoppingCarQuantity + hr_allcart.getInt("car_quantity")) WHERE `product_name`=strShoppingCarName ";
+                                    sql="UPDATE `shopping_car` SET `car_quantity`= (strShoppingCarQuantity + hr_allcart.getInt('car_quantity')) WHERE `product_name`=strShoppingCarName ";
                                     ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql); 
                                     }
                         }
@@ -156,7 +168,7 @@
             </table>
         </form>
     </div>
-              
+              */
                     
  
     <div class="address">
