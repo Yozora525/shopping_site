@@ -87,21 +87,22 @@
 
             <!-- Thumbnail images -->
             <%
-            while(rsIMG1.next()){
-                int i=0;
-                i++;
-                if(i>3){
                 out.println("<div class='row'>");
+                int i=0;
+             while(rsIMG1.next()){
+                do{
+                i++;
                 out.println("<div class='column'>");
-                out.println("<img class='demo cursor' src='"+ rsIMG.getString("product_image") +" style='width:100%' onclick='currentSlide(i)'>" );
-                out.println("</div>");
-                }
+                out.println("<img class='demo cursor' src='"+ rsIMG1.getString("product_image") +"' style='width:100%' onclick='currentSlide(i)'>" );
+                out.println("</div>"); //三個產品圖片
+                out.println(i); //每次執行 i都為1 但i應為1'2'3 遞增
+                }while(i<4);
+                
             }
+                out.println("</div>");
             %>
             <%-- <div class="row">
-                <div class="column"> --%>
-                
-                <%-- out.println("<img class='demo cursor' src='"+ rsIMG.getString("product_image") +" style='width:100%' onclick='currentSlide(1)'>" );  //三個產品圖片 --%>
+                <div class="column"> --%> 
 
                 
                 <%-- <img class="demo cursor" src="assets/img/MoonDrop_illumination1.jpg" style="width:100%" onclick="currentSlide(1)">
@@ -115,7 +116,7 @@
                 <img class="demo cursor" src="assets/img/MoonDrop_illumination3.jpg" style="width:100%" onclick="currentSlide(3)">
                 </div> --%>
                 
-            </div>
+
         </div>
         <div class="productDescription">
             <div class="productContent">
