@@ -21,6 +21,7 @@
         response.setCharacterEncoding("UTF-8");
         String strShoppingCarName = (String)session.getAttribute("strProductNameItroduce");
         String strShoppingCarPrice;
+        String strShoppingCarQuantity = request.getParameter("quantity");
         session.removeAttribute("strProductNameItroduce");
 
        // out.println(strShoppingCarName);
@@ -42,6 +43,7 @@
         out.println(strShoppingCarPrice);
 
         out.println(session.getAttribute("email").toString());
+        out.println(strShoppingCarQuantity);
         
         //int strshoppingCartPrice = Integer.parseInt(strPrice);
 
@@ -79,10 +81,10 @@
     int iSum = 0;
     int no;
 
-    sql="INSERT `shopping_car`(`product_name`, `price`,`email`)";//     , `car_quantity`,`email`)";
+    sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
         sql+="VALUES ('" + strShoppingCarName + "', ";
         sql+="'"+ Integer.parseInt(strShoppingCarPrice) +"', "; //單價
-        //sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
+        sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
         sql+="'"+ session.getAttribute("email").toString() +"')"; 
 
     no =con.createStatement().executeUpdate(sql);

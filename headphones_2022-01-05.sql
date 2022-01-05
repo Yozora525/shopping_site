@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2022-01-05 10:53:54 +0000
+# 生成時間: 2022-01-05 11:07:11 +0000
 # ************************************************************
 
 
@@ -308,10 +308,18 @@ CREATE TABLE `shopping_car` (
   `car_quantity` int(11) NOT NULL DEFAULT 0,
   `email` varchar(45) NOT NULL DEFAULT 'null',
   `car_money` int(11) NOT NULL DEFAULT 0,
-  `address` varchar(64) NOT NULL DEFAULT 'null',
-  `username` varchar(100) NOT NULL DEFAULT 'null'
+  `address` varchar(64) NOT NULL DEFAULT 'null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+LOCK TABLES `shopping_car` WRITE;
+/*!40000 ALTER TABLE `shopping_car` DISABLE KEYS */;
+
+INSERT INTO `shopping_car` (`product_name`, `price`, `car_quantity`, `email`, `car_money`, `address`)
+VALUES
+	('Galaxy Buds2',4990,100,'haha@gmail.com',0,'null');
+
+/*!40000 ALTER TABLE `shopping_car` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # 轉儲表 transaction
