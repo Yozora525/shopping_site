@@ -13,50 +13,93 @@
 </head>
 <body>
 <%
+    if(session.getAttribute("email") == null) {
+        out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
+    }
+    else{
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String strShoppingCarName =session.getAttribute("strProductNameItroduce").toString();
+        String strShoppingCarName = (String)session.getAttribute("strProductNameItroduce");
+        String strShoppingCarPrice;
+        String strShoppingCarQuantity = request.getParameter("quantity");
+        session.removeAttribute("strProductNameItroduce");
+
        // out.println(strShoppingCarName);
         
-        sql="SELECT `product_name` `price` FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
+        sql="SELECT * FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
         ResultSet rs_Product=con.createStatement().executeQuery(sql);
+
 
         while(rs_Product.next()){
-            out.println( rs_Product.getString("price"));
+            session.setAttribute("strShoppingCarPrice", rs_Product.getString("price"));
+            /*out.println( rs_Product.getString("price"));
+            String strshoppingCartPrice =rs_Product.getString("price").toString();
+            int intshoppingCarPrice =Integer.parseInt(rs_Product.getString("price"));
+            session.setAttribute("strshoppingCartPrice", strshoppingCartPrice);
+            out.println(strshoppingCartPrice);*/
         }
-        
+
+        strShoppingCarPrice = session.getAttribute("strShoppingCarPrice").toString();
+        out.println(strShoppingCarPrice);
+
+        out.println(session.getAttribute("email").toString());
+        out.println(strShoppingCarQuantity);
         
         //int strshoppingCartPrice = Integer.parseInt(strPrice);
+
 %>
-<%
-  //  if(session.getAttribute("email") == null) {
- //       out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
-  //  }
-  //  else{
+<%/*
+            int no=0;
+            int total=0; //計算總額
 
-/*
-        sql="SELECT `product_name` `price` FROM `product` WHERE `product_name` = '" + strProductNameItroduce + "'";
-        ResultSet rs_Product=con.createStatement().executeQuery(sql);
-        int strPrice= rs_Product.getInt("strProductPriceItroduce"); //取得商品單價
-        out.println(strPrice);
-       /*
-            while(hr_cart.next())
-        {
-            int cart_number=hr_number.getString(""); //取得商品數量
-            String cart_productName=hr_productName.getString(""); //取得商品名稱
-            int cart_price=hr_price.getString(""); //取得商品單價
-           // int total+=cart_number*cart_price; //計算總額
 
-        } 
-        */
-/*
-        sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`,`email`)";
+        sql="INSERT `shopping_car`(`product_name`, `price`,`email`)";//     , `car_quantity`,`email`)";
         sql+="VALUES ('" + session.getAttribute("strProductNameItroduce") + "', ";
-        sql+="'"+ session.getAttribute("") +"', "; //單價
+        sql+="'"+ session.getAttribute("intshoppingCarPrice") +"', "; //單價
         sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
-        sql+="'"+ session.getAttribute("email") +"')"; */
+        sql+="'"+ session.getAttribute("email") +"')";  */
+
+/*
+        sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // AND `email`="+ email +"'"; 
+        ResultSet hr_allcart=con.createStatement().executeQuery(sql);  //用於下面表格
+        */
+    /*    out.println(session.getAttribute("strProductNameItroduce"));
+        out.println(session.getAttribute("intshoppingCarPrice"));
+        out.println(session.getAttribute("email")); /*
+   
+    /*       no =con.createStatement().executeUpdate(sql);
+
+        if (no>0){
+            out.println("新增成功");
+         //   session.removeAttribute("strProductNameItroduce");
+        }
+
+        else{
+            out.println(sql);
+        }
+    */
     
-        %>
+    int iSum = 0;
+    int no;
+
+    sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
+        sql+="VALUES ('" + strShoppingCarName + "', ";
+        sql+="'"+ Integer.parseInt(strShoppingCarPrice) +"', "; //單價
+        sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
+        sql+="'"+ session.getAttribute("email").toString() +"')"; 
+
+    no =con.createStatement().executeUpdate(sql);
+    
+    if (no>0){
+            out.println("新增成功");
+            session.removeAttribute("strShoppingCarPrice");
+    }
+
+    else{
+        out.println(sql);
+    }
+
+%>
 
     <header class="mainHeader">
         <div class="container">
@@ -71,107 +114,77 @@
                 <a href="#" onclick="openNav()">聯絡我們</a>
             </nav>
             <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
+
             <form class="headerSearch" method="POST" action="search_resultt.jsp">
                 <input type="search" name="key_word" placeholder="請輸入產品名稱">
                 <button><img src="assets/img/magnifying-glass.png"></button>
             </form>
+
         </div>
     </header>
-    <div class="shoppingCart">
-        <h2>購物車</h2>
-        <form method="POST" action="">
-            <table border="1">
-                <tbody id="amsTbody">
-                    <tr>
-                        <th>商品名稱</th>
-                        <th>價格</th>
-                        <th>數量</th>
-                        <th>刪除</th>
-                    </tr>
-                    <%--
-
-                        <%
-
-
-                        for(int i=1;i<= count;i++)
+<%
+     out.println("<div class='shoppingCart'>");
+         out.println("<h2>購物車</h2>");
+         out.println("<form method='POST' action=''>");
+            out.println("<table border='1'>");
+               out.println(" <tbody id='amsTbody'>");
+                   out.println("<tr>");
+                    out.println("<th>商品名稱</th>");
+                    out.println("<th>價格</th>");
+                    out.println("<th>數量</th>");
+                    out.println("<th>刪除</th>");
+                    out.println("</tr>");                                          
+/*
+                        while(hr_allcart.next())
                         {
-                            out.println("<tr class='tdSet'>");
+                                out.println("<tr class='tdSet'>");
 
-                            for(int j=1;j<=count;j++)
-                            {
-                                out.println("<td class='tdSet'>"+rs_product.getString("product_name")+"</td>");
-                                out.println("<td class='tdSet'>"+rs_product.getString("price")+"</td>");
-                                out.println("<td class='tdSet'>";
-                                out.println("<select name='quantity' id='number1'>");
+                                    out.println("<td class='tdSet'>"+ hr_allcart.getString("product_name") +"</td>"); //產品名
+                                    out.println("<td class='tdSet'>"+ hr_allcart.getString("price") +"</td>"); //價錢
 
-                                for(int n=1;n<=     ;n++)
-                                {
-                                    out.println("<option value='"+n+"'></option>");
-                                }
-                                
-                                out.println("</select>");
+                                out.println("<td class='tdSet'>");
+
+                                    out.println("<input type='number' value='"+hr.hr_allcart.getString("")+"' min='1' />"); //輸入買多少數量
+
                                 out.println("</td>");
-                                out.println("<td class="deleteCol tdSet">");
-                                out.println("<button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>");
-                                out.println("</td></tr>");
-                            }
-                        }
-                        %>
-                     </tbody>
+                                out.println("<td class='deleteCol tdSet'>");
+
+                                    out.println("<button class='delete' onclick='editTable.delRow()'>");
+                                    out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button>");
+
+                                out.println("</td>");
+                                out.println("</tr>");
+                                
+                                
+                            
+                        }*/
+%>
+                         </tbody>
                 <tr>
-                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp;76500&nbsp;元</td>
+                    <%-- <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%=total%> &nbsp;元</td> --%>
+                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp;  &nbsp;元</td>
                 </tr>
             </table>
         </form>
     </div>
-                    --%>
-                    <tr class="tdSet">
+              
+                    
+                    <%-- <tr class="tdSet">
                         <td class="tdSet">鐵三角 M50x</td>
                         <td class="tdSet">$ 5600</td>
                         <td class="tdSet">
-                            <select name="quantity" id="number1">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
+                            <input type="number" value="1" min="1" />
                         </td>
                         <td class="deleteCol tdSet">
                             <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
                         </td>
                     </tr>
+
                     <tr class="tdSet">
                         <td class="tdSet">SONY IER-Z1R</td>
                         <td class="tdSet">$ 55900</td>
                         <td class="tdSet">
-                            <select name="quantity" id="number2">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
+                            <input type="number" value="1" min="1" />
                         </td>
                         <td class="deleteCol tdSet">
                             <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
@@ -181,28 +194,12 @@
                         <td class="tdSet">水月雨 KATO</td>
                         <td class="tdSet">$ 6000</td>
                         <td class="tdSet">
-                            <select name="quantity" id="number3">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
+                            <input type="number" value="1" min="1" />
                         </td>
                         <td class="deleteCol tdSet">
                             <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
                         </td>
-                    </tr>
+                    </tr> --%>
                      <!-- jsp到這邊結束-->
                 </tbody>
                 <tr>
@@ -211,6 +208,7 @@
             </table>
         </form>
     </div>
+ 
     <div class="address">
         <form action="">
             <table>
@@ -253,5 +251,8 @@
     </div>
     <script type="text/javascript" src="assets/js/shopping_cart.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%
+    }
+    %>
 </body>
 </html>

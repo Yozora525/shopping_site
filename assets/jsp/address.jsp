@@ -3,8 +3,8 @@
 <%@page import = "java.sql.*" %> 
 <%@include file = "consql.jsp" %>
 <%
-    if(session.getAttribute("email") == null){
-        out.println("請先登入再使用留言板功能, 點<a href='../../login.html'>我</a>回登入頁");
+    if(session.getAttribute("detailedAddress") == null){
+        out.println("請先輸入地址再使用結帳功能, 點<a href='../../login.html'>我</a>回登入頁");
     }
 
     else{
@@ -13,19 +13,21 @@
         String postalCode =request.getParameter("postalCode");
         String city =request.getParameter("city");
         String detailedAddress =request.getParameter("detailedAddress");
-        int no=0;
-
+        int non=0;
+        out.println("postalCode");
+        out.println("city");
+        out.println("detailedAddress");
+        
         sql="INSERT `shopping_car`(`address`)";
-        sql+="VALUES ('" + postalCode + "', ";
-        sql+="'"+ city +"', ";
-        sql+="'"+ detailedAddress +"')";
+        sql+="VALUES ('" + request.getParameter("postalCode") + request.getParameter("city") + request.getParameter("detailedAddress") +"') ";
+       // sql+="'"+ city +"', ";
+     //   sql+="'"+ detailedAddress +"')";
     
-        no =con.createStatement().executeUpdate(sql);
+        non =con.createStatement().executeUpdate(sql);
 
-        if (no>0){
-            out.println("新增成功");
+        if (non >0){
+            out.println("新增地址成功!"); //之後會改成 結帳成功
             con.close();
-            session.removeAttribute("strProductNameItroduce");
         }
 
         else{
@@ -33,5 +35,7 @@
         }
     }
     
+    sql="INSERT `record`(`address`)";
+    sql+="VALUES ('" + postalCode + city + detailedAddress +"') ";
     
 %>
