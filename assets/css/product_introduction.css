@@ -19,11 +19,43 @@
   /* Hide the images by default */
 .mySlides {
     display: none;
+    position: relative;
+    left: 8%;
 }
   /* Add a pointer when hovering over the thumbnail images */
 .cursor {
     cursor: pointer;
 }
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 3px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.prev{
+    left: -1%;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 10%;
+  border-radius: 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .row:after {
     content: "";
     display: table;

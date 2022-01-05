@@ -69,7 +69,7 @@
             //out.println("</div>");
             while(rsIMG.next()) {
                 out.println("<div class='mySlides'>");
-                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:300px;height:300px;margin-top:30px;'>");
+                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:350px;height:350px;margin-top:30px;'>");
                 out.println("</div>");
             }
             //out.println("</div>"); 
@@ -81,9 +81,11 @@
              <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination3.jpg" style="width:100%">
             </div>  --%>
-            
-            
 
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
             <!-- Thumbnail images -->
             <br>
             <%
