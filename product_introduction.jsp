@@ -53,24 +53,27 @@
             ResultSet rsProduct=con.createStatement().executeQuery(sql);
             ResultSet rsProduct1=con.createStatement().executeQuery(sql);
             ResultSet rsProduct2=con.createStatement().executeQuery(sql);
-            out.println("<div class='mySlides'>");
+            //out.println("<div class='mySlides'>");
 
             sql="SELECT * FROM `product_img` WHERE `product_name` = '" + strProductNameItroduce + "'";
             ResultSet rsIMG=con.createStatement().executeQuery(sql);
             ResultSet rsIMG1=con.createStatement().executeQuery(sql);
 
-
+            /*
             while(rsProduct1.next()) {
+                out.println("<div class='mySlides'>");
                 out.println("<img src='" + rsProduct1.getString(4) + "' style='width:70%;height:70%'>");
-            }
+                out.println("</div>");
+            }*/
             
-            out.println("</div>");
+            //out.println("</div>");
 
             while(rsIMG.next()) {
                 out.println("<div class='mySlides'>");
-                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:100%'>");
-                out.println("</div>");               
-            } 
+                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:100%;height:80%'>");
+                out.println("</div>");
+            }
+            //out.println("</div>"); 
             %>
             <%-- <div class="mySlides">
                 <img src="assets/img/MoonDrop_illumination2.jpg" style="width:100%">
@@ -94,10 +97,9 @@
                     
                     i++;
                     out.println("<div class='column'>");
-                    out.println("<img class='demo cursor' src='"+ rsIMG1.getString("product_image") +"' style='width:100%' onclick='currentSlide(" + i + ")'>" );
+                    out.println("<img class='demo cursor' src='"+ rsIMG1.getString("product_image") +"' style='width:75%' onclick='currentSlide(" + i + ")'>" );
                     out.println("</div>"); //三個產品圖片
-                    out.println(i);
-            }
+                }
                 out.println("</div>");
             %>
 
