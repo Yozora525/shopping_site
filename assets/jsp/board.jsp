@@ -12,7 +12,7 @@
 %>
 <%
     if(session.getAttribute("email") == null){
-        out.println("請先登入再使用留言板功能, 點<a href='login.html'>我</a>回登入頁");
+        out.println("請先登入再使用留言板功能, 點<a href='../../login.html'>我</a>回登入頁");
     }
 
     else{
