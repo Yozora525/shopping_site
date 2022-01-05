@@ -13,10 +13,10 @@
 </head>
 <body>
 <%
-  //  if(session.getAttribute("email") == null) {
- //       out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
-  //  }
-  //else{
+    if(session.getAttribute("email") == null) {
+        out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
+    }
+    else{
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         String strShoppingCarName = (String)session.getAttribute("strProductNameItroduce");
@@ -79,23 +79,22 @@
     int iSum = 0;
     int no;
 
-  /*  sql="INSERT `shopping_car`(`product_name`, `price`,`email`)";//     , `car_quantity`,`email`)";
+    sql="INSERT `shopping_car`(`product_name`, `price`,`email`)";//     , `car_quantity`,`email`)";
         sql+="VALUES ('" + strShoppingCarName + "', ";
         sql+="'"+ Integer.parseInt(strShoppingCarPrice) +"', "; //單價
-      //  sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
+        //sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
         sql+="'"+ session.getAttribute("email").toString() +"')"; 
 
     no =con.createStatement().executeUpdate(sql);
     
     if (no>0){
             out.println("新增成功");
-         //   session.removeAttribute("strProductNameItroduce");
-        }
+    }
 
-        else{
-            out.println(sql);
-        }
-*/
+    else{
+        out.println(sql);
+    }
+
 %>
 
     <header class="mainHeader">
@@ -155,7 +154,7 @@
                                 
                             
                         }*/
-                         %>
+%>
                          </tbody>
                 <tr>
                     <%-- <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%=total%> &nbsp;元</td> --%>
@@ -248,5 +247,8 @@
     </div>
     <script type="text/javascript" src="assets/js/shopping_cart.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%
+    }
+    %>
 </body>
 </html>
