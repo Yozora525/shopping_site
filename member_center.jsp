@@ -17,7 +17,7 @@
 <body>
 <%
     if(session.getAttribute("email") == null) {
-        out.println("請確實登入, 點<a href='login.html'>我</a>回登入頁");
+        //out.println("請確實登入, 點<a href='login.html'>我</a>回登入頁");
         response.sendRedirect("login.html");
     }
 

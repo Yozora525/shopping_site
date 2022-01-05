@@ -19,7 +19,10 @@
   //else{
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String strShoppingCarName =session.getAttribute("strProductNameItroduce").toString();
+        String strShoppingCarName = (String)session.getAttribute("strProductNameItroduce");
+        String strShoppingCarPrice;
+        session.removeAttribute("strProductNameItroduce");
+
        // out.println(strShoppingCarName);
         
         sql="SELECT * FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
@@ -27,17 +30,23 @@
 
 
         while(rs_Product.next()){
-           // out.println( rs_Product.getString("price"));
-         //  String strshoppingCartPrice =rs_Product.getString("price").toString();
+            session.setAttribute("strShoppingCarPrice", rs_Product.getString("price"));
+            /*out.println( rs_Product.getString("price"));
+            String strshoppingCartPrice =rs_Product.getString("price").toString();
             int intshoppingCarPrice =Integer.parseInt(rs_Product.getString("price"));
-        //    session.setAttribute("strshoppingCartPrice", strshoppingCartPrice);
-      //      out.println(strshoppingCartPrice);
+            session.setAttribute("strshoppingCartPrice", strshoppingCartPrice);
+            out.println(strshoppingCartPrice);*/
         }
 
+        strShoppingCarPrice = session.getAttribute("strShoppingCarPrice").toString();
+        out.println(strShoppingCarPrice);
+
+        out.println(session.getAttribute("email").toString());
         
         //int strshoppingCartPrice = Integer.parseInt(strPrice);
+
 %>
-<%
+<%/*
             int no=0;
             int total=0; //計算總額
 
@@ -67,9 +76,27 @@
         }
     */
     
+    int iSum = 0;
+    int no;
 
+  /*  sql="INSERT `shopping_car`(`product_name`, `price`,`email`)";//     , `car_quantity`,`email`)";
+        sql+="VALUES ('" + strShoppingCarName + "', ";
+        sql+="'"+ Integer.parseInt(strShoppingCarPrice) +"', "; //單價
+      //  sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
+        sql+="'"+ session.getAttribute("email").toString() +"')"; 
 
-        %>
+    no =con.createStatement().executeUpdate(sql);
+    
+    if (no>0){
+            out.println("新增成功");
+         //   session.removeAttribute("strProductNameItroduce");
+        }
+
+        else{
+            out.println(sql);
+        }
+*/
+%>
 
     <header class="mainHeader">
         <div class="container">
@@ -104,7 +131,7 @@
                     out.println("<th>數量</th>");
                     out.println("<th>刪除</th>");
                     out.println("</tr>");                                          
-
+/*
                         while(hr_allcart.next())
                         {
                                 out.println("<tr class='tdSet'>");
@@ -127,11 +154,12 @@
                                 
                                 
                             
-                        }
+                        }*/
                          %>
                          </tbody>
                 <tr>
-                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%=total%> &nbsp;元</td>
+                    <%-- <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%=total%> &nbsp;元</td> --%>
+                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp;  &nbsp;元</td>
                 </tr>
             </table>
         </form>
