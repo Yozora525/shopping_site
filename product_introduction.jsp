@@ -70,7 +70,7 @@
 
             while(rsIMG.next()) {
                 out.println("<div class='mySlides'>");
-                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:100%;height:80%'>");
+                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:70%;height:60%;margin-top:30px;'>");
                 out.println("</div>");
             }
             //out.println("</div>"); 
@@ -89,7 +89,7 @@
             
 
             <!-- Thumbnail images -->
-
+            <br>
             <%
                 out.println("<div class='row'>");
                 int i=0;
@@ -97,7 +97,7 @@
                     
                     i++;
                     out.println("<div class='column'>");
-                    out.println("<img class='demo cursor' src='"+ rsIMG1.getString("product_image") +"' style='width:75%' onclick='currentSlide(" + i + ")'>" );
+                    out.println("<img src='"+ rsIMG1.getString("product_image") +"' style='width:100%; padding:0px' onclick='currentSlide(" + i + ")'>" );
                     out.println("</div>"); //三個產品圖片
                 }
                 out.println("</div>");
