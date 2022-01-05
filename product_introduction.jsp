@@ -67,7 +67,6 @@
             }*/
             
             //out.println("</div>");
-
             while(rsIMG.next()) {
                 out.println("<div class='mySlides'>");
                 out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:70%;height:60%;margin-top:30px;'>");
@@ -83,9 +82,6 @@
                 <img src="assets/img/MoonDrop_illumination3.jpg" style="width:100%">
             </div>  --%>
             
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
             
 
             <!-- Thumbnail images -->
@@ -97,7 +93,7 @@
                     
                     i++;
                     out.println("<div class='column'>");
-                    out.println("<img src='"+ rsIMG1.getString("product_image") +"' style='width:100%; padding:0px' onclick='currentSlide(" + i + ")'>" );
+                    out.println("<img class='demo cursor' src='"+ rsIMG1.getString("product_image") +"' style='width:100%; padding:0px' onclick='currentSlide(" + i + ")'>" );
                     out.println("</div>"); //三個產品圖片
                 }
                 out.println("</div>");

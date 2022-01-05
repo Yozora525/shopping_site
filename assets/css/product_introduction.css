@@ -16,7 +16,6 @@
     margin: 2.5%;
     overflow: auto;
 }
-
   /* Hide the images by default */
 .mySlides {
     display: none;
@@ -26,36 +25,6 @@
 .cursor {
     cursor: pointer;
 }
-  
-  /* Next & previous buttons */
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-}
-  
-  /* Position the "next button" to the right */
-.next {
-    right: 30%;
-    border-radius: 3px 0 0 3px;
-}
-  
-  /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-  
 .row:after {
     content: "";
     display: table;
@@ -66,17 +35,19 @@
 .column {
     float: left;
     width: 25%;
-    margin: 4% 12% 4% 0%;
+    margin: 4% 8% 4% 0%;
 }
 .column1{
-    float: right;
+    float: left;
     width: 25%;
     margin: 4% 0% 4% 0%;
 }
-  
+
   /* Add a transparency effect for thumnbail images */
 .demo {
     opacity: 0.6;
+    width: 100px;
+    height: 100px;
 }
   
 .active,
