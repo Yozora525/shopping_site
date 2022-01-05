@@ -6,7 +6,7 @@
 .productImg{
     width: 40%;
     height: 45%;
-    margin: 4% 0% 4% 6%;
+    margin: 0% 0% 4% 6%;
     float: left;
     position: relative;
 }
@@ -20,7 +20,6 @@
 .mySlides {
     display: none;
 }
-  
   /* Add a pointer when hovering over the thumbnail images */
 .cursor {
     cursor: pointer;
@@ -37,12 +36,6 @@
     width: 25%;
     margin: 4% 8% 4% 0%;
 }
-.column1{
-    float: left;
-    width: 25%;
-    margin: 4% 0% 4% 0%;
-}
-
   /* Add a transparency effect for thumnbail images */
 .demo {
     opacity: 0.6;

@@ -69,7 +69,7 @@
             //out.println("</div>");
             while(rsIMG.next()) {
                 out.println("<div class='mySlides'>");
-                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:70%;height:60%;margin-top:30px;'>");
+                out.println("<img src='" + rsIMG.getString("product_image") + "' style='width:300px;height:300px;margin-top:30px;'>");
                 out.println("</div>");
             }
             //out.println("</div>"); 
