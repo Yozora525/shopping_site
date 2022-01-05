@@ -29,8 +29,8 @@
         while(rs_Product.next()){
            // out.println( rs_Product.getString("price"));
          //  String strshoppingCartPrice =rs_Product.getString("price").toString();
-            int strshoppingCartPrice =Integer.parseInt(rs_Product.getString("price"));
-            session.setAttribute("strshoppingCartPrice", strshoppingCartPrice);
+            int intshoppingCarPrice =Integer.parseInt(rs_Product.getString("price"));
+        //    session.setAttribute("strshoppingCartPrice", strshoppingCartPrice);
       //      out.println(strshoppingCartPrice);
         }
 
@@ -44,15 +44,15 @@
 
         sql="INSERT `shopping_car`(`product_name`, `price`,`email`)";//     , `car_quantity`,`email`)";
         sql+="VALUES ('" + session.getAttribute("strProductNameItroduce") + "', ";
-        sql+="'"+ session.getAttribute("strshoppingCartPrice") +"', "; //單價
+        sql+="'"+ session.getAttribute("intshoppingCarPrice") +"', "; //單價
       //  sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
         sql+="'"+ session.getAttribute("email") +"')"; 
 
-        sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // AND `email`="+ email +"'";
-        ResultSet hr_allcart=con.createStatement().executeQuery(sql);
+        sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // AND `email`="+ email +"'"; 
+        ResultSet hr_allcart=con.createStatement().executeQuery(sql);  //用於下面表格
         
         out.println(session.getAttribute("strProductNameItroduce"));
-        out.println(session.getAttribute("strshoppingCartPrice"));
+        out.println(session.getAttribute("intshoppingCarPrice"));
         out.println(session.getAttribute("email"));
    
     /*       no =con.createStatement().executeUpdate(sql);
@@ -103,9 +103,7 @@
                     out.println("<th>價格</th>");
                     out.println("<th>數量</th>");
                     out.println("<th>刪除</th>");
-                    out.println("</tr>");
-                   
-                        
+                    out.println("</tr>");                                          
 
                         while(hr_allcart.next())
                         {
