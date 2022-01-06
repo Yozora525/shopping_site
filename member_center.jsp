@@ -97,7 +97,7 @@
                 <a href="member_orders_record.html"><button class="recordBtn">訂單紀錄</button></a>
             </div>
             <div class="comment">
-                <a href="member_comment_record.html"><button class="recordBtn">評論紀錄</button></a>
+                <a href="member_comment_record.jsp"><button class="recordBtn">評論紀錄</button></a>
             </div>
         </div>
         <form action="assets/jsp/modify_username.jsp">
