@@ -150,7 +150,7 @@
                         out.println("<p class='priceShow'>售價   <b class='price'>$" + rsProduct2.getString(2) + "</b></p>");
                     }
                     
-                    out.println("<form action='shopping_cart.jsp' method='post'>");
+                    out.println("<form action='assets/jsp/InsertCart.jsp' method='post'>");
                     out.println("<input class='number' type='number' name='quantity' min='1' value='1'/>");
                     
                     sql="SELECT * FROM `inventory` WHERE `product_name` = '" + strProductNameItroduce + "'";
@@ -162,12 +162,12 @@
                 %>
                 <div class="buttonBlock">
                 <%
-                   out.println(" <a href='shopping_cart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='addToCart' type='submit'><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a>");
+                   out.println(" <a href='assets/jsp/InsertCart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='addToCart' type='submit'><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a>");
                 %>  
 
                     <%-- <a href="#"><button class="addToCart" type="submit"><img src='assets/img/shopping_cart.png'>&nbsp;&nbsp;加入購物車</button></a> --%>
                 <%
-                   out.println(" <a href='shopping_cart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='checkout' type='submit'>直接結帳</button></a>");
+                   out.println(" <a href='assets/jsp/InsertCart.jsp?strProductNameItroduce=" + strProductNameItroduce + "'><button class='checkout' type='submit'>直接結帳</button></a>");
                    out.println("</form>");
                 %>  
                 <%-- <a href="#"><button class="checkout" type="submit">直接結帳</button></a> --%>
