@@ -8,7 +8,8 @@
 </head>
 <body>
 <%
-
+    request.setCharacterEncoding("UTF-8"); 
+    response.setCharacterEncoding("UTF-8");
     String strUserName = request.getParameter("user_name");
     String strEmail = request.getParameter("user_email");
     String strPassword = request.getParameter("user_pwd");
