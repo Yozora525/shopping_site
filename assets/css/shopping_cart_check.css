@@ -34,6 +34,7 @@
 .address table{
     width: 100%;
     height: 100%;
+    text-align: center;
     border-collapse: collapse;
 }
 .address table th,
@@ -42,21 +43,21 @@
 }
 .addressCol{
     text-align: center;
-    width: 20%;
+    width: 35%;
     font-size: 20px;
     font-weight: bolder;
 }
 .postalCode{
-    width: 60%;
+    width: 25%;
 }
 .postalCodeCol{
     width: 15%;
 }
 .cityCol{
-    width: 25%;
+    width: 15%;
 }
 .city{
-    width: 15%;
+    width: 30%;
 }
 .checkoutCol{
     width: 30%;
@@ -76,8 +77,11 @@
     color: black;
     background-color: white;
 }
+.detailedAddressCol{
+    width: 35%;
+}
 .detailedAddress{
-    width: 80%;
+    width: 65%;
 }
 .buttonBlock{
     margin-top: 5%;
