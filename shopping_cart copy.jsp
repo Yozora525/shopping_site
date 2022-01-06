@@ -23,8 +23,6 @@
         String strShoppingCarPrice;
         String strShoppingCarQuantity = request.getParameter("quantity");
         session.removeAttribute("strProductNameItroduce");
-
-       // out.println(strShoppingCarName);
         
         sql="SELECT * FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
         ResultSet rs_Product=con.createStatement().executeQuery(sql);
@@ -32,72 +30,16 @@
 
         while(rs_Product.next()){
             session.setAttribute("strShoppingCarPrice", rs_Product.getString("price"));
-            /*out.println( rs_Product.getString("price"));
-            String strshoppingCartPrice =rs_Product.getString("price").toString();
-            int intshoppingCarPrice =Integer.parseInt(rs_Product.getString("price"));
-            session.setAttribute("strshoppingCartPrice", strshoppingCartPrice);
-            out.println(strshoppingCartPrice);*/
         }
 
-        strShoppingCarPrice = session.getAttribute("strShoppingCarPrice").toString();
+       // strShoppingCarPrice = session.getAttribute("strShoppingCarPrice").toString();
+        strShoppingCarPrice=String.valueOf(session.getAttribute("strShoppingCarPrice")); //物件轉字串型別
         out.println(strShoppingCarPrice);
 
         out.println(session.getAttribute("email").toString());
         out.println(strShoppingCarQuantity);
         
         //int strshoppingCartPrice = Integer.parseInt(strPrice);
-
-%>
-<%/*
-            int no=0;
-            int total=0; //計算總額
-
-
-        sql="INSERT `shopping_car`(`product_name`, `price`,`email`)";//     , `car_quantity`,`email`)";
-        sql+="VALUES ('" + session.getAttribute("strProductNameItroduce") + "', ";
-        sql+="'"+ session.getAttribute("intshoppingCarPrice") +"', "; //單價
-        sql+="'"+ session.getAttribute("") +"', "; //購物車的商品數量
-        sql+="'"+ session.getAttribute("email") +"')";  */
-
-/*
-        sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // AND `email`="+ email +"'"; 
-        ResultSet hr_allcart=con.createStatement().executeQuery(sql);  //用於下面表格
-        */
-    /*    out.println(session.getAttribute("strProductNameItroduce"));
-        out.println(session.getAttribute("intshoppingCarPrice"));
-        out.println(session.getAttribute("email")); /*
-   
-    /*       no =con.createStatement().executeUpdate(sql);
-
-        if (no>0){
-            out.println("新增成功");
-         //   session.removeAttribute("strProductNameItroduce");
-        }
-
-        else{
-            out.println(sql);
-        }
-    */
-    
-    int iSum = 0;
-    int no;
-
-    sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
-        sql+="VALUES ('" + strShoppingCarName + "', ";
-        sql+="'"+ Integer.parseInt(strShoppingCarPrice) +"', "; //單價
-        sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
-        sql+="'"+ session.getAttribute("email").toString() +"')"; 
-
-    no =con.createStatement().executeUpdate(sql);
-    
-    if (no>0){
-            out.println("新增成功");
-            session.removeAttribute("strShoppingCarPrice");
-    }
-
-    else{
-        out.println(sql);
-    }
 
 %>
 
@@ -122,7 +64,7 @@
 
         </div>
     </header>
-<%
+<%  
      out.println("<div class='shoppingCart'>");
          out.println("<h2>購物車</h2>");
          out.println("<form method='POST' action=''>");
@@ -134,83 +76,123 @@
                     out.println("<th>數量</th>");
                     out.println("<th>刪除</th>");
                     out.println("</tr>");                                          
+
+                        int iProductQ =0;
+                        sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // 購物車裡 產品名都一樣 用於更新
+                        ResultSet hr_allcart=con.createStatement().executeQuery(sql);  //用於下面表格
+                        int count =0;
+                        int q;
+                        int pq;
+                        while(hr_allcart.next()){
+                           ++count;
+                            session.setAttribute("q", hr_allcart.getInt("car_quantity"));
+                        }
+                        out.println(count);
+                        if ( count > 1 )
+                            {
+                                out.println("true");
+                              //  Return True;
+                                iProductQ = Integer.parseInt(strShoppingCarQuantity) + Integer.parseInt(session.getAttribute("q").toString());
+                                sql="UPDATE `shopping_car` SET `car_quantity`= '"+ iProductQ +"' WHERE `product_name`='"+ strShoppingCarName +"'" ;
+                               // ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql);
+                                int rsUpdate =con.createStatement().executeUpdate(sql);
+                                
+                                if(rsUpdate > 0){
+                                    out.println("success");
+                                } 
+                                else{
+                                    out.println("fail");
+                                }
+                                out.println(sql);  //等等再刪除剛剛新增的
+                                int no;
+
 /*
-                        while(hr_allcart.next())
+                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
+                                sql+="VALUES ('" + strShoppingCarName + "', ";
+                                // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
+                                sql+="'"+ strShoppingCarPrice +"', ";
+                                sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
+                                sql+="'"+ session.getAttribute("email").toString() +"')"; 
+
+                                no =con.createStatement().executeUpdate(sql);
+    
+                                if (no>0){
+                                    out.println("新增成功");
+                                    session.removeAttribute("strShoppingCarPrice");
+                                    }
+                                else{
+                                    out.println(sql);
+                                    }*/
+
+                            }
+                        else
+                            {
+                                int no;
+                                out.println("false");
+                              //  Return False;
+                              
+                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
+                                sql+="VALUES ('" + strShoppingCarName + "', ";
+                                // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
+                                sql+="'"+ strShoppingCarPrice +"', ";
+                                sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
+                                sql+="'"+ session.getAttribute("email").toString() +"')"; 
+
+                                no =con.createStatement().executeUpdate(sql);
+    
+                                if (no>0){
+                                    out.println("新增成功");
+                                    session.removeAttribute("strShoppingCarPrice");
+                                    }
+                                else{
+                                    out.println(sql);
+                                    }
+                            }  
+
+
+                        int iSum = 0; //總金額
+                        sql="SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
+                        ResultSet hr_all=con.createStatement().executeQuery(sql);
+
+                        while(hr_all.next())
                         {
+
                                 out.println("<tr class='tdSet'>");
 
-                                    out.println("<td class='tdSet'>"+ hr_allcart.getString("product_name") +"</td>"); //產品名
-                                    out.println("<td class='tdSet'>"+ hr_allcart.getString("price") +"</td>"); //價錢
+                                    out.println("<td class='tdSet'>"+ hr_all.getString("product_name") +"</td>"); //產品名
+                                    out.println("<td class='tdSet'>"+ hr_all.getString("price") +"</td>"); //價錢
 
                                 out.println("<td class='tdSet'>");
-
-                                    out.println("<input type='number' value='"+hr.hr_allcart.getString("")+"' min='1' />"); //輸入買多少數量
+                                    
+                                    out.println("<input type='number' value='"+hr_all.getString("car_quantity")+"' min='1' />"); //輸入買多少數量
 
                                 out.println("</td>");
                                 out.println("<td class='deleteCol tdSet'>");
 
+                                    out.println("<a href ='assets/jsp/delete.jsp?product_name="+hr_all.getString("product_name")+"'>");
                                     out.println("<button class='delete' onclick='editTable.delRow()'>");
-                                    out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button>");
+                                    out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button></a>"); //刪除鈕
 
                                 out.println("</td>");
                                 out.println("</tr>");
-                                
+
+                                iSum+=Integer.parseInt(strShoppingCarPrice) * Integer.parseInt(strShoppingCarQuantity) ;
                                 
                             
-                        }*/
-%>
-                         </tbody>
+                        }     %>
+ 
+                          </tbody>
                 <tr>
-                    <%-- <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%=total%> &nbsp;元</td> --%>
-                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp;  &nbsp;元</td>
+                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%out.println(iSum);%> &nbsp;元</td>
                 </tr>
             </table>
         </form>
-    </div>
-              
+    </div> 
+               
                     
-                    <%-- <tr class="tdSet">
-                        <td class="tdSet">鐵三角 M50x</td>
-                        <td class="tdSet">$ 5600</td>
-                        <td class="tdSet">
-                            <input type="number" value="1" min="1" />
-                        </td>
-                        <td class="deleteCol tdSet">
-                            <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
-                        </td>
-                    </tr>
-
-                    <tr class="tdSet">
-                        <td class="tdSet">SONY IER-Z1R</td>
-                        <td class="tdSet">$ 55900</td>
-                        <td class="tdSet">
-                            <input type="number" value="1" min="1" />
-                        </td>
-                        <td class="deleteCol tdSet">
-                            <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
-                        </td>
-                    </tr>
-                    <tr class="tdSet">
-                        <td class="tdSet">水月雨 KATO</td>
-                        <td class="tdSet">$ 6000</td>
-                        <td class="tdSet">
-                            <input type="number" value="1" min="1" />
-                        </td>
-                        <td class="deleteCol tdSet">
-                            <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
-                        </td>
-                    </tr> --%>
-                     <!-- jsp到這邊結束-->
-                </tbody>
-                <tr>
-                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp;76500&nbsp;元</td>
-                </tr>
-            </table>
-        </form>
-    </div>
  
     <div class="address">
-        <form action="">
+        <form action="assets/jsp/address.jsp">
             <table>
                 <tr>
                     <td rowspan="2" class="addressCol">收件地址</td>

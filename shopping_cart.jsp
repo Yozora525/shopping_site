@@ -42,31 +42,6 @@
         //int strshoppingCartPrice = Integer.parseInt(strPrice);
 
 %>
-<%
-            
-  
-    int no;
-
-
-    sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
-        sql+="VALUES ('" + strShoppingCarName + "', ";
-       // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
-        sql+="'"+ strShoppingCarPrice +"', ";
-        sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
-        sql+="'"+ session.getAttribute("email").toString() +"')"; 
-
-    no =con.createStatement().executeUpdate(sql);
-    
-    if (no>0){
-            out.println("新增成功");
-            session.removeAttribute("strShoppingCarPrice");
-    }
-
-    else{
-        out.println(sql);
-    }
-
-%>
 
     <header class="mainHeader">
         <div class="container">
@@ -120,38 +95,62 @@
                                 iProductQ = Integer.parseInt(strShoppingCarQuantity) + Integer.parseInt(session.getAttribute("q").toString());
                                 sql="UPDATE `shopping_car` SET `car_quantity`= '"+ iProductQ +"' WHERE `product_name`='"+ strShoppingCarName +"'" ;
                                // ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql);
-                                int rsUpdate =con.createStatement().executeUpdate(sql);;
-
+                                int rsUpdate =con.createStatement().executeUpdate(sql);
+                                
                                 if(rsUpdate > 0){
                                     out.println("success");
                                 } 
-
                                 else{
                                     out.println("fail");
                                 }
-                                out.println(sql);
-                                //等等再刪除剛剛新增的
+                                out.println(sql);  //等等再刪除剛剛新增的
+                                int no;
+
+/*
+                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
+                                sql+="VALUES ('" + strShoppingCarName + "', ";
+                                // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
+                                sql+="'"+ strShoppingCarPrice +"', ";
+                                sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
+                                sql+="'"+ session.getAttribute("email").toString() +"')"; 
+
+                                no =con.createStatement().executeUpdate(sql);
+    
+                                if (no>0){
+                                    out.println("新增成功");
+                                    session.removeAttribute("strShoppingCarPrice");
+                                    }
+                                else{
+                                    out.println(sql);
+                                    }*/
+
                             }
-                            else
+                        else
                             {
+                                int no;
                                 out.println("false");
                               //  Return False;
+                              
+                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
+                                sql+="VALUES ('" + strShoppingCarName + "', ";
+                                // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
+                                sql+="'"+ strShoppingCarPrice +"', ";
+                                sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
+                                sql+="'"+ session.getAttribute("email").toString() +"')"; 
+
+                                no =con.createStatement().executeUpdate(sql);
+    
+                                if (no>0){
+                                    out.println("新增成功");
+                                    session.removeAttribute("strShoppingCarPrice");
+                                    }
+                                else{
+                                    out.println(sql);
+                                    }
                             }  
 
 
-
-               //        while(hr_allcart.next())
-                  //      {
- 
-                         //   "SELECT `product_name` FROM `shopping_car` WHERE `product_name` = '" + strShoppingCarName + "'";
-
-                   //              if(  `strShoppingCarName= )    //在sql裡找到相同名稱的產品 更新數量
-                  //                  {   //總數量=迴圈總數量+這次的數量
-                  //                  sql="UPDATE `shopping_car` SET `car_quantity`= (strShoppingCarQuantity + hr_allcart.getInt('car_quantity')) WHERE `product_name`=strShoppingCarName ";
-                  //                  ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql); 
-                                    ///}
-                  //      }
-              int iSum = 0; //總金額
+                        int iSum = 0; //總金額
                         sql="SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
                         ResultSet hr_all=con.createStatement().executeQuery(sql);
 

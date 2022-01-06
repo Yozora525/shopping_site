@@ -8,7 +8,7 @@
     
     out.println(email);
 
-    sql="DELETE * FROM `shopping_car` WHERE `product_name` = '"+ product_name +" ' AND `email`='"+ email +"'" ;
+    sql="DELETE FROM `shopping_car` WHERE `product_name` = '"+ product_name +" ' AND `email`='"+ email +"'" ;
     ResultSet hs_Delete=con.createStatement().executeQuery(sql);
     
     
