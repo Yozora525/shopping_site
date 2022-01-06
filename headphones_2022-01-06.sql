@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2022-01-06 05:49:51 +0000
+# 生成時間: 2022-01-06 07:38:15 +0000
 # ************************************************************
 
 
@@ -50,22 +50,17 @@ CREATE TABLE `evaluation` (
   `email` varchar(45) NOT NULL DEFAULT '',
   `product_name` varchar(45) NOT NULL,
   `score` int(11) DEFAULT NULL,
-  `comment` varchar(350) DEFAULT NULL
+  `comment` varchar(350) DEFAULT NULL,
+  `comment_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `evaluation` WRITE;
 /*!40000 ALTER TABLE `evaluation` DISABLE KEYS */;
 
-INSERT INTO `evaluation` (`email`, `product_name`, `score`, `comment`)
+INSERT INTO `evaluation` (`email`, `product_name`, `score`, `comment`, `comment_date`)
 VALUES
-	('haha@gmail.com','Galaxy Buds2',NULL,'wwww'),
-	('haha@gmail.com','Galaxy Buds Pro',NULL,'test'),
-	('haha@gmail.com','Galaxy Buds Pro',NULL,'try'),
-	('haha@gmail.com','水月雨 blessing2',NULL,'哈哈'),
-	('haha@gmail.com','Galaxy Buds2',NULL,'嗨嗨'),
-	('haha@gmail.com','Galaxy Buds2',NULL,'測試'),
-	('www@gmail.com','Galaxy Buds2',NULL,'留\r<br>言'),
-	('www@gmail.com','Galaxy Buds2',NULL,'今天\r<br>星期三');
+	('haha@gmail.com','Galaxy Buds Pro',NULL,'test','2022-01-06 15:19:20'),
+	('haha@gmail.com','Galaxy Buds Pro',NULL,'wwww','2022-01-06 15:30:30');
 
 /*!40000 ALTER TABLE `evaluation` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -311,6 +306,15 @@ CREATE TABLE `shopping_car` (
   `address` varchar(64) NOT NULL DEFAULT 'null'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+LOCK TABLES `shopping_car` WRITE;
+/*!40000 ALTER TABLE `shopping_car` DISABLE KEYS */;
+
+INSERT INTO `shopping_car` (`product_name`, `price`, `car_quantity`, `email`, `car_money`, `address`)
+VALUES
+	('Galaxy Buds Pro',6990,50,'haha@gmail.com',349500,'null');
+
+/*!40000 ALTER TABLE `shopping_car` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # 轉儲表 transaction
