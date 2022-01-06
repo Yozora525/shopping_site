@@ -14,14 +14,13 @@
 <body>
 <%
     if(session.getAttribute("email") == null) {
-        out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
+        out.println("請先登入再使用購物車功能, 點<a href='login.jsp'>我</a>回登入頁");
     }
     else{
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         String strShoppingCarName = (String)session.getAttribute("strProductNameItroduce");
         String strShoppingCarPrice;
-        String strShoppingCarQuantity = request.getParameter("quantity");
         session.removeAttribute("strProductNameItroduce");
         
         sql="SELECT * FROM `product` WHERE `product_name` = '" + strShoppingCarName + "'";
@@ -34,13 +33,6 @@
 
        // strShoppingCarPrice = session.getAttribute("strShoppingCarPrice").toString();
         strShoppingCarPrice=String.valueOf(session.getAttribute("strShoppingCarPrice")); //物件轉字串型別
-        out.println(strShoppingCarPrice);
-
-        out.println(session.getAttribute("email").toString());
-        out.println(strShoppingCarQuantity);
-        
-        //int strshoppingCartPrice = Integer.parseInt(strPrice);
-
 %>
 
     <header class="mainHeader">
@@ -77,63 +69,10 @@
                     out.println("<th>刪除</th>");
                     out.println("</tr>");                                          
 
-                        int iProductQ =0;
-                        sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // 購物車裡 產品名都一樣 用於更新
-                        ResultSet hr_allcart=con.createStatement().executeQuery(sql);  //用於下面表格
-                        int count =0;
-                        int q;
-                        int pq;
-                        while(hr_allcart.next()){
-                           ++count;
-                            session.setAttribute("q", hr_allcart.getInt("car_quantity"));
-                        }
-                        out.println(count);
-                        if ( count > 1 )
-                            {
-                                out.println("true");
-                              //  Return True;
-                                iProductQ = Integer.parseInt(strShoppingCarQuantity) + Integer.parseInt(session.getAttribute("q").toString());
-                                sql="UPDATE `shopping_car` SET `car_quantity`= '"+ iProductQ +"' WHERE `product_name`='"+ strShoppingCarName +"'" ;
-                               // ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql);
-                                int rsUpdate =con.createStatement().executeUpdate(sql);
-                                
-                                if(rsUpdate > 0){
-                                    out.println("success");
-                                } 
-                                else{
-                                    out.println("fail");
-                                }
-                                out.println(sql);  //等等再刪除剛剛新增的
-                                int no;
-
-
-                            }
-                        else
-                            {
-                                int no;
-                                out.println("false");
-                              //  Return False;
-                              
-                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
-                                sql+="VALUES ('" + strShoppingCarName + "', ";
-                                // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
-                                sql+="'"+ strShoppingCarPrice +"', ";
-                                sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
-                                sql+="'"+ session.getAttribute("email").toString() +"')"; 
-
-                                no =con.createStatement().executeUpdate(sql);
-    
-                                if (no>0){
-                                    out.println("新增成功");
-                                    session.removeAttribute("strShoppingCarPrice");
-                                    }
-                                else{
-                                    out.println(sql);
-                                    }
-                            }  
-
 
                         int iSum = 0; //總金額
+                        int price;
+                        int quantity;
                         sql="SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
                         ResultSet hr_all=con.createStatement().executeQuery(sql);
 
@@ -152,14 +91,17 @@
                                 out.println("</td>");
                                 out.println("<td class='deleteCol tdSet'>");
 
-                                    out.println("<a href ='assets/jsp/delete.jsp?product_name="+hr_all.getString("product_name")+"'>");
+                                   
                                     out.println("<button class='delete' onclick='editTable.delRow()'>");
+                                     out.println("<a href ='assets/jsp/delete.jsp?strShoppingCarName="+hr_all.getString("product_name")+"'>");
                                     out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button></a>"); //刪除鈕
 
                                 out.println("</td>");
                                 out.println("</tr>");
 
-                                iSum+=Integer.parseInt(strShoppingCarPrice) * Integer.parseInt(strShoppingCarQuantity) ;
+                                price = hr_all.getInt("price"); 
+                                quantity = hr_all.getInt("car_quantity");
+                                iSum+= price * quantity;
                                 
                             
                         }     %>
