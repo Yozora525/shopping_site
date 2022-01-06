@@ -14,7 +14,7 @@
 <body>
 <%
     if(session.getAttribute("email") == null) {
-        out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
+        out.println("請先登入再使用購物車功能, 點<a href='login.jsp'>我</a>回登入頁");
     }
     else{
         request.setCharacterEncoding("UTF-8");
@@ -76,7 +76,6 @@
                         sql="SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
                         ResultSet hr_all=con.createStatement().executeQuery(sql);
 
-
                         while(hr_all.next())
                         {
 
@@ -92,8 +91,9 @@
                                 out.println("</td>");
                                 out.println("<td class='deleteCol tdSet'>");
 
-                                    out.println("<a href ='assets/jsp/delete.jsp?product_name="+hr_all.getString("product_name")+"'>");
+                                   
                                     out.println("<button class='delete' onclick='editTable.delRow()'>");
+                                     out.println("<a href ='assets/jsp/delete.jsp?strShoppingCarName="+hr_all.getString("product_name")+"'>");
                                     out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button></a>"); //刪除鈕
 
                                 out.println("</td>");

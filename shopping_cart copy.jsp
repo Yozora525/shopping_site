@@ -106,23 +106,6 @@
                                 out.println(sql);  //等等再刪除剛剛新增的
                                 int no;
 
-/*
-                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
-                                sql+="VALUES ('" + strShoppingCarName + "', ";
-                                // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
-                                sql+="'"+ strShoppingCarPrice +"', ";
-                                sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
-                                sql+="'"+ session.getAttribute("email").toString() +"')"; 
-
-                                no =con.createStatement().executeUpdate(sql);
-    
-                                if (no>0){
-                                    out.println("新增成功");
-                                    session.removeAttribute("strShoppingCarPrice");
-                                    }
-                                else{
-                                    out.println(sql);
-                                    }*/
 
                             }
                         else
