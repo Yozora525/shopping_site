@@ -36,7 +36,6 @@
         out.println(strShoppingCarPrice);
 
         out.println(session.getAttribute("email").toString());
-        out.println(strShoppingCarQuantity);
         
         //int strshoppingCartPrice = Integer.parseInt(strPrice);
 
