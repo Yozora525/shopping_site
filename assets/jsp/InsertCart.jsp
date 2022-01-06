@@ -4,7 +4,7 @@
 <%@include file = "consql.jsp" %>
 <%
 if(session.getAttribute("email") == null) {
-    out.println("請先登入再使用購物車功能, 點<a href='login.html'>我</a>回登入頁");
+    out.println("請先登入再使用購物車功能, 點<a href='login.jsp'>我</a>回登入頁");
 }
     else{
         request.setCharacterEncoding("UTF-8");

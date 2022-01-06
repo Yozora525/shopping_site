@@ -20,9 +20,5 @@
         out.println("fail");
         out.println(sql);
     }
-    
-    
-    
-
 
 %>
