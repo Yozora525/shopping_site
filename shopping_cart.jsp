@@ -44,7 +44,7 @@
 %>
 <%
             
-    int iSum = 0; //總金額
+  
     int no;
 
 
@@ -89,7 +89,7 @@
 
         </div>
     </header>
-<%  /*
+<%  
      out.println("<div class='shoppingCart'>");
          out.println("<h2>購物車</h2>");
          out.println("<form method='POST' action=''>");
@@ -101,42 +101,62 @@
                     out.println("<th>數量</th>");
                     out.println("<th>刪除</th>");
                     out.println("</tr>");                                          
-*/
 
+                        int iProductQ =0;
                         sql="SELECT * FROM `shopping_car`  WHERE `product_name` = '" + strShoppingCarName + "'";  // 購物車裡 產品名都一樣 用於更新
                         ResultSet hr_allcart=con.createStatement().executeQuery(sql);  //用於下面表格
-
-                        sql= "Select Count(*) From `shopping_car`  WHERE `product_name` =  strShoppingCarName"
-                        if (("Select Count(*) From `shopping_car`  WHERE `product_name` =  + strShoppingCarName" ) > 0 )
+                        int count =0;
+                        int q;
+                        int pq;
+                        while(hr_allcart.next()){
+                           ++count;
+                            session.setAttribute("q", hr_allcart.getInt("car_quantity"));
+                        }
+                        out.println(count);
+                        if ( count > 1 )
                             {
                                 out.println("true");
-                                Return True;
+                              //  Return True;
+                                iProductQ = Integer.parseInt(strShoppingCarQuantity) + Integer.parseInt(session.getAttribute("q").toString());
+                                sql="UPDATE `shopping_car` SET `car_quantity`= '"+ iProductQ +"' WHERE `product_name`='"+ strShoppingCarName +"'" ;
+                               // ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql);
+                                int rsUpdate =con.createStatement().executeUpdate(sql);;
+
+                                if(rsUpdate > 0){
+                                    out.println("success");
+                                } 
+
+                                else{
+                                    out.println("fail");
+                                }
+                                out.println(sql);
+                                //等等再刪除剛剛新增的
                             }
                             else
                             {
                                 out.println("false");
-                                Return False;
-                            }
-                   /*     while(hr_allcart.next())
-                        {
+                              //  Return False;
+                            }  
+
+
+
+               //        while(hr_allcart.next())
+                  //      {
  
                          //   "SELECT `product_name` FROM `shopping_car` WHERE `product_name` = '" + strShoppingCarName + "'";
 
-                                 if(  `strShoppingCarName= )    //在sql裡找到相同名稱的產品 更新數量
-                                    {   //總數量=迴圈總數量+這次的數量
-                                    sql="UPDATE `shopping_car` SET `car_quantity`= (strShoppingCarQuantity + hr_allcart.getInt('car_quantity')) WHERE `product_name`=strShoppingCarName ";
-                                    ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql); 
-                                    }
-                        }
-                        sql="SELECT * FROM `shopping_car` WHERE `email` = "+ String.valueOf(session.getAttribute("email"));
+                   //              if(  `strShoppingCarName= )    //在sql裡找到相同名稱的產品 更新數量
+                  //                  {   //總數量=迴圈總數量+這次的數量
+                  //                  sql="UPDATE `shopping_car` SET `car_quantity`= (strShoppingCarQuantity + hr_allcart.getInt('car_quantity')) WHERE `product_name`=strShoppingCarName ";
+                  //                  ResultSet CORRECTION_cart=con.createStatement().executeQuery(sql); 
+                                    ///}
+                  //      }
+              int iSum = 0; //總金額
+                        sql="SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
                         ResultSet hr_all=con.createStatement().executeQuery(sql);
 
                         while(hr_all.next())
                         {
-                                 if(strShoppingCarName=)    //在sql裡找到相同名稱的產品 更新數量
-                                    strShoppingCarQuantity +=   //總數量=迴圈總數量+這次的數量
-
-
 
                                 out.println("<tr class='tdSet'>");
 
@@ -156,19 +176,20 @@
 
                                 out.println("</td>");
                                 out.println("</tr>");
+
                                 iSum+=Integer.parseInt(strShoppingCarPrice) * Integer.parseInt(strShoppingCarQuantity) ;
                                 
                             
-                        }
-%>
-                         </tbody>
+                        }     %>
+ 
+                          </tbody>
                 <tr>
-                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%=iSum%> &nbsp;元</td>
+                    <td class="sum" colspan="4">總計:&nbsp;&nbsp;&nbsp; <%out.println(iSum);%> &nbsp;元</td>
                 </tr>
             </table>
         </form>
-    </div>
-              */
+    </div> 
+               
                     
  
     <div class="address">
