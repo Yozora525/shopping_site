@@ -73,7 +73,7 @@
                         <b>1</b>
                     </span>
                 </div>
-                <img src="assets/img/unavailable.jpg" class="topsalepic">
+                <img src="assets/img/AKG_K701.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                   <br>
@@ -91,7 +91,7 @@
                         <b>5</b>
                     </span>
                 </div>
-                <img src="assets/img/unavailable.jpg" class="topsalepic">
+                <img src="assets/img/ATH_M50xBT2.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                 <br>
@@ -108,7 +108,7 @@
                     <span class="num">
                         <b>2</b>
                     </span></div>
-                <img src="assets/img/unavailable.jpg" class="topsalepic">
+                <img src="assets/img/AKG_K712.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                 <br>
@@ -125,7 +125,7 @@
                     <span class="num">
                         <b>6</b>
                     </span></div>
-                <img src="assets/img/unavailable.jpg" class="topsalepic">
+                <img src="assets/img/MoonDrop_Blessing2.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                 <br>
@@ -142,7 +142,7 @@
                     <span class="num">
                         <b>3</b>
                     </span></div>
-                <img src="assets/img/unavailable.jpg" class="topsalepic">
+                <img src="assets/img/Galaxy_BudsPro-1.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                 <br>
@@ -159,7 +159,7 @@
                     <span class="num">
                         <b>7</b>
                     </span></div>
-                <img src="assets/img/unavailable.jpg" class="topsalepic">
+                <img src="assets/img/MoonDrop_illumination1.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                   <br>
@@ -176,7 +176,7 @@
                     <span class="num">
                         <b>4</b>
                     </span></div>
-                <img src="assets/img/unavailable.jpg" class="topsalepic">
+                <img src="assets/img/Oxygen_kato.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                 <br>
@@ -194,7 +194,7 @@
                             <b>8</b>
                         </span>
                     </div>
-                    <img src="assets/img/unavailable.jpg" class="topsalepic">
+                    <img src="assets/img/SONY_WHH900N.jpg" class="topsalepic">
                 </div>
                 <div class="flip-card-back">
                     <br>
