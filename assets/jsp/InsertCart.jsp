@@ -43,18 +43,22 @@
                             session.setAttribute("q", hr_allcart.getInt("car_quantity"));
                         }
                         out.println(count);
-                        if ( count > 1 )
+                        if ( count >= 1 )
                             {
                               //  out.println("true");
                                 iProductQ = Integer.parseInt(strShoppingCarQuantity) + Integer.parseInt(session.getAttribute("q").toString());
-                                sql="UPDATE `shopping_car` SET `car_quantity`= '"+ iProductQ +"' WHERE `product_name`='"+ strShoppingCarName +"'" ;
+                                int iCarName = iProductQ * Integer.parseInt(strShoppingCarPrice);
+                                sql="UPDATE `shopping_car` SET `car_quantity`= '"+ iProductQ +"', `car_money` = '"+ iCarName +"' WHERE `product_name`='"+ strShoppingCarName +"'" ;
                                 int rsUpdate =con.createStatement().executeUpdate(sql);
                                 
                                 if(rsUpdate > 0){
-                                    out.println("success");
+                                    session.removeAttribute("strShoppingCarPrice");
+                                    session.removeAttribute("car_quantity");
                                     response.sendRedirect("../../shopping_cart.jsp");
                                 } 
                                 else{
+                                    session.removeAttribute("car_quantity");
+                                    session.removeAttribute("strShoppingCarPrice");
                                     out.println("fail");
                                 }
                                 out.println(sql); 
@@ -66,23 +70,26 @@
                                 int no;
                                 out.println("false");
                               //  Return False;
-                              
-                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `email`)";//     , `car_quantity`,`email`)";
+                                int iSum = Integer.parseInt(strShoppingCarPrice) * Integer.parseInt(strShoppingCarQuantity);
+                                
+                                sql="INSERT `shopping_car`(`product_name`, `price`, `car_quantity`, `car_money`, `email`)";//     , `car_quantity`,`email`)";
                                 sql+="VALUES ('" + strShoppingCarName + "', ";
                                 // sql+="'"+ Integer.valueOf(strShoppingCarPrice).intValue() +"', "; //單價 Integer.valueOf(str).intValue();
                                 sql+="'"+ strShoppingCarPrice +"', ";
                                 sql+="'"+ Integer.parseInt(strShoppingCarQuantity) +"', ";
+                                sql+="'"+ iSum + "', ";
                                 sql+="'"+ session.getAttribute("email").toString() +"')"; 
 
                                 no =con.createStatement().executeUpdate(sql);
     
                                 if (no>0){
-                                     session.removeAttribute("strShoppingCarPrice");
-                                    //out.println("新增成功");
-                                   
+                                    session.removeAttribute("strShoppingCarPrice");
+                                    session.removeAttribute("car_quantity");
                                     response.sendRedirect("../../shopping_cart.jsp");
                                     }
                                 else{
+                                    session.removeAttribute("car_quantity");
+                                    session.removeAttribute("strShoppingCarPrice");
                                     out.println(sql);
                                     }
                             }  

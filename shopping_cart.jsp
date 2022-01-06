@@ -33,12 +33,6 @@
 
        // strShoppingCarPrice = session.getAttribute("strShoppingCarPrice").toString();
         strShoppingCarPrice=String.valueOf(session.getAttribute("strShoppingCarPrice")); //物件轉字串型別
-        out.println(strShoppingCarPrice);
-
-        out.println(session.getAttribute("email").toString());
-        
-        //int strshoppingCartPrice = Integer.parseInt(strPrice);
-
 %>
 
     <header class="mainHeader">
@@ -77,8 +71,11 @@
 
 
                         int iSum = 0; //總金額
+                        int price;
+                        int quantity;
                         sql="SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
                         ResultSet hr_all=con.createStatement().executeQuery(sql);
+
 
                         while(hr_all.next())
                         {
@@ -102,7 +99,9 @@
                                 out.println("</td>");
                                 out.println("</tr>");
 
-                                iSum+=Integer.parseInt(strShoppingCarPrice) * Integer.parseInt(strShoppingCarQuantity) ;
+                                price = hr_all.getInt("price"); 
+                                quantity = hr_all.getInt("car_quantity");
+                                iSum+= price * quantity;
                                 
                             
                         }     %>
