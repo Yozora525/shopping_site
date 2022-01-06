@@ -191,7 +191,7 @@
     <div class='comment'>
     <table>
     <%
-        sql="SELECT * FROM `evaluation` WHERE `product_name` = '" + strProductNameItroduce + "'";
+        sql="SELECT * FROM `evaluation` WHERE `product_name` = '" + strProductNameItroduce + "' ORDER BY `comment_date` DESC";
         // ResultSet hs_comment=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY).executeQuery(sql);
         ResultSet rsComment=con.createStatement().executeQuery(sql);
         //hs_comment.last();
@@ -222,7 +222,7 @@
                             out.println("<input type='radio' id='one1' name='rate' value='1'>");
                             out.println("<label for='one'></label>");
                         out.println("</div>");
-
+                out.println(rsComment.getString("comment_date"));
                         out.println("</div>");
 
                 out.println("<div class='commentText'>");

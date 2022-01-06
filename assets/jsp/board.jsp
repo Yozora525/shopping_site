@@ -29,9 +29,10 @@
         no =con.createStatement().executeUpdate(sql);
 
         if (no>0){
-            out.println("新增成功");
+            
             con.close();
             session.removeAttribute("strProductNameItroduce");
+            response.sendRedirect("../../product_overview.jsp");
         }
 
         else{
