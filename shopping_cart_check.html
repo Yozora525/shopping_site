@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/shopping_cart_check.css">
+</head>
+<body>
+    <header class="mainHeader">
+        <div class="container">
+            <a href="index.jsp" class="logo">
+                <img src="assets/img/headphones.png" alt="earphonelogo">
+            </a>
+            <nav class="navBar">
+                <a href="product_overview.jsp">產品介紹</a>
+                <a href="login.html">會員中心</a>
+                <a href="managed_server_login.html">後台管理</a>
+                <a href="about_us.html">關於我們</a>
+                <a href="#" onclick="openNav()">聯絡我們</a>
+            </nav>
+            <a class="cart" href="shopping_cart.jsp"><img src="assets/img/shopping-cart.png"></a>
+            <form class="headerSearch" method="POST" action="search_resultt.jsp">
+                <input type="search" name="key_word" placeholder="請輸入產品名稱">
+                <button><img src="assets/img/magnifying-glass.png"></button>
+            </form>
+        </div>
+    </header>
+    <div class="shoppingCart">
+        <h2>購物車</h2>
+        <form method="POST" action="">
+            <table border="1">
+                <tbody id="amsTbody">
+                    <tr>
+                        <th>商品名稱</th>
+                        <th>價格</th>
+                        <th>數量</th>
+                    </tr>
+                    <tr class="tdSet1">
+                        <td class="tdSet">鐵三角 M50x</td>
+                        <td class="tdSet">$ 5600</td>
+                        <td class="tdSet">
+                            <input type="text" class="quantity" value="1" readonly/>
+                        </td>
+                    </tr>
+                    <tr class="tdSet1">
+                        <td class="tdSet">SONY IER-Z1R</td>
+                        <td class="tdSet">$ 55900</td>
+                        <td class="tdSet">
+                            <input type="text" class="quantity" value="1" readonly/>
+                        </td>
+                    </tr>
+                    <tr class="tdSet1">
+                        <td class="tdSet">水月雨 KATO</td>
+                        <td class="tdSet">$ 6000</td>
+                        <td class="tdSet">
+                            <input type="text" class="quantity" value="1" readonly/>
+                        </td>
+                    </tr>
+                </tbody>
+                <tr>
+                    <td class="sum" colspan="4" style="text-align: right;">總計:&nbsp;&nbsp;&nbsp;76500&nbsp;元</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="address">
+        <form action="">
+            <table border="1">
+                <tr>
+                    <td rowspan="2" class="addressCol">收件地址</td>
+                    <td class="postalCodeCol">
+                        <input class="postalCode" type="text" name="postalCode" placeholder="請輸入郵遞區號" value="123" readonly/></td>
+                    <td class="cityCol">
+                        <input type="text" class="city" value="桃園市" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="detailedAddressCol"><input class="detailedAddress" type="text" name="detailedAddress" placeholder="請輸入詳細地址" value="中壢區" readonly></td>
+                </tr>
+            </table>
+            <div class="buttonBlock">
+                <input type="submit" class="btn" value="確認送出"/>
+                <input type="button" class="btn" value="回上頁"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
