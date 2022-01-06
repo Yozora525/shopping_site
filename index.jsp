@@ -33,7 +33,7 @@
             </form>
         </div>
     </header>
-    <div class="slideshow-container" style="margin-left:19%; margin-bottom:9%;">
+    <div class="slideshow-container" >
         <div class="mySlides fade">
             <img src="assets/img/colorfulheadphone.jpg" style="width:100%">
         </div>
@@ -62,10 +62,10 @@
         <span class="dot" ></span>
        </div>
     </div>    
-       <div class="hotsales" style="margin-left:7%;">
+       <div class="hotsales" style="padding:10%; padding-left:90px">
            <h2>熱銷商品排行榜</h2>
         <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="bookmarkRibbon">
@@ -73,7 +73,7 @@
                         <b>1</b>
                     </span>
                 </div>
-                <img src="assets/img/AKG_K701.jpg" class="topsalepic">
+                <img src="assets/img/AKG_K702.jpg" class="topsalepic">
               </div>
               <div class="flip-card-back">
                   <br>
@@ -83,7 +83,7 @@
             </a>
           </div>
           <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="bookmarkRibbon">
@@ -101,7 +101,7 @@
             </a>
           </div>
           <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="bookmarkRibbon">
@@ -118,7 +118,7 @@
             </a>
           </div>
           <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="bookmarkRibbon">
@@ -135,7 +135,7 @@
             </a>
           </div>
           <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="bookmarkRibbon">
@@ -152,7 +152,7 @@
             </a>
           </div>
           <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="bookmarkRibbon">
@@ -169,7 +169,7 @@
             </a>
           </div>
           <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="bookmarkRibbon">
@@ -186,7 +186,7 @@
             </a>
         </div>
             <div class="flip-card">
-            <a href=" /*產品網址*/ ">
+            <a href="product_overview.jsp">
                 <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <div class="bookmarkRibbon">

@@ -64,7 +64,7 @@
     .hotsales{
       column-count:4;
       column-gap: 2px;
-      padding: 1000px; 
+      padding: 10%; 
       padding-right: 0%;  
       width: fit-content;
     }
