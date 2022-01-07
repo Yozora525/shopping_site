@@ -27,7 +27,7 @@
 
         if(iCount > 0){
             out.println("成功");
-            response.sendRedirect("shopping_cart_check.jsp");
+            response.sendRedirect("../../shopping_cart_check.jsp");
         }
 
         else{
