@@ -70,7 +70,11 @@
                 </tr>
             </table>
             <div class="buttonBlock">
+
+                <a href ='shopping_cart.jsp'>
                 <input type="button" class="btn" value="回上頁"/>
+
+                <a href ='assets/jsp/checkout.jsp'>
                 <input type="submit" class="btn" value="確認送出"/>
             </div>
         </form>

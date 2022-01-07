@@ -4,7 +4,7 @@
 <%@include file = "consql.jsp" %>
 <%
     if(request.getParameter("detailedAddress") == null || request.getParameter("detailedAddress").equals("") || session.getAttribute("email") == null || request.getParameter("postalCode") == null ||  request.getParameter("postalCode").equals("")){
-        out.println("請先輸入地址再使用結帳功能, 點<a href='../../shopping_cart.jsp'>我</a>回登入頁");
+        out.println("請先輸入地址再使用結帳功能, 點<a href='../../index.jsp'>我</a>回登入頁");
     }
 
     else{
