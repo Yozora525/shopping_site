@@ -58,8 +58,8 @@
     </header>
 <%  
      out.println("<div class='shoppingCart'>");
-         out.println("<h2>購物車</h2>");
-         out.println("<form method='POST' action=''>");
+        out.println("<h2>購物車</h2>");
+        out.println("<form method='POST' action=''>");
             out.println("<table border='1'>");
                out.println(" <tbody id='amsTbody'>");
                    out.println("<tr>");
@@ -79,7 +79,6 @@
 
                         while(hr_all.next())
                         {
-
                                 out.println("<tr class='tdSet'>");
 
                                     out.println("<td class='tdSet'>"+ hr_all.getString("product_name") +"</td>"); //產品名
@@ -87,18 +86,20 @@
 
                                 out.println("<td class='tdSet'>");
                                     
-                                    out.println("<input type='number' value='"+hr_all.getString("car_quantity")+"' min='1' />"); //輸入買多少數量
+                                    out.println("<input type='number' name='modifyQuantity' value='"+hr_all.getString("car_quantity")+"' min='1' />"); //輸入買多少數量
 
                                 out.println("</td>");
                                 out.println("<td class='deleteCol tdSet'>");
 
                                    
                                     out.println("<button class='delete' onclick='editTable.delRow()'>");
-                                     out.println("<a href ='assets/jsp/delete.jsp?strShoppingCarName="+hr_all.getString(1)+"'>");
+                         
+                                    out.println("<a href ='assets/jsp/delete.jsp?strShoppingCarName="+hr_all.getString(1)+"'>");
                                     out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button></a>"); //刪除鈕
-
+                                    
                                 out.println("</td>");
                                 out.println("</tr>");
+    
 
                                 price = hr_all.getInt("price"); 
                                 quantity = hr_all.getInt("car_quantity");

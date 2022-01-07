@@ -3,30 +3,40 @@
 <%@page import = "java.sql.*" %> 
 <%@include file = "consql.jsp" %>
 <%
-    if(request.getParameter("detailedAddress") == null){
-        out.println("請先輸入地址再使用結帳功能, 點<a href='../../assets/jsp/login.jsp'>我</a>回登入頁");
+    if(request.getParameter("detailedAddress") == null || request.getParameter("detailedAddress").equals("") || session.getAttribute("email") == null || request.getParameter("postalCode") == null ||  request.getParameter("postalCode").equals("")){
+        out.println("請先輸入地址再使用結帳功能, 點<a href='../../shopping_cart.jsp'>我</a>回登入頁");
     }
 
     else{
-        String email=(String)session.getAttribute("email");
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+
+        String strModifyQuantity = request.getParameter("modifyQuantity");
+        String email=(String)session.getAttribute("email");
         String postalCode =request.getParameter("postalCode");
         String city =request.getParameter("city");
         String detailedAddress =request.getParameter("detailedAddress");
-        sql = "SELECT * FROM `shopping_car` where `email` = '"+session.getAttribute("email")+"';"; 
-        ResultSet rs = con.createStatement().executeQuery(sql);
-        java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis());
-        
-        while(rs.next()){
-        sql="UPDATE `shopping_car` SET `address`= '"+postalCode+city+detailedAddress;
-        sql+="' where `email` ='"+email+"'";
-       // sql+="'"+ city +"', ";
-     //   sql+="'"+ detailedAddress +"')";
-        con.createStatement().execute(sql);
+        String strAddress = city + postalCode + detailedAddress;
 
+        out.println(strModifyQuantity);
+
+        // 將地址資料寫入 購物車 資料表
+        sql = "UPDATE `shopping_car` SET `address`= '" + strAddress + "' WHERE `email` = '" + email + "'" ;
+        //ResultSet rs = con.createStatement().executeQuery(sql);
+        // java.sql.Date new_date=new java.sql.Date(System.currentTimeMillis());
+
+        int iCount = con.createStatement().executeUpdate(sql);
+
+        if(iCount > 0){
+            out.println("成功");
+            // response.sendRedirect("");
         }
-            out.println("新增地址成功!"); //之後會改成 結帳成功
+
+        else{
+            out.println("失敗");
+        }
+        
+        out.println(strAddress);
 
     }
     
@@ -36,6 +46,8 @@
 %>
 
 <%
+
+/*
     sql="SELECT * FROM `shopping_cart` WHERE `email`= "+ String.valueOf(session.getAttribute("email")) +"'"; // insert入record
     ResultSet rs_rec =con.createStatement.executeQuery(sql);
 
@@ -52,7 +64,8 @@
 
     con.createStatement().executeUpdate(sql);
     response.sendRedirect(order_established.html);
+*/
 
-    
+
 
 %>
