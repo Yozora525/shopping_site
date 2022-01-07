@@ -26,62 +26,38 @@
     text-align: right;
     font-weight: bolder;
 }
+.address table{
+    width: 100%;
+}
+.addressTitle{
+    font-size: 20px;
+}
+.addressCol{
+    width: 30%;
+    text-align: center;
+}
+.addressTextCol{
+    width: 70%;
+    text-align: center;
+}
+.addressText{
+    width: 50%;
+    height: 30px;
+}
 .address{
     width: 1200px;
     margin: auto;
     padding-top: 40px;
 }
-.address table{
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    border-collapse: collapse;
-}
-.address table th,
-.address table td{
-    padding: 10px;
-}
 .addressCol{
     text-align: center;
-    width: 35%;
+    width: 50%;
     font-size: 20px;
     font-weight: bolder;
 }
-.postalCode{
-    width: 25%;
-}
-.postalCodeCol{
-    width: 15%;
-}
-.cityCol{
-    width: 15%;
-}
-.city{
-    width: 30%;
-}
-.checkoutCol{
-    width: 30%;
-}
-.checkout{
-    width: 130px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bolder;
-    color: white;
-    background-color: #0080FF;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.checkout:hover{
-    color: black;
-    background-color: white;
-}
-.detailedAddressCol{
-    width: 35%;
-}
-.detailedAddress{
-    width: 65%;
+.addressTextCol{
+    width: 50%;
+    text-align: left;
 }
 .buttonBlock{
     margin-top: 5%;
