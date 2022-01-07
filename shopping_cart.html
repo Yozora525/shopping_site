@@ -64,59 +64,7 @@
                             </select>
                         </td>
                         <td class="deleteCol tdSet">
-                            <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
-                        </td>
-                    </tr>
-                    <tr class="tdSet">
-                        <td class="tdSet">SONY IER-Z1R</td>
-                        <td class="tdSet">$ 55900</td>
-                        <td class="tdSet">
-                            <select name="quantity" id="number2">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
-                        </td>
-                        <td class="deleteCol tdSet">
-                            <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
-                        </td>
-                    </tr>
-                    <tr class="tdSet">
-                        <td class="tdSet">水月雨 KATO</td>
-                        <td class="tdSet">$ 6000</td>
-                        <td class="tdSet">
-                            <select name="quantity" id="number3">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
-                        </td>
-                        <td class="deleteCol tdSet">
-                            <button class="delete" onclick="editTable.delRow()"><img class="deleteImg" src="assets/img/delete.png" alt="delete"></button>
+                            <input type="button" onclick="start()" id="displaysign" name="btt1" value="Edit"/>
                         </td>
                     </tr>
                 </tbody>
@@ -164,6 +112,30 @@
                     <td colspan="2" class="detailedAddressCol"><input class="detailedAddress" type="text" name="detailedAddress" placeholder="請輸入詳細地址"></td>
                 </tr>
             </table>
+        </form>
+        <form action="">
+            <div class="signform" id="signform" style="display: none">
+                <div class="signclose">
+                    <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose()">
+                </div>
+                <div class="userdiv">
+                <p>商品名稱:&nbsp;&nbsp;&nbsp;
+                    <select name="productName" id="productName">
+                        <option value="SONY_WI-SP500">SONY WI-SP500</option>
+                        <option value="SONY_WH-H900N">SONY WH-H900N</option>
+                        <option value="Galaxy_Buds_Pro">Galaxy Buds Pro</option>
+                        <option value="SONY_MDR-XB950N1">SONY MDR-XB950N1</option>
+                    </select>
+                </p>
+                </div>
+                <div class="pwddiv">
+                <p>價格:&nbsp;&nbsp;&nbsp;<input type="number" value="1"></p>
+                </div>
+                <div class="postdiv">
+                    <input type="reset" value="重填"/>
+                    <input type="submit" value="確認"/>
+                </div>
+            </div>
         </form>
     </div>
     <script type="text/javascript" src="assets/js/shopping_cart.js"></script>
