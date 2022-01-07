@@ -66,7 +66,7 @@
                     out.println("<th>商品名稱</th>");
                     out.println("<th>價格</th>");
                     out.println("<th>數量</th>");
-                    out.println("<th>刪除</th>");
+                    out.println("<th>修改數量</th>");
                     out.println("</tr>");                                          
 
 
