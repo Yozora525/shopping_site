@@ -94,7 +94,7 @@
         </div>
         <div class="record">
             <div class="order">
-                <a href="member_orders_record.html"><button class="recordBtn">訂單紀錄</button></a>
+                <a href="member_orders_record.jsp"><button class="recordBtn">訂單紀錄</button></a>
             </div>
             <div class="comment">
                 <a href="member_comment_record.jsp"><button class="recordBtn">評論紀錄</button></a>

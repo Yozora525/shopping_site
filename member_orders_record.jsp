@@ -1,3 +1,7 @@
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %> 
+<%@include file = "assets/jsp/consql.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,27 +44,25 @@
                 <th>數量</th>
                 <th>費用</th>
             </tr>
-            <tr>
-                <td>2021/01/01</td>
-                <td>桃園市龍潭區</td>
-                <td>鐵三角 M50x</td>
-                <td>1個</td>
-                <td>$ 5600</td>
-            </tr>
-            <tr>
-                <td>2021/06/30</td>
-                <td>新北市板橋區</td>
-                <td>SONY IER-Z1R</td>
-                <td>1個</td>
-                <td>$ 55900</td>
-            </tr>
-            <tr>
-                <td>2021/12/31</td>
-                <td>新竹縣竹北市</td>
-                <td>水月雨 KATO</td>
-                <td>1個</td>
-                <td>$ 6000</td>
-            </tr>
+            <%
+            sql = "SELECT * FROM `record` WHERE email = '" + session.getAttribute("email").toString()  +"'";
+            ResultSet rsRecord = con.createStatement().executeQuery(sql);
+            int iTotal = 0;
+
+            while(rsRecord.next()){
+                out.println("<tr>");
+
+                out.println("<td>" + rsRecord.getString("sold_date") + "</td>");
+                out.println("<td>" + rsRecord.getString("address") +"</td>");
+                out.println("<td>" + rsRecord.getString("product_name") +"</td>");
+                out.println("<td>" + rsRecord.getString("sold_quantity") +"</td>");
+                iTotal = rsRecord.getInt("price") * rsRecord.getInt("sold_quantity");
+                out.println("<td>" + iTotal +"</td>");
+
+                out.println("</tr>");
+            }
+                
+            %>
         </table>
     </div>
 </body>
