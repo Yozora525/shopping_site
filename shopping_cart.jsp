@@ -42,7 +42,7 @@
             </a>
             <nav class="navBar">
                 <a href="product_overview.jsp">產品介紹</a>
-                <a href="login.html">會員中心</a>
+                <a href="member_center.jsp">會員中心</a>
                 <a href="managed_server_login.html">後台管理</a>
                 <a href="about_us.html">關於我們</a>
                 <a href="#" onclick="openNav()">聯絡我們</a>
@@ -76,6 +76,7 @@
                         sql="SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
                         ResultSet hr_all=con.createStatement().executeQuery(sql);
 
+
                         while(hr_all.next())
                         {
 
@@ -93,7 +94,7 @@
 
                                    
                                     out.println("<button class='delete' onclick='editTable.delRow()'>");
-                                     out.println("<a href ='assets/jsp/delete.jsp?strShoppingCarName="+hr_all.getString("product_name")+"'>");
+                                     out.println("<a href ='assets/jsp/delete.jsp?strShoppingCarName="+hr_all.getString(1)+"'>");
                                     out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button></a>"); //刪除鈕
 
                                 out.println("</td>");

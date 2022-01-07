@@ -53,6 +53,6 @@
     con.createStatement().executeUpdate(sql);
     response.sendRedirect(order_established.html);
 
-
+    
 
 %>
