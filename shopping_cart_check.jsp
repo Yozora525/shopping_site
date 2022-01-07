@@ -42,42 +42,69 @@
                         <th>價格</th>
                         <th>數量</th>
                     </tr>
-                    <tr class="tdSet1">
-                        <td class="tdSet">鐵三角 M50x</td>
-                        <td class="tdSet">$ 5600</td>
-                        <td class="tdSet">
-                            <input type="text" class="quantity" value="1" readonly/>
-                        </td>
-                    </tr>
 
-                </tbody>
-                <tr>
-                    <td class="sum" colspan="4" style="text-align: right;">總計:&nbsp;&nbsp;&nbsp;76500&nbsp;元</td>
-                </tr>
-            </table>
-        </form>
-    </div>
-    <div class="address">
-        <form action="">
-            <table>
-                <tr>
-                    <td class="addressCol">
-                        <p class="addressTitle">收件地址</p>
-                    </td>
-                    <td class="addressTextCol">
-                        <input type="text" class="addressText" value="123 桃園市中壢區" readonly/>
-                    </td>
-                </tr>
-            </table>
-            <div class="buttonBlock">
+                <tr class="tdSet1">
+<%
+                    sql = "SELECT * FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
+                    ResultSet rsShopping = con.createStatement().executeQuery(sql);
+                    ResultSet rsAddress = con.createStatement().executeQuery(sql);
+                    int iMoney=0;
 
-                <a href ='shopping_cart.jsp'>
-                <input type="button" class="btn" value="回上頁"/>
+                    while(rsShopping.next()){
+                        out.println("<tr>");
 
-                <a href ='assets/jsp/checkout.jsp'>
-                <input type="submit" class="btn" value="確認送出"/>
-            </div>
-        </form>
-    </div>
+                        out.println("<td class='tdSet'>" + rsShopping.getString("product_name") + "</td>");
+                        out.println("<td class='tdSet'>$" + rsShopping.getString("price") + "</td>");
+
+                        out.println("<td class='tdSet' align='center'>");
+                            out.println("<input type='text' style='background-color:transparent; border-style:none none none none; class='quantity' value='" + rsShopping.getString("car_quantity") + "' readonly/>");
+                        out.println("</td>");
+
+                        out.println("</tr>");
+
+                out.println("</tr>");
+                out.println("</tbody>");
+                out.println("<tr>");
+                iMoney += rsShopping.getInt("price") * rsShopping.getInt("car_quantity");
+                session.setAttribute("iMoney", iMoney);
+                    
+                }
+                out.println("<td class='sum' colspan='4' style='text-align: right;'>總計:&nbsp;&nbsp;&nbsp;" + String.valueOf(session.getAttribute("iMoney")) + "&nbsp;元</td>");
+                
+                session.removeAttribute("iMoney");
+                out.println("</tr>");
+            out.println("</table>");
+        out.println("</form>");
+    out.println("</div>");
+    out.println("<div class='address'>");
+        out.println("<form action=''>");
+            out.println("<table>");
+                out.println("<tr>");
+                    out.println("<td class='addressCol'>");
+                        out.println("<p class='addressTitle'>收件地址</p>");
+                    out.println("</td>");
+                    out.println("<td class=addressTextCol'>");
+                    if(rsAddress.next()){
+                        out.println("<input type='text' class='addressText' value='" + rsAddress.getString("address") + "' readonly/>");
+                    }
+                        
+                    out.println("</td>");
+                out.println("</tr>");
+            out.println("</table>");
+                    
+
+            out.println("<div class='buttonBlock'>");
+
+                out.println("<a href ='shopping_cart.jsp'>");
+                out.println("<input type='button' class='btn' value='回上頁'/>");
+
+                out.println("<a href ='assets/jsp/checkout.jsp'>");
+                out.println("<input type='submit' class='btn' value='確認送出'/>");
+            out.println("</div>");
+        out.println("</form>");
+    out.println("</div>");
+
+    
+%>
 </body>
 </html>

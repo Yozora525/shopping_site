@@ -23,4 +23,6 @@
         else{
             out.println("失敗");
         }
+
+    
 %>
