@@ -7,7 +7,7 @@
 
 session.getAttribute("email");
 
-sql="INSERT INTO `record` (`email`, `product_name`,`price`,`sold_quantity`,`total_money`,`address` ) SELECT `email`, `product_name`,`price`,`car_quantity`,`car_money`,`address`  FROM `shopping_car` WHERE `email`= '"+String.valueOf(session.getAttribute("email"))+"'" ;
+sql="INSERT INTO `record` (`email`, `product_name`,`price`,`sold_quantity`,`total_money`,`address` ) SELECT `email`, `product_name`,`price`,`car_quantity`,`price`,`address`  FROM `shopping_car` WHERE `email`= '"+String.valueOf(session.getAttribute("email"))+"'" ;
 //ORDER BY `comment_date` DESC 排時間
 //INSERT INTO 目標表 (欄位1, 欄位2, ...) SELECT 欄位1, 欄位2, ... FROM 來源表;
 int up=con.createStatement().executeUpdate(sql);
@@ -18,17 +18,28 @@ if(up >0){
     if(upda >0){
         out.println("success");
 
-        sql="SELECT * FROM `transaction`";
+        sql="SELECT * FROM `transaction` ORDER BY `product_name` DESC";
         ResultSet hs_transaction = con.createStatement().executeQuery(sql);
         int hsInventoryQuantity = 0;
+        int rsInsert=0;
 
-        while(hs_transaction.next()){
+        
+        while(hs_transaction.next() ){
             hsInventoryQuantity += hs_transaction.getInt(2) - hs_transaction.getInt(3);
-            
+                sql="UPDATE `inventory` SET `inventory_quantity` = '" + hsInventoryQuantity + "' WHERE `product_name`= '" + hs_transaction.getString(1) + "'";
+                rsInsert = con.createStatement().executeUpdate(sql);
         }
 
-        sql="UPDATE `inventory` SET `inventory_quantity` = '" + hsInventoryQuantity + "' WHERE `product_name`= '" +  + "' ";
-       // UPDATE 資料表名稱 SET 欄位1="值1", 欄位2="值2" …WHERE 指定所修改的資料
+
+        sql="DELETE QUICK FROM `shopping_car` WHERE `email` = '"+ String.valueOf(session.getAttribute("email")) + "'";
+        int deleteN=con.createStatement().executeUpdate(sql);
+        if(deleteN > 0){
+            response.sendRedirect("../../order_established.html");
+        }
+
+        else{
+            out.println("error");
+        }
     }
 
     else{
