@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2022-01-07 13:29:23 +0000
+# 生成時間: 2022-01-07 14:20:14 +0000
 # ************************************************************
 
 
@@ -124,7 +124,7 @@ CREATE TABLE `product` (
   `way` varchar(45) NOT NULL DEFAULT '',
   `brand` varchar(45) NOT NULL,
   `status` char(1) NOT NULL DEFAULT '1',
-  `product_introduce_1` varchar(45) NOT NULL,
+  `product_introduce_1` varchar(256) NOT NULL DEFAULT '',
   PRIMARY KEY (`product_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

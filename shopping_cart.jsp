@@ -79,32 +79,26 @@
                         while(hr_all.next())
                         {
 
-                                out.println("<tr class='tdSet'>");
+                            out.println("<tr class='tdSet'>");
 
-                                    out.println("<td class='tdSet'>"+ hr_all.getString("product_name") +"</td>"); //產品名
-                                    out.println("<td class='tdSet'>"+ hr_all.getString("price") +"</td>"); //價錢
+                            out.println("<td class='tdSet'>"+ hr_all.getString("product_name") +"</td>"); //產品名
+                            out.println("<td class='tdSet'>"+ hr_all.getString("price") +"</td>"); //價錢
 
-                                out.println("<td class='tdSet'>");
+                            out.println("<td class='tdSet'>");
                                     
-                                    out.println("<input type='number' value='"+hr_all.getString("car_quantity")+"' min='1' />"); //輸入買多少數量
+                            out.println("<input type='number' value='"+hr_all.getString("car_quantity")+"' min='1' />"); //輸入買多少數量
 
-                                out.println("</td>");
-                                out.println("<td class='deleteCol tdSet'>");
+                            out.println("<td class='deleteCol tdSet'>");
+                            out.println("<input type='button' onclick='start()' id='displaysign' name='btt1' value='Edit'/>");
+                            out.println("</td>");
 
-                                   
-                                    out.println("<button class='delete' onclick='editTable.delRow()'>");
-                                     out.println("<a href ='assets/jsp/delete.jsp?strShoppingCarName="+hr_all.getString("product_name")+"'>");
-                                    out.println("<img class='deleteImg' src='assets/img/delete.png' alt='delete'></button></a>"); //刪除鈕
+                            out.println("</tr>");
 
-                                out.println("</td>");
-                                out.println("</tr>");
-
-                                price = hr_all.getInt("price"); 
-                                quantity = hr_all.getInt("car_quantity");
-                                iSum+= price * quantity;
-                                
-                            
-                        }     %>
+                            price = hr_all.getInt("price"); 
+                            quantity = hr_all.getInt("car_quantity");
+                            iSum+= price * quantity;
+                        }
+%>
  
                           </tbody>
                 <tr>
@@ -113,9 +107,42 @@
             </table>
         </form>
     </div> 
-               
+            
+
+            <form action="assets/jsp/modify_quantity.jsp" method="POST">
+            <div class="signform" id="signform" style="display: none">
+                <div class="signclose">
+                    <img src="assets/img/x-mark.png" width="35px" height="35px" onclick="signclose()">
+                </div>
+
+                <div class="userdiv">
+
+                <p>商品名稱:&nbsp;&nbsp;&nbsp;
+
+                    <select name="productName" id="productName">
+                <%
+                    sql="SELECT `product_name` FROM `shopping_car` WHERE `email`= '"+String.valueOf(session.getAttribute("email"))+"'";
                     
+                    ResultSet rsSelectProductName = con.createStatement().executeQuery(sql);
+
+                    while(rsSelectProductName.next()){
+                        out.println("<option value='" + rsSelectProductName.getString("product_name") + "'>" + rsSelectProductName.getString("product_name")+ "</option>");
+                    }
+                %>
+                    </select>
+                </p>
+                </div>
+                <div class="pwddiv">
+                <p>數量:&nbsp;&nbsp;&nbsp;<input type="number" name="modifyQuantity" value="1" min="1"></p>
+                </div>
+                <div class="postdiv">
+                    <input type="reset" value="重填"/>
+                    <input type="submit" value="確認"/>
+                </div>
+            </div>
+        </form>
  
+
     <div class="address">
         <form action="assets/jsp/address.jsp">
             <table>
