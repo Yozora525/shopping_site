@@ -77,7 +77,7 @@
         out.println("</form>");
     out.println("</div>");
     out.println("<div class='address'>");
-        out.println("<form action=''>");
+        
             out.println("<table>");
                 out.println("<tr>");
                     out.println("<td class='addressCol'>");
@@ -101,7 +101,6 @@
                 out.println("<a href ='assets/jsp/checkout.jsp'>");
                 out.println("<input type='submit' class='btn' value='確認送出'/>");
             out.println("</div>");
-        out.println("</form>");
     out.println("</div>");
 
     

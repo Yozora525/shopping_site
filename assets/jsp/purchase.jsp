@@ -18,15 +18,11 @@
     int iProductAdd = Integer.parseInt(request.getParameter("product_add"));
     int no;
 
-    if(strTransactionDate.equals("") || iProductAdd <=0){
-        out.println("資料錯誤，請確實填寫資料，點<a href='../../managed_server.jsp'>我</a>回後台管理");
-    }
 
-    else{
         // out.println(strTransactionDate);
 
-        sql = "INSERT `transaction`(`product_name`,`import_quantity`, `transaction_date`) " + 
-        "VALUES ('"+ strProductName + "','" + iProductAdd + "','" + strTransactionDate + "')";
+        sql = "INSERT `transaction`(`product_name`,`import_quantity`) " + 
+        "VALUES ('"+ strProductName + "','" + iProductAdd + "')";
 
         no=con.createStatement().executeUpdate(sql);
 
@@ -55,7 +51,6 @@
             out.println("");
             con.close();
         }
-    }
     
 %>
 </body>

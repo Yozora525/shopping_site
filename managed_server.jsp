@@ -127,7 +127,6 @@
     <div class="panel">
         <table border="1">
             <tr>
-                <th>姓名</th>
                 <th>email</th>
                 <th>地址</th>
                 <th>商品名稱</th>
@@ -136,7 +135,7 @@
             </tr>
             
             <%
-                sql = "SELECT `username`, `email`, `address`, `product_name`, `price`, `sold_quantity` FROM `record`";
+                sql = "SELECT `email`, `address`, `product_name`, `price`, `sold_quantity` FROM `record`";
                 ResultSet rsRecord = con.createStatement().executeQuery(sql);
 
                 while(rsRecord.next()) {
@@ -146,7 +145,6 @@
                 out.println("<td>" + rsRecord.getString(3) + "</td>");
                 out.println("<td>" + rsRecord.getString(4) + "</td>");
                 out.println("<td>" + rsRecord.getString(5) + "</td>");
-                out.println("<td>" + rsRecord.getString(6) + "</td>");
                 out.println("</tr>");
                 }
             %>
@@ -159,14 +157,14 @@
         
             <table border="1">
                 <tr>
-                    <th>日期</th>
+                    <%-- <th>日期</th> --%>
                     <th>商品名稱</th>
                     <th>數量</th>
                     <th>確認更新</th>
                 </tr>
                 <tr>
         <form action="assets/jsp/purchase.jsp" method="POST">
-                <td><input type="date" name="purchase_date"/></td>
+                <%-- <td><input type="date" name="purchase_date"/></td> --%>
                 <td>
                     <select size="1" name="product_name">
                     <%
