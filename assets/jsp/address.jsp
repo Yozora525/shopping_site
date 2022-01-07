@@ -18,8 +18,6 @@
         String detailedAddress =request.getParameter("detailedAddress");
         String strAddress = city + postalCode + detailedAddress;
 
-        out.println(strModifyQuantity);
-
         // 將地址資料寫入 購物車 資料表
         sql = "UPDATE `shopping_car` SET `address`= '" + strAddress + "' WHERE `email` = '" + email + "'" ;
         //ResultSet rs = con.createStatement().executeQuery(sql);
@@ -29,7 +27,7 @@
 
         if(iCount > 0){
             out.println("成功");
-            // response.sendRedirect("");
+            response.sendRedirect("shopping_cart_check.jsp");
         }
 
         else{

@@ -1,3 +1,7 @@
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %> 
+<%@include file = "assets/jsp/consql.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,20 +49,7 @@
                             <input type="text" class="quantity" value="1" readonly/>
                         </td>
                     </tr>
-                    <tr class="tdSet1">
-                        <td class="tdSet">SONY IER-Z1R</td>
-                        <td class="tdSet">$ 55900</td>
-                        <td class="tdSet">
-                            <input type="text" class="quantity" value="1" readonly/>
-                        </td>
-                    </tr>
-                    <tr class="tdSet1">
-                        <td class="tdSet">水月雨 KATO</td>
-                        <td class="tdSet">$ 6000</td>
-                        <td class="tdSet">
-                            <input type="text" class="quantity" value="1" readonly/>
-                        </td>
-                    </tr>
+
                 </tbody>
                 <tr>
                     <td class="sum" colspan="4" style="text-align: right;">總計:&nbsp;&nbsp;&nbsp;76500&nbsp;元</td>
