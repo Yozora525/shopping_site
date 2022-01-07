@@ -7,7 +7,7 @@
 #
 # 主機: 127.0.0.1 (MySQL 5.5.5-10.6.4-MariaDB)
 # 數據庫: headphones
-# 生成時間: 2022-01-07 14:20:14 +0000
+# 生成時間: 2022-01-07 15:29:09 +0000
 # ************************************************************
 
 
@@ -256,21 +256,20 @@ CREATE TABLE `record` (
   `sold_quantity` int(11) NOT NULL,
   `total_money` int(11) NOT NULL,
   `address` varchar(64) DEFAULT NULL,
-  `username` varchar(100) DEFAULT '',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `record` WRITE;
 /*!40000 ALTER TABLE `record` DISABLE KEYS */;
 
-INSERT INTO `record` (`ID`, `email`, `product_name`, `sold_date`, `price`, `sold_quantity`, `total_money`, `address`, `username`)
+INSERT INTO `record` (`ID`, `email`, `product_name`, `sold_date`, `price`, `sold_quantity`, `total_money`, `address`)
 VALUES
-	(1,'haha@gmail.com','水月雨 KATO','2021-12-30 23:05:03',5680,1,5680,'中壢國','test'),
-	(2,'haha@gmail.com','SONY WI-SP500','2022-01-07 16:54:30',2390,4,9560,'臺北市320314中北路200號',''),
-	(3,'haha@gmail.com','水月雨 blessing2','2022-01-07 16:54:30',11000,14,154000,'臺北市320314中北路200號',''),
-	(4,'haha@gmail.com','水月雨 kxxs','2022-01-07 16:54:30',4980,4,19920,'臺北市320314中北路200號',''),
-	(5,'haha@gmail.com','水月雨 KATO','2022-01-07 16:54:30',5680,5,28400,'臺北市320314中北路200號',''),
-	(6,'haha@gmail.com','Galaxy Buds2','2022-01-07 16:54:30',4990,1,4990,'臺北市320314中北路200號','');
+	(1,'haha@gmail.com','水月雨 KATO','2021-12-30 23:05:03',5680,1,5680,'中壢國'),
+	(2,'haha@gmail.com','SONY WI-SP500','2022-01-07 16:54:30',2390,4,9560,'臺北市320314中北路200號'),
+	(3,'haha@gmail.com','水月雨 blessing2','2022-01-07 16:54:30',11000,14,154000,'臺北市320314中北路200號'),
+	(4,'haha@gmail.com','水月雨 kxxs','2022-01-07 16:54:30',4980,4,19920,'臺北市320314中北路200號'),
+	(5,'haha@gmail.com','水月雨 KATO','2022-01-07 16:54:30',5680,5,28400,'臺北市320314中北路200號'),
+	(6,'haha@gmail.com','Galaxy Buds2','2022-01-07 16:54:30',4990,1,4990,'臺北市320314中北路200號');
 
 /*!40000 ALTER TABLE `record` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -318,12 +317,12 @@ LOCK TABLES `shopping_car` WRITE;
 
 INSERT INTO `shopping_car` (`product_name`, `price`, `car_quantity`, `email`, `car_money`, `address`)
 VALUES
-	('SONY WI-SP500',2390,4,'haha@gmail.com',9560,'臺北市1111111111'),
-	('水月雨 blessing2',11000,14,'haha@gmail.com',154000,'臺北市1111111111'),
-	('水月雨 kxxs',4980,4,'haha@gmail.com',19920,'臺北市1111111111'),
-	('水月雨 KATO',5680,5,'haha@gmail.com',28400,'臺北市1111111111'),
+	('SONY WI-SP500',2390,20,'haha@gmail.com',9560,'臺北市335dd'),
+	('水月雨 blessing2',11000,10,'haha@gmail.com',154000,'臺北市335dd'),
+	('水月雨 kxxs',4980,4,'haha@gmail.com',19920,'臺北市335dd'),
+	('水月雨 KATO',5680,5,'haha@gmail.com',28400,'臺北市335dd'),
 	('SONY WH-H900N',7490,1,'10994009@cycu.edu.tw',7490,NULL),
-	('Galaxy Buds2',4990,1,'haha@gmail.com',4990,'臺北市1111111111');
+	('Galaxy Buds2',4990,10,'haha@gmail.com',4990,'臺北市335dd');
 
 /*!40000 ALTER TABLE `shopping_car` ENABLE KEYS */;
 UNLOCK TABLES;
